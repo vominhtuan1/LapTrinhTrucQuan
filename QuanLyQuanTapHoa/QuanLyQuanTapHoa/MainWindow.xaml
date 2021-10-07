@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa"
+        xmlns:uc="clr-namespace:QuanLyQuanTapHoa.UserControls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
@@ -176,8 +177,13 @@
                 </i:Interaction.Triggers>
             </Button>
         </Grid>
+        
+        <!--Các grid window-->
         <Grid Grid.Column="1">
-            <Grid x:Name="grdHome" Background="Red" Visibility="Visible"></Grid>
+            <Grid x:Name="GridPrinciple"></Grid>
+            <Grid x:Name="grdHome" Visibility="Visible">
+                <uc:HomeControl></uc:HomeControl>
+            </Grid>
             <Grid x:Name="grdReport" Background="Yellow" Visibility="Hidden"></Grid>
             <Grid x:Name="grdWarehouse" Background="Pink" Visibility="Hidden"></Grid>
             <Grid x:Name="grdStaff" Background="Green" Visibility="Hidden"></Grid>
@@ -185,6 +191,7 @@
             <Grid x:Name="grdBill" Background="Orange" Visibility="Hidden"></Grid>
             <Grid x:Name="grdDiscount" Background="Aqua" Visibility="Hidden"></Grid>
         </Grid>
+        
     </Grid>
 </Window>
 

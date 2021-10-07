@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanTapHoa.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +15,14 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand SwitchTabCommand { get; set; }
         public ICommand GetUidCommand { get; set; }
 
-
-
         private string uid;
-
+        
         public MainViewModel()
         {
             SwitchTabCommand = new RelayCommand<MainWindow>((p) => { return true; }, (p) => { SwitchTab(p); });
             GetUidCommand = new RelayCommand<Button>((p) => { return true; }, (p) => { uid = p.Uid; });
         }
+
         public void SwitchTab(MainWindow mainWindow)
         {
             int index = int.Parse(uid);

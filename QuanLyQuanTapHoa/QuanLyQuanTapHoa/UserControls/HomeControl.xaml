@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              DataContext="{StaticResource HomeVM}"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -57,110 +58,78 @@
                         </Setter>
                     </Style>
                 </Grid.Resources>
-                <ScrollViewer HorizontalScrollBarVisibility="Hidden" >
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                        <Button Height="auto" Width="auto">
-                            <Border Background="Orange" Padding="4" CornerRadius="8">
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Border Background="White" CornerRadius="8" Padding="10 10">
-                                        <Image Source="/./images/all.png" Height="40" Width="40"/>
-                                    </Border>
-                                    <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Button>
-                    </StackPanel>
-                </ScrollViewer>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/all.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/DoUong.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Đồ uống" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/Sua.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Sữa" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/MiGoi.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Mì gói" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/DauAn.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Dầu,gia vị" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/CaNhan.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Cá nhân" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Height="auto" Width="auto">
+                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                    <Image Source="/./images/BanhKeo.png" Height="35" Width="35"/>
+                                </Border>
+                                <TextBlock Text="Bánh kẹo" TextAlignment="Center" Margin="0 5"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
                 <StackPanel Orientation="Horizontal" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -184,6 +153,126 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </ScrollViewer>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Height="50">
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="#8EA0E0" CornerRadius="10" Margin="0 5">
+                                        <Grid>
+                                            <ContentPresenter Margin="5" Cursor="Hand" Content="Xóa tất cả"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel Orientation="Horizontal" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock FontSize="24" FontWeight="Light"  Text="Hóa đơn " Margin="0 0 60 0"></TextBlock>
+                    <Button Foreground="White"></Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <ItemsControl x:Name="CartItemControl"  ItemsSource="{Binding cartItemList}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:CartItemControl Height="60" Width="250" Margin="0 0 0 10"></local:CartItemControl>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="2" Margin="10 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" VerticalAlignment="Center">
+                        <TextBlock Text="Mã giảm giá :" FontSize="15"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" >
+                        <TextBox FontSize="15" Width="auto" materialDesign:HintAssist.Hint="Mã giảm giá"></TextBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Tổng :" FontSize="15"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                        <TextBlock Text="65.000 VND" FontSize="15"></TextBlock>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Giảm giá :" FontSize="15"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                        <TextBlock Text="5.000 VND" FontSize="15"></TextBlock>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3" Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Thành tiền :" FontSize="15"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                        <TextBlock Text="60.000 VND" FontSize="15"></TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="#8EA0E0" CornerRadius="15" Padding="15 2">
+                                        <Grid>
+                                            <ContentPresenter Cursor="Hand"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                <Button Content="Thanh toán" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                        Margin="0 10" FontSize="24"></Button>
             </Grid>
         </Grid>
     </Grid>

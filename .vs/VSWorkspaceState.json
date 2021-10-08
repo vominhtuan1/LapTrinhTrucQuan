@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\QuanLyQuanTapHoa",
-    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa"
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa",
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\UserControls",
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\ViewModel"
   ],
-  "SelectedNode": "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\MainWindow.xaml",
+  "SelectedNode": "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\UserControls\\HomeControl.xaml",
   "PreviewInSolutionExplorer": false
 }

@@ -9,7 +9,15 @@ namespace QuanLyQuanTapHoa.ViewModel
 {
     class HomeViewModel: BaseViewModel
     {
+        
+        
         public List<product> productList { get; set; }
+        public List<cartItem> cartItemList { get; set; }
+        public class cartItem
+        {
+            public string name { get; set; }
+            public int soluong { get; set; }
+        }
         public class product
         {
             public string name { get; set; }
@@ -17,6 +25,16 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         public HomeViewModel()
         {
+            cartItemList = new List<cartItem>();
+            cartItemList.Add(new cartItem() { name = "Mì 3 miền", soluong = 10 });
+            cartItemList.Add(new cartItem() { name = "Dầu gội đầu", soluong = 1 });
+            cartItemList.Add(new cartItem() { name = "Bánh gạo", soluong = 2 });
+            cartItemList.Add(new cartItem() { name = "Cocacola", soluong = 5 });
+            cartItemList.Add(new cartItem() { name = "Dầu ăn", soluong = 1 });
+            cartItemList.Add(new cartItem() { name = "Bánh tráng", soluong = 10 });
+            cartItemList.Add(new cartItem() { name = "Súc xích", soluong = 10 });
+            cartItemList.Add(new cartItem() { name = "Cháo gói", soluong = 1 });
+            cartItemList.Add(new cartItem() { name = "Kem đánh răng", soluong = 1 });
             productList = new List<product>();
             productList.Add(new product() { name = "kem", price = 2000 });
             productList.Add(new product() { name = "sua chua", price = 5000 });

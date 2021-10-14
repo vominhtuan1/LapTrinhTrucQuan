@@ -1,0 +1,95 @@
+﻿<Window x:Class="QuanLyQuanTapHoa.EditProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyQuanTapHoa"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="EditProductWindow" Height="280" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="Sửa sản phẩm" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Margin="16 0">
+            <TextBox materialDesign:HintAssist.Hint="Tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </Grid>
+        <Grid Grid.Row="2" Margin="16 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="0 0 10 0">
+                <TextBox materialDesign:HintAssist.Hint="Số lượng bày bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+            <Grid Grid.Column="1" Margin="10 0 0 0">
+                <TextBox materialDesign:HintAssist.Hint="Thêm từ kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Margin="16 0">
+            <TextBox materialDesign:HintAssist.Hint="Thêm từ kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </Grid>
+        <Grid Grid.Row="4" Margin="16 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <ComboBox materialDesign:HintAssist.Hint="Đơn vị tính"  MinWidth="72" Margin="0 0 10 0"
+                            ItemsSource="{Binding LongListToTestComboVirtualization}"
+                            Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ComboBox materialDesign:HintAssist.Hint="Loại"  MinWidth="72" Margin="10 0 0 0"
+                            ItemsSource="{Binding LongListToTestComboVirtualization}"
+                            Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="5" HorizontalAlignment="Center">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="#F73B4F" CornerRadius="10" Margin="0 20" Padding="20 2">
+                                    <Grid>
+                                        <ContentPresenter Margin="5" Cursor="Hand"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Button Content="Xác nhận" Foreground="White" FontSize="14"></Button>
+        </Grid>
+    </Grid>
+</Window>

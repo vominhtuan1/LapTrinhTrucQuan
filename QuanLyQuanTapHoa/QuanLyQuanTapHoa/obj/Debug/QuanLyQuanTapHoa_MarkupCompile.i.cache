@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\
 QuanLyQuanTapHoa
 none
 false
 DEBUG;TRACE
-C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml
-6-2102390376
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml
+10-702837914
 
-14649675714
-171977183021
-LoginWindow.xaml;MainWindow.xaml;ResourceXAML\MainResource.xaml;UserControls\CartItemControl.xaml;UserControls\HomeControl.xaml;UserControls\ProductControl.xaml;
+19-1469023257
+171694499390
+AddProductWindow.xaml;EditProductWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ResourceXAML\MainResource.xaml;UserControls\CartItemControl.xaml;UserControls\HomeControl.xaml;UserControls\ProductControl.xaml;UserControls\ProductDetailControl.xaml;UserControls\SettingControl.xaml;
 
-False
+True
 

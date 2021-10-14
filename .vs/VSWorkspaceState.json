@@ -3,9 +3,8 @@
     "",
     "\\QuanLyQuanTapHoa",
     "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa",
-    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\UserControls",
-    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\ViewModel"
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\UserControls"
   ],
-  "SelectedNode": "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\UserControls\\HomeControl.xaml",
+  "SelectedNode": "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\UserControls\\CartItemControl.xaml",
   "PreviewInSolutionExplorer": false
 }

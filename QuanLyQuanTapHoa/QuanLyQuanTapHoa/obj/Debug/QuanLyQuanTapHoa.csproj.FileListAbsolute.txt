@@ -98,3 +98,47 @@ C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanT
 C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
 C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
 C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml

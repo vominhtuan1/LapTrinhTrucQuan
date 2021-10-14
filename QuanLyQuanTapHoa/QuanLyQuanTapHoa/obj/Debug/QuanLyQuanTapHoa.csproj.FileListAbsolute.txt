@@ -98,3 +98,47 @@ C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanT
 C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
 C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
 C:\Users\voxua\OneDrive\Desktop\Lap trinh truc quan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+C:\Users\vomin\Desktop\New folder (9)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml

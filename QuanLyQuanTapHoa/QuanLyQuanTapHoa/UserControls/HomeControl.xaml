@@ -191,11 +191,11 @@
                                 <local:CartItemControl Height="60" Width="250" Margin="0 0 0 10"></local:CartItemControl>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
+                        <!--<ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel/>
                             </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
+                        </ItemsControl.ItemsPanel>-->
                     </ItemsControl>
                 </ScrollViewer>
             </Grid>
@@ -244,13 +244,14 @@
                 </Grid>
                 <Grid Grid.Row="3" Margin="0 5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="124*"></ColumnDefinition>
+                        <ColumnDefinition Width="53*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <TextBlock Text="Thành tiền :" FontSize="15"></TextBlock>
                     </Grid>
-                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                    <Grid Grid.Column="1" HorizontalAlignment="Right" Grid.ColumnSpan="2">
                         <TextBlock Text="60.000 VND" FontSize="15"></TextBlock>
                     </Grid>
                 </Grid>

@@ -193,7 +193,9 @@
             <Grid x:Name="grdBill" Visibility="Hidden">
                 <uc:BillControl></uc:BillControl>
             </Grid>
-            <Grid x:Name="grdDiscount" Background="Aqua" Visibility="Hidden"></Grid>
+            <Grid x:Name="grdDiscount" Visibility="Hidden">
+                <uc:DiscountControl></uc:DiscountControl>
+            </Grid>
         </Grid>
         
     </Grid>

@@ -6,4 +6,6 @@
     <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
     <viewmodel:BillViewModel x:Key="BillVM"></viewmodel:BillViewModel>
     <viewmodel:SettingViewModel x:Key="SettingVM"></viewmodel:SettingViewModel>
+    <viewmodel:DiscountViewModel x:Key="DiscountVM"></viewmodel:DiscountViewModel>
+    
 </ResourceDictionary>

@@ -22,6 +22,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             loginWindow.Hide();
             mainWindow.ShowDialog();
             loginWindow.Show();
+
         }
     }
 }

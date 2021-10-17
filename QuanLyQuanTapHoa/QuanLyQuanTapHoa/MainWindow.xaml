@@ -186,7 +186,9 @@
             </Grid>
             <Grid x:Name="grdReport" Background="Yellow" Visibility="Hidden"></Grid>
             <Grid x:Name="grdWarehouse" Background="Pink" Visibility="Hidden"></Grid>
-            <Grid x:Name="grdStaff" Background="Green" Visibility="Hidden"></Grid>
+            <Grid x:Name="grdStaff" Background="Green" Visibility="Hidden">
+                <uc:StaffControl></uc:StaffControl>
+            </Grid>
             <Grid x:Name="grdSetting" Visibility="Hidden">
                 <uc:SettingControl></uc:SettingControl>
             </Grid>

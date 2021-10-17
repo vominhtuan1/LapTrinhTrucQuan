@@ -1,16 +1,20 @@
 ﻿
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\BillDetailWindow.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\LoginWindow.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\MainWindow.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\ResourceXAML\MainResource.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillControl.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillDetailControl.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\CartItemControl.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\HomeControl.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductOfBillDetailControl.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddProductWindow.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditProductWindow.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductDetailControl.xaml;;
-FC:\Users\voxua\OneDrive\Desktop\New folder (5)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\SettingControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddProductWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddStaffWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\BillDetailWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditProductWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditStaffWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\LoginWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\MainWindow.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\ResourceXAML\MainResource.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillDetailControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\CartItemControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\HomeControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductDetailControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductOfBillDetailControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\SettingControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\StaffControl.xaml;;
+FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\StaffDetailControl.xaml;;
 

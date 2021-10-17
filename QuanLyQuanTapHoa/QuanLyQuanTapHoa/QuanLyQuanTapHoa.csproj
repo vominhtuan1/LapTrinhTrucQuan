@@ -72,11 +72,17 @@
     <Compile Include="AddProductWindow.xaml.cs">
       <DependentUpon>AddProductWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddStaffWindow.xaml.cs">
+      <DependentUpon>AddStaffWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BillDetailWindow.xaml.cs">
       <DependentUpon>BillDetailWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditProductWindow.xaml.cs">
       <DependentUpon>EditProductWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditStaffWindow.xaml.cs">
+      <DependentUpon>EditStaffWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -105,13 +111,24 @@
     <Compile Include="UserControls\SettingControl.xaml.cs">
       <DependentUpon>SettingControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\StaffControl.xaml.cs">
+      <DependentUpon>StaffControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StaffDetailControl.xaml.cs">
+      <DependentUpon>StaffDetailControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BillViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
+    <Compile Include="ViewModel\StaffViewModel.cs" />
     <Page Include="AddProductWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddStaffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditProductWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditStaffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +193,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\SettingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\StaffControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\StaffDetailControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

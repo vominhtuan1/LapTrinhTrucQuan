@@ -1,20 +1,23 @@
-﻿
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddProductWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddStaffWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\BillDetailWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditProductWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditStaffWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\LoginWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\MainWindow.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\ResourceXAML\MainResource.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillDetailControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\CartItemControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\HomeControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductDetailControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductOfBillDetailControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\SettingControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\StaffControl.xaml;;
-FE:\project\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\StaffDetailControl.xaml;;
+﻿C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddProductWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\AddStaffWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\BillDetailWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditProductWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\EditStaffWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\ImportProductWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\LoginWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\MainWindow.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\ResourceXAML\MainResource.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\BillDetailControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\CartItemControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\HomeControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ImportGoodsDetailControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductDetailControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\ProductOfBillDetailControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\SettingControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\StaffControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\StaffDetailControl.xaml;;
+FC:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\UserControls\WarehouseControl.xaml;;
 

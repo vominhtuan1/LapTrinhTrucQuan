@@ -146,7 +146,7 @@
             <TextBlock Text="Thêm nhân viên" FontSize="20" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <Grid Grid.Row="1" Margin="16 0">
-            
+
             <TextBox materialDesign:HintAssist.Hint="Họ tên" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="2" Margin="16 0">
@@ -193,7 +193,11 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="6" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="23*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.ColumnSpan="2" />
         </Grid>
         <Grid Grid.Row="7" Margin="16 0">
             <TextBox materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />

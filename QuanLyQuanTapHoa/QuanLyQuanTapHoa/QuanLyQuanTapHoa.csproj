@@ -69,6 +69,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDiscountWindow.xaml.cs">
+      <DependentUpon>AddDiscountWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddProductWindow.xaml.cs">
       <DependentUpon>AddProductWindow.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,12 @@
     <Compile Include="UserControls\CartItemControl.xaml.cs">
       <DependentUpon>CartItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DiscountControl.xaml.cs">
+      <DependentUpon>DiscountControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DiscountDetailControl.xaml.cs">
+      <DependentUpon>DiscountDetailControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
     </Compile>
@@ -119,11 +128,16 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BillViewModel.cs" />
+    <Compile Include="ViewModel\DiscountViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\StaffViewModel.cs" />
+    <Page Include="AddDiscountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +187,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CartItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DiscountControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DiscountDetailControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

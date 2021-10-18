@@ -8,4 +8,5 @@
     <viewmodel:SettingViewModel x:Key="SettingVM"></viewmodel:SettingViewModel>
     <viewmodel:DiscountViewModel x:Key="DiscountVM"></viewmodel:DiscountViewModel>
     <viewmodel:StaffViewModel x:Key="StaffVM"></viewmodel:StaffViewModel>
+    <viewmodel:WarehouseViewModel x:Key="WarehouseVM"></viewmodel:WarehouseViewModel>
 </ResourceDictionary>

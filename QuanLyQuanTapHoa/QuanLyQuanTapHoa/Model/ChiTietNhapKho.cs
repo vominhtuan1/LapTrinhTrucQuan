@@ -14,18 +14,12 @@ namespace QuanLyQuanTapHoa.Model
     
     public partial class ChiTietNhapKho
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChiTietNhapKho()
-        {
-            this.NhapKhoes = new HashSet<NhapKho>();
-        }
-    
         public int MaCTNK { get; set; }
+        public int MaNhapKho { get; set; }
         public int MaSanPham { get; set; }
         public Nullable<int> SoLuong { get; set; }
     
+        public virtual NhapKho NhapKho { get; set; }
         public virtual SanPham SanPham { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhapKho> NhapKhoes { get; set; }
     }
 }

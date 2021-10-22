@@ -16,5 +16,5 @@ C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa
 22-16772994
 AddDiscountWindow.xaml;AddProductWindow.xaml;AddStaffWindow.xaml;BillDetailWindow.xaml;EditProductWindow.xaml;EditStaffWindow.xaml;ImportProductWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ResourceXAML\MainResource.xaml;UserControls\BillControl.xaml;UserControls\BillDetailControl.xaml;UserControls\CartItemControl.xaml;UserControls\DiscountControl.xaml;UserControls\DiscountDetailControl.xaml;UserControls\HomeControl.xaml;UserControls\ImportProductDetailControl.xaml;UserControls\ProductControl.xaml;UserControls\ProductDetailControl.xaml;UserControls\ProductOfBillDetailControl.xaml;UserControls\SettingControl.xaml;UserControls\StaffControl.xaml;UserControls\StaffDetailControl.xaml;UserControls\WarehouseControl.xaml;
 
-True
+False
 

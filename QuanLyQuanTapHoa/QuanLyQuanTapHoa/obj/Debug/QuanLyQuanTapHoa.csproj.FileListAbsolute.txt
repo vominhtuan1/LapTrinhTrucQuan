@@ -463,3 +463,8 @@ C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa
 C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
 C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
 C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs

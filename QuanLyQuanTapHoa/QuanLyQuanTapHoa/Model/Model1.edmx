@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyQuanTapHoaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyQuanTapHoaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiTietHoaDon">
           <Key>
             <PropertyRef Name="MaCTHD" />
@@ -19,6 +19,7 @@
             <PropertyRef Name="MaCTNK" />
           </Key>
           <Property Name="MaCTNK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaNhapKho" Type="int" Nullable="false" />
           <Property Name="MaSanPham" Type="int" Nullable="false" />
           <Property Name="SoLuong" Type="int" />
         </EntityType>
@@ -78,7 +79,6 @@
             <PropertyRef Name="MaNhapKho" />
           </Key>
           <Property Name="MaNhapKho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MaCTNK" Type="int" Nullable="false" />
           <Property Name="NgayNhap" Type="datetime" />
         </EntityType>
         <EntityType Name="SanPham">
@@ -127,7 +127,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ChiTietNh__SoLuo__3D5E1FD2">
+        <Association Name="FK__ChiTietNh__MaNha__403A8C7D">
+          <End Role="NhapKho" Type="Self.NhapKho" Multiplicity="1" />
+          <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhapKho">
+              <PropertyRef Name="MaNhapKho" />
+            </Principal>
+            <Dependent Role="ChiTietNhapKho">
+              <PropertyRef Name="MaNhapKho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietNh__SoLuo__3F466844">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
           <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,18 +184,6 @@
             </Principal>
             <Dependent Role="NhanVien">
               <PropertyRef Name="MaChucVu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__NhapKho__NgayNha__403A8C7D">
-          <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="1" />
-          <End Role="NhapKho" Type="Self.NhapKho" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChiTietNhapKho">
-              <PropertyRef Name="MaCTNK" />
-            </Principal>
-            <Dependent Role="NhapKho">
-              <PropertyRef Name="MaCTNK" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -231,7 +231,11 @@
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
           </AssociationSet>
-          <AssociationSet Name="FK__ChiTietNh__SoLuo__3D5E1FD2" Association="Self.FK__ChiTietNh__SoLuo__3D5E1FD2">
+          <AssociationSet Name="FK__ChiTietNh__MaNha__403A8C7D" Association="Self.FK__ChiTietNh__MaNha__403A8C7D">
+            <End Role="NhapKho" EntitySet="NhapKho" />
+            <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietNh__SoLuo__3F466844" Association="Self.FK__ChiTietNh__SoLuo__3F466844">
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKho" />
           </AssociationSet>
@@ -247,10 +251,6 @@
             <End Role="ChucVu" EntitySet="ChucVu" />
             <End Role="NhanVien" EntitySet="NhanVien" />
           </AssociationSet>
-          <AssociationSet Name="FK__NhapKho__NgayNha__403A8C7D" Association="Self.FK__NhapKho__NgayNha__403A8C7D">
-            <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKho" />
-            <End Role="NhapKho" EntitySet="NhapKho" />
-          </AssociationSet>
           <AssociationSet Name="FK__SanPham__MaDonVi__300424B4" Association="Self.FK__SanPham__MaDonVi__300424B4">
             <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
             <End Role="SanPham" EntitySet="SanPham" />
@@ -260,11 +260,59 @@
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyQuanTapHoaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QuanLyQuanTapHoaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietHoaDons" EntityType="QuanLyQuanTapHoaModel.ChiTietHoaDon" />
+          <EntitySet Name="ChiTietNhapKhoes" EntityType="QuanLyQuanTapHoaModel.ChiTietNhapKho" />
+          <EntitySet Name="ChucVus" EntityType="QuanLyQuanTapHoaModel.ChucVu" />
+          <EntitySet Name="DonViTinhs" EntityType="QuanLyQuanTapHoaModel.DonViTinh" />
+          <EntitySet Name="GiamGias" EntityType="QuanLyQuanTapHoaModel.GiamGia" />
+          <EntitySet Name="HoaDons" EntityType="QuanLyQuanTapHoaModel.HoaDon" />
+          <EntitySet Name="LoaiSanPhams" EntityType="QuanLyQuanTapHoaModel.LoaiSanPham" />
+          <EntitySet Name="NhanViens" EntityType="QuanLyQuanTapHoaModel.NhanVien" />
+          <EntitySet Name="NhapKhoes" EntityType="QuanLyQuanTapHoaModel.NhapKho" />
+          <EntitySet Name="SanPhams" EntityType="QuanLyQuanTapHoaModel.SanPham" />
+          <EntitySet Name="TaiKhoans" EntityType="QuanLyQuanTapHoaModel.TaiKhoan" />
+          <AssociationSet Name="FK__ChiTietHo__MaHoa__3A81B327" Association="QuanLyQuanTapHoaModel.FK__ChiTietHo__MaHoa__3A81B327">
+            <End Role="HoaDon" EntitySet="HoaDons" />
+            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietHo__SoLuo__398D8EEE" Association="QuanLyQuanTapHoaModel.FK__ChiTietHo__SoLuo__398D8EEE">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietNh__MaNha__403A8C7D" Association="QuanLyQuanTapHoaModel.FK__ChiTietNh__MaNha__403A8C7D">
+            <End Role="NhapKho" EntitySet="NhapKhoes" />
+            <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKhoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietNh__SoLuo__3F466844" Association="QuanLyQuanTapHoaModel.FK__ChiTietNh__SoLuo__3F466844">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKhoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NhanVien__MaChuc__2D27B809" Association="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2D27B809">
+            <End Role="ChucVu" EntitySet="ChucVus" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SanPham__MaDonVi__30F848ED" Association="QuanLyQuanTapHoaModel.FK__SanPham__MaDonVi__30F848ED">
+            <End Role="DonViTinh" EntitySet="DonViTinhs" />
+            <End Role="SanPham" EntitySet="SanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HoaDon__TongTien__36B12243" Association="QuanLyQuanTapHoaModel.FK__HoaDon__TongTien__36B12243">
+            <End Role="GiamGia" EntitySet="GiamGias" />
+            <End Role="HoaDon" EntitySet="HoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SanPham__MaDonVi__300424B4" Association="QuanLyQuanTapHoaModel.FK__SanPham__MaDonVi__300424B4">
+            <End Role="LoaiSanPham" EntitySet="LoaiSanPhams" />
+            <End Role="SanPham" EntitySet="SanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NhanVien__MaChuc__2C3393D0" Association="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2C3393D0">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="ChiTietHoaDon">
           <Key>
             <PropertyRef Name="MaCTHD" />
@@ -273,18 +321,19 @@
           <Property Name="MaSanPham" Type="Int32" Nullable="false" />
           <Property Name="MaHoaDon" Type="Int32" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
-          <NavigationProperty Name="HoaDon" Relationship="Self.FK__ChiTietHo__MaHoa__3A81B327" FromRole="ChiTietHoaDon" ToRole="HoaDon" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__ChiTietHo__SoLuo__398D8EEE" FromRole="ChiTietHoaDon" ToRole="SanPham" />
+          <NavigationProperty Name="HoaDon" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietHo__MaHoa__3A81B327" FromRole="ChiTietHoaDon" ToRole="HoaDon" />
+          <NavigationProperty Name="SanPham" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietHo__SoLuo__398D8EEE" FromRole="ChiTietHoaDon" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="ChiTietNhapKho">
           <Key>
             <PropertyRef Name="MaCTNK" />
           </Key>
           <Property Name="MaCTNK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaNhapKho" Type="Int32" Nullable="false" />
           <Property Name="MaSanPham" Type="Int32" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__ChiTietNh__SoLuo__3D5E1FD2" FromRole="ChiTietNhapKho" ToRole="SanPham" />
-          <NavigationProperty Name="NhapKhoes" Relationship="Self.FK__NhapKho__NgayNha__403A8C7D" FromRole="ChiTietNhapKho" ToRole="NhapKho" />
+          <NavigationProperty Name="NhapKho" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietNh__MaNha__403A8C7D" FromRole="ChiTietNhapKho" ToRole="NhapKho" />
+          <NavigationProperty Name="SanPham" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietNh__SoLuo__3F466844" FromRole="ChiTietNhapKho" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="ChucVu">
           <Key>
@@ -292,7 +341,7 @@
           </Key>
           <Property Name="MaChucVu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenChucVu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="NhanViens" Relationship="Self.FK__NhanVien__MaChuc__2D27B809" FromRole="ChucVu" ToRole="NhanVien" />
+          <NavigationProperty Name="NhanViens" Relationship="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2D27B809" FromRole="ChucVu" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="DonViTinh">
           <Key>
@@ -300,7 +349,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDonViTinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDonVi__30F848ED" FromRole="DonViTinh" ToRole="SanPham" />
+          <NavigationProperty Name="SanPhams" Relationship="QuanLyQuanTapHoaModel.FK__SanPham__MaDonVi__30F848ED" FromRole="DonViTinh" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="GiamGia">
           <Key>
@@ -311,7 +360,7 @@
           <Property Name="SoTienGiam" Type="Int32" />
           <Property Name="NgayBatDau" Type="DateTime" Precision="3" />
           <Property Name="NgayKetThuc" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__TongTien__36B12243" FromRole="GiamGia" ToRole="HoaDon" />
+          <NavigationProperty Name="HoaDons" Relationship="QuanLyQuanTapHoaModel.FK__HoaDon__TongTien__36B12243" FromRole="GiamGia" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -321,8 +370,8 @@
           <Property Name="NgayLapHoaDon" Type="DateTime" Precision="3" />
           <Property Name="IdGiamGia" Type="Int32" />
           <Property Name="TongTien" Type="Int32" />
-          <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK__ChiTietHo__MaHoa__3A81B327" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
-          <NavigationProperty Name="GiamGia" Relationship="Self.FK__HoaDon__TongTien__36B12243" FromRole="HoaDon" ToRole="GiamGia" />
+          <NavigationProperty Name="ChiTietHoaDons" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietHo__MaHoa__3A81B327" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
+          <NavigationProperty Name="GiamGia" Relationship="QuanLyQuanTapHoaModel.FK__HoaDon__TongTien__36B12243" FromRole="HoaDon" ToRole="GiamGia" />
         </EntityType>
         <EntityType Name="LoaiSanPham">
           <Key>
@@ -330,7 +379,7 @@
           </Key>
           <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDonVi__300424B4" FromRole="LoaiSanPham" ToRole="SanPham" />
+          <NavigationProperty Name="SanPhams" Relationship="QuanLyQuanTapHoaModel.FK__SanPham__MaDonVi__300424B4" FromRole="LoaiSanPham" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -342,17 +391,16 @@
           <Property Name="NamSinh" Type="Int32" />
           <Property Name="MaTaiKhoan" Type="Int32" Nullable="false" />
           <Property Name="MaChucVu" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChucVu" Relationship="Self.FK__NhanVien__MaChuc__2D27B809" FromRole="NhanVien" ToRole="ChucVu" />
-          <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__NhanVien__MaChuc__2C3393D0" FromRole="NhanVien" ToRole="TaiKhoan" />
+          <NavigationProperty Name="ChucVu" Relationship="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2D27B809" FromRole="NhanVien" ToRole="ChucVu" />
+          <NavigationProperty Name="TaiKhoan" Relationship="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2C3393D0" FromRole="NhanVien" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="NhapKho">
           <Key>
             <PropertyRef Name="MaNhapKho" />
           </Key>
           <Property Name="MaNhapKho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaCTNK" Type="Int32" Nullable="false" />
           <Property Name="NgayNhap" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="ChiTietNhapKho" Relationship="Self.FK__NhapKho__NgayNha__403A8C7D" FromRole="NhapKho" ToRole="ChiTietNhapKho" />
+          <NavigationProperty Name="ChiTietNhapKhoes" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietNh__MaNha__403A8C7D" FromRole="NhapKho" ToRole="ChiTietNhapKho" />
         </EntityType>
         <EntityType Name="SanPham">
           <Key>
@@ -367,10 +415,10 @@
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="MaLoai" Type="Int32" Nullable="false" />
           <Property Name="MaDonViTinh" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK__ChiTietHo__SoLuo__398D8EEE" FromRole="SanPham" ToRole="ChiTietHoaDon" />
-          <NavigationProperty Name="ChiTietNhapKhoes" Relationship="Self.FK__ChiTietNh__SoLuo__3D5E1FD2" FromRole="SanPham" ToRole="ChiTietNhapKho" />
-          <NavigationProperty Name="DonViTinh" Relationship="Self.FK__SanPham__MaDonVi__30F848ED" FromRole="SanPham" ToRole="DonViTinh" />
-          <NavigationProperty Name="LoaiSanPham" Relationship="Self.FK__SanPham__MaDonVi__300424B4" FromRole="SanPham" ToRole="LoaiSanPham" />
+          <NavigationProperty Name="ChiTietHoaDons" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietHo__SoLuo__398D8EEE" FromRole="SanPham" ToRole="ChiTietHoaDon" />
+          <NavigationProperty Name="ChiTietNhapKhoes" Relationship="QuanLyQuanTapHoaModel.FK__ChiTietNh__SoLuo__3F466844" FromRole="SanPham" ToRole="ChiTietNhapKho" />
+          <NavigationProperty Name="DonViTinh" Relationship="QuanLyQuanTapHoaModel.FK__SanPham__MaDonVi__30F848ED" FromRole="SanPham" ToRole="DonViTinh" />
+          <NavigationProperty Name="LoaiSanPham" Relationship="QuanLyQuanTapHoaModel.FK__SanPham__MaDonVi__300424B4" FromRole="SanPham" ToRole="LoaiSanPham" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -379,11 +427,11 @@
           <Property Name="MaTaiKhoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="NhanViens" Relationship="Self.FK__NhanVien__MaChuc__2C3393D0" FromRole="TaiKhoan" ToRole="NhanVien" />
+          <NavigationProperty Name="NhanViens" Relationship="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2C3393D0" FromRole="TaiKhoan" ToRole="NhanVien" />
         </EntityType>
         <Association Name="FK__ChiTietHo__MaHoa__3A81B327">
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.HoaDon" Role="HoaDon" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.ChiTietHoaDon" Role="ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HoaDon">
               <PropertyRef Name="MaHoaDon" />
@@ -394,8 +442,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ChiTietHo__SoLuo__398D8EEE">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.SanPham" Role="SanPham" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.ChiTietHoaDon" Role="ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SanPham">
               <PropertyRef Name="MaSanPham" />
@@ -405,9 +453,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ChiTietNh__SoLuo__3D5E1FD2">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-          <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="*" />
+        <Association Name="FK__ChiTietNh__MaNha__403A8C7D">
+          <End Type="QuanLyQuanTapHoaModel.NhapKho" Role="NhapKho" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.ChiTietNhapKho" Role="ChiTietNhapKho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhapKho">
+              <PropertyRef Name="MaNhapKho" />
+            </Principal>
+            <Dependent Role="ChiTietNhapKho">
+              <PropertyRef Name="MaNhapKho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietNh__SoLuo__3F466844">
+          <End Type="QuanLyQuanTapHoaModel.SanPham" Role="SanPham" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.ChiTietNhapKho" Role="ChiTietNhapKho" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SanPham">
               <PropertyRef Name="MaSanPham" />
@@ -417,21 +477,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NhapKho__NgayNha__403A8C7D">
-          <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="1" />
-          <End Role="NhapKho" Type="Self.NhapKho" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChiTietNhapKho">
-              <PropertyRef Name="MaCTNK" />
-            </Principal>
-            <Dependent Role="NhapKho">
-              <PropertyRef Name="MaCTNK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__NhanVien__MaChuc__2D27B809">
-          <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="1" />
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.ChucVu" Role="ChucVu" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.NhanVien" Role="NhanVien" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ChucVu">
               <PropertyRef Name="MaChucVu" />
@@ -442,8 +490,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SanPham__MaDonVi__30F848ED">
-          <End Role="DonViTinh" Type="Self.DonViTinh" Multiplicity="1" />
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.DonViTinh" Role="DonViTinh" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.SanPham" Role="SanPham" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DonViTinh">
               <PropertyRef Name="Id" />
@@ -454,8 +502,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__HoaDon__TongTien__36B12243">
-          <End Role="GiamGia" Type="Self.GiamGia" Multiplicity="0..1" />
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.GiamGia" Role="GiamGia" Multiplicity="0..1" />
+          <End Type="QuanLyQuanTapHoaModel.HoaDon" Role="HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GiamGia">
               <PropertyRef Name="IdGiamGia" />
@@ -466,8 +514,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SanPham__MaDonVi__300424B4">
-          <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="1" />
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.LoaiSanPham" Role="LoaiSanPham" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.SanPham" Role="SanPham" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LoaiSanPham">
               <PropertyRef Name="MaLoai" />
@@ -478,8 +526,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__NhanVien__MaChuc__2C3393D0">
-          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1" />
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <End Type="QuanLyQuanTapHoaModel.TaiKhoan" Role="TaiKhoan" Multiplicity="1" />
+          <End Type="QuanLyQuanTapHoaModel.NhanVien" Role="NhanVien" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TaiKhoan">
               <PropertyRef Name="MaTaiKhoan" />
@@ -489,55 +537,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyQuanTapHoaEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
-          <EntitySet Name="ChiTietNhapKhoes" EntityType="Self.ChiTietNhapKho" />
-          <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
-          <EntitySet Name="DonViTinhs" EntityType="Self.DonViTinh" />
-          <EntitySet Name="GiamGias" EntityType="Self.GiamGia" />
-          <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
-          <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
-          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
-          <EntitySet Name="NhapKhoes" EntityType="Self.NhapKho" />
-          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
-          <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
-          <AssociationSet Name="FK__ChiTietHo__MaHoa__3A81B327" Association="Self.FK__ChiTietHo__MaHoa__3A81B327">
-            <End Role="HoaDon" EntitySet="HoaDons" />
-            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ChiTietHo__SoLuo__398D8EEE" Association="Self.FK__ChiTietHo__SoLuo__398D8EEE">
-            <End Role="SanPham" EntitySet="SanPhams" />
-            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ChiTietNh__SoLuo__3D5E1FD2" Association="Self.FK__ChiTietNh__SoLuo__3D5E1FD2">
-            <End Role="SanPham" EntitySet="SanPhams" />
-            <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKhoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__NhapKho__NgayNha__403A8C7D" Association="Self.FK__NhapKho__NgayNha__403A8C7D">
-            <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKhoes" />
-            <End Role="NhapKho" EntitySet="NhapKhoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__NhanVien__MaChuc__2D27B809" Association="Self.FK__NhanVien__MaChuc__2D27B809">
-            <End Role="ChucVu" EntitySet="ChucVus" />
-            <End Role="NhanVien" EntitySet="NhanViens" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SanPham__MaDonVi__30F848ED" Association="Self.FK__SanPham__MaDonVi__30F848ED">
-            <End Role="DonViTinh" EntitySet="DonViTinhs" />
-            <End Role="SanPham" EntitySet="SanPhams" />
-          </AssociationSet>
-          <AssociationSet Name="FK__HoaDon__TongTien__36B12243" Association="Self.FK__HoaDon__TongTien__36B12243">
-            <End Role="GiamGia" EntitySet="GiamGias" />
-            <End Role="HoaDon" EntitySet="HoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SanPham__MaDonVi__300424B4" Association="Self.FK__SanPham__MaDonVi__300424B4">
-            <End Role="LoaiSanPham" EntitySet="LoaiSanPhams" />
-            <End Role="SanPham" EntitySet="SanPhams" />
-          </AssociationSet>
-          <AssociationSet Name="FK__NhanVien__MaChuc__2C3393D0" Association="Self.FK__NhanVien__MaChuc__2C3393D0">
-            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-            <End Role="NhanVien" EntitySet="NhanViens" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -547,109 +546,109 @@
           <EntitySetMapping Name="ChiTietHoaDons">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.ChiTietHoaDon">
               <MappingFragment StoreEntitySet="ChiTietHoaDon">
-                <ScalarProperty Name="MaCTHD" ColumnName="MaCTHD" />
-                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-                <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+                <ScalarProperty Name="MaCTHD" ColumnName="MaCTHD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChiTietNhapKhoes">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.ChiTietNhapKho">
               <MappingFragment StoreEntitySet="ChiTietNhapKho">
-                <ScalarProperty Name="MaCTNK" ColumnName="MaCTNK" />
-                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+                <ScalarProperty Name="MaNhapKho" ColumnName="MaNhapKho" />
+                <ScalarProperty Name="MaCTNK" ColumnName="MaCTNK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChucVus">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.ChucVu">
               <MappingFragment StoreEntitySet="ChucVu">
-                <ScalarProperty Name="MaChucVu" ColumnName="MaChucVu" />
                 <ScalarProperty Name="TenChucVu" ColumnName="TenChucVu" />
+                <ScalarProperty Name="MaChucVu" ColumnName="MaChucVu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DonViTinhs">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.DonViTinh">
               <MappingFragment StoreEntitySet="DonViTinh">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TenDonViTinh" ColumnName="TenDonViTinh" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GiamGias">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.GiamGia">
               <MappingFragment StoreEntitySet="GiamGia">
-                <ScalarProperty Name="IdGiamGia" ColumnName="IdGiamGia" />
-                <ScalarProperty Name="Coupoun" ColumnName="Coupoun" />
-                <ScalarProperty Name="SoTienGiam" ColumnName="SoTienGiam" />
-                <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
                 <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+                <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+                <ScalarProperty Name="SoTienGiam" ColumnName="SoTienGiam" />
+                <ScalarProperty Name="Coupoun" ColumnName="Coupoun" />
+                <ScalarProperty Name="IdGiamGia" ColumnName="IdGiamGia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoaDons">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.HoaDon">
               <MappingFragment StoreEntitySet="HoaDon">
-                <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
-                <ScalarProperty Name="NgayLapHoaDon" ColumnName="NgayLapHoaDon" />
-                <ScalarProperty Name="IdGiamGia" ColumnName="IdGiamGia" />
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="IdGiamGia" ColumnName="IdGiamGia" />
+                <ScalarProperty Name="NgayLapHoaDon" ColumnName="NgayLapHoaDon" />
+                <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiSanPhams">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.LoaiSanPham">
               <MappingFragment StoreEntitySet="LoaiSanPham">
-                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
-                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
-                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="NamSinh" ColumnName="NamSinh" />
-                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
                 <ScalarProperty Name="MaChucVu" ColumnName="MaChucVu" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="NamSinh" ColumnName="NamSinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhapKhoes">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.NhapKho">
               <MappingFragment StoreEntitySet="NhapKho">
-                <ScalarProperty Name="MaNhapKho" ColumnName="MaNhapKho" />
-                <ScalarProperty Name="MaCTNK" ColumnName="MaCTNK" />
                 <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+                <ScalarProperty Name="MaNhapKho" ColumnName="MaNhapKho" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SanPhams">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
-                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-                <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
-                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
-                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
-                <ScalarProperty Name="SLBayBan" ColumnName="SLBayBan" />
-                <ScalarProperty Name="SLTrongKho" ColumnName="SLTrongKho" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="MaDonViTinh" ColumnName="MaDonViTinh" />
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="SLTrongKho" ColumnName="SLTrongKho" />
+                <ScalarProperty Name="SLBayBan" ColumnName="SLBayBan" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
+                <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TaiKhoans">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.TaiKhoan">
               <MappingFragment StoreEntitySet="TaiKhoan">
-                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

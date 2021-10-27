@@ -27,22 +27,22 @@
             </Style>
         </Grid.Resources>
         <Border Grid.Column="0">
-            <TextBlock Text="STT"/>
+            <TextBlock x:Name="Stt" Text="STT"/>
         </Border>
         <Border Grid.Column="1">
-            <TextBlock Text="Tên sản phẩm"/>
+            <TextBlock x:Name="TenSanPham" Text="Tên sản phẩm"/>
         </Border>
         <Border Grid.Column="2">
-            <TextBlock Text="Loại"/>
+            <TextBlock x:Name="Loai" Text="Loại"/>
         </Border>
         <Border Grid.Column="3">
-            <TextBlock Text="Đơn vị tính"/>
+            <TextBlock x:Name="DonViTinh" Text="Đơn vị tính"/>
         </Border>
         <Border Grid.Column="4">
-            <TextBlock Text="Số lượng"/>
+            <TextBlock x:Name="SoLuong" Text="Số lượng"/>
         </Border>
         <Border Grid.Column="5" BorderThickness="0">
-            <TextBlock Text="Tổng"/>
+            <TextBlock x:Name="Tong" Text="Tổng"/>
         </Border>
     </Grid>
 </UserControl>

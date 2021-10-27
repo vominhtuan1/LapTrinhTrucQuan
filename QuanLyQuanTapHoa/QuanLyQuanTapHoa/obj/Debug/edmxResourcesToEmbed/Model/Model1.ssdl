@@ -14,6 +14,7 @@
       <PropertyRef Name="MaCTNK" />
     </Key>
     <Property Name="MaCTNK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNhapKho" Type="int" Nullable="false" />
     <Property Name="MaSanPham" Type="int" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
   </EntityType>
@@ -73,7 +74,6 @@
       <PropertyRef Name="MaNhapKho" />
     </Key>
     <Property Name="MaNhapKho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MaCTNK" Type="int" Nullable="false" />
     <Property Name="NgayNhap" Type="datetime" />
   </EntityType>
   <EntityType Name="SanPham">
@@ -122,7 +122,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietNh__SoLuo__3D5E1FD2">
+  <Association Name="FK__ChiTietNh__MaNha__403A8C7D">
+    <End Role="NhapKho" Type="Self.NhapKho" Multiplicity="1" />
+    <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhapKho">
+        <PropertyRef Name="MaNhapKho" />
+      </Principal>
+      <Dependent Role="ChiTietNhapKho">
+        <PropertyRef Name="MaNhapKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietNh__SoLuo__3F466844">
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
     <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="*" />
     <ReferentialConstraint>
@@ -170,18 +182,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NhapKho__NgayNha__403A8C7D">
-    <End Role="ChiTietNhapKho" Type="Self.ChiTietNhapKho" Multiplicity="1" />
-    <End Role="NhapKho" Type="Self.NhapKho" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ChiTietNhapKho">
-        <PropertyRef Name="MaCTNK" />
-      </Principal>
-      <Dependent Role="NhapKho">
-        <PropertyRef Name="MaCTNK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__SanPham__MaDonVi__300424B4">
     <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
@@ -226,7 +226,11 @@
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietNh__SoLuo__3D5E1FD2" Association="Self.FK__ChiTietNh__SoLuo__3D5E1FD2">
+    <AssociationSet Name="FK__ChiTietNh__MaNha__403A8C7D" Association="Self.FK__ChiTietNh__MaNha__403A8C7D">
+      <End Role="NhapKho" EntitySet="NhapKho" />
+      <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKho" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietNh__SoLuo__3F466844" Association="Self.FK__ChiTietNh__SoLuo__3F466844">
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKho" />
     </AssociationSet>
@@ -241,10 +245,6 @@
     <AssociationSet Name="FK__NhanVien__MaChuc__2D27B809" Association="Self.FK__NhanVien__MaChuc__2D27B809">
       <End Role="ChucVu" EntitySet="ChucVu" />
       <End Role="NhanVien" EntitySet="NhanVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK__NhapKho__NgayNha__403A8C7D" Association="Self.FK__NhapKho__NgayNha__403A8C7D">
-      <End Role="ChiTietNhapKho" EntitySet="ChiTietNhapKho" />
-      <End Role="NhapKho" EntitySet="NhapKho" />
     </AssociationSet>
     <AssociationSet Name="FK__SanPham__MaDonVi__300424B4" Association="Self.FK__SanPham__MaDonVi__300424B4">
       <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />

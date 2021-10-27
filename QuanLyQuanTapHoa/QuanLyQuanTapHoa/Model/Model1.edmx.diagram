@@ -8,10 +8,10 @@
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChiTietHoaDon" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChiTietNhapKho" Width="1.5" PointX="5.25" PointY="3.75" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChucVu" Width="1.5" PointX="5.75" PointY="7.625" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.DonViTinh" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.DonViTinh" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.GiamGia" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.HoaDon" Width="1.5" PointX="3" PointY="7.75" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="4" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.NhanVien" Width="1.5" PointX="8" PointY="7.125" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.NhapKho" Width="1.5" PointX="3" PointY="11" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.SanPham" Width="1.5" PointX="3" PointY="3.125" />

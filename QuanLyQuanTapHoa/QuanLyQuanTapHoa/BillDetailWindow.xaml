@@ -18,15 +18,20 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                 <TextBlock Text="Mã hóa đơn : "/>
-                <TextBlock Text="HD001"/>
+                <TextBlock x:Name="MaHoaDon" Text="HD001"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                 <TextBlock Text="Ngày tạo : "/>
-                <TextBlock Text="1/9/2021"/>
-                </StackPanel>
+                <TextBlock x:Name="NgayLap" Text="1/9/2021"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <TextBlock Text="Mã giảm giá : "/>
+                <TextBlock x:Name="MaGG" Text=""/>
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel>
@@ -72,12 +77,7 @@
                 </Grid>
                 <Border Width="550"  BorderThickness="1" BorderBrush="#cccccc">
                     <ScrollViewer MaxHeight="250"  VerticalScrollBarVisibility="Hidden">
-                        <WrapPanel>
-                            <usercontrols:ProductOfBillDetailControl></usercontrols:ProductOfBillDetailControl>
-                            <usercontrols:ProductOfBillDetailControl Background="#FFE2E2F9"></usercontrols:ProductOfBillDetailControl>
-                            <usercontrols:ProductOfBillDetailControl></usercontrols:ProductOfBillDetailControl>
-                            <usercontrols:ProductOfBillDetailControl Background="#FFE2E2F9"></usercontrols:ProductOfBillDetailControl>
-                        </WrapPanel>
+                        <WrapPanel Name="ListProductOfBill"></WrapPanel>
                     </ScrollViewer>
                 </Border>
             </StackPanel>
@@ -88,10 +88,19 @@
                     <Setter Property="FontSize" Value="16"/>
                 </Style>
             </Grid.Resources>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="Tổng tiền : "/>
-                <TextBlock Text="1500000"/>
-                <TextBlock Text=" VND"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Tổng tiền : "/>
+                    <TextBlock x:Name="Tong" Text="1500000"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Giảm giá : "/>
+                    <TextBlock x:Name="Giamgia" Text=""/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Thành tiền : "/>
+                    <TextBlock x:Name="ThanhTien" Text="1500000"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

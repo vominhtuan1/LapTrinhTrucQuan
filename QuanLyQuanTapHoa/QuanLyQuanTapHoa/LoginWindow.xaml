@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa"
         mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         WindowStartupLocation="CenterScreen"
         DataContext="{StaticResource LoginVM}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -44,12 +45,36 @@
                         <Grid Grid.Row="1">
                             <TextBox Foreground="White" Width="150" BorderBrush="White" CaretBrush="White" SelectionBrush="White"
                              materialDesign:HintAssist.Hint="Tài khoản"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                             Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" >
+                                <Validation.ErrorTemplate>
+                                    <ControlTemplate>
+                                        <StackPanel>
+                                            <AdornedElementPlaceholder x:Name="textBox" />
+                                            <ItemsControl ItemsSource="{Binding}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ErrorContent}" Foreground="Red" />
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </ControlTemplate>
+                                </Validation.ErrorTemplate>
+                            </TextBox>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBox Foreground="White" Width="150" BorderBrush="White" CaretBrush="White" SelectionBrush="white"
-                             materialDesign:HintAssist.Hint="Mật khẩu"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <PasswordBox Foreground="White" Width="150" BorderBrush="White" CaretBrush="White" SelectionBrush="white"
+                                         materialDesign:HintAssist.Hint="Mật khẩu"
+                                         x:Name="PasswordBox"
+                                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="PasswordChanged">
+                                        <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" 
+                                                               CommandParameter="{Binding ElementName=PasswordBox}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </PasswordBox>
                         </Grid>
                         <Grid Grid.Row="3">
                             <Button Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=loginWindow}"

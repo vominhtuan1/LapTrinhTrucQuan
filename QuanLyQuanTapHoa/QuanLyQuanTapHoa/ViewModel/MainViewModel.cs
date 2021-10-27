@@ -33,6 +33,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             mainWindow.grdStaff.Visibility = System.Windows.Visibility.Hidden;
             mainWindow.grdSetting.Visibility = System.Windows.Visibility.Hidden;
             mainWindow.grdBill.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.BillControl.Visibility = System.Windows.Visibility.Hidden;
             mainWindow.grdDiscount.Visibility = System.Windows.Visibility.Hidden;
 
             mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
@@ -92,6 +93,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                     mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 6:
+                    mainWindow.BillControl.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.grdBill.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdBill.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");

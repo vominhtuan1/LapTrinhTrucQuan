@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="250">
-    <Border Background="White" CornerRadius="15" BorderThickness="1" BorderBrush="#FFC7C4C4">
+             x:Name="CartItem"
+             Margin="0 4 0 4"
+             Height="60" Width="250">
+    <Border  BorderThickness="1" BorderBrush="#cccccc" Background="White" CornerRadius="15">
         <Border.Effect>
-            <DropShadowEffect Color="#FFE8E8E8"/>
+            <DropShadowEffect Color="#FFF1F1F1"/>
         </Border.Effect>
-
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -19,15 +22,16 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Image Margin="10 0 0 0" Source="/./images/mì 3 miền.png"/>
+                <Image x:Name="CartItemImage" Margin="10 0 0 0" Source="{Binding SanPham.Image}"/>
             </Grid>
             <Grid Grid.Column="1" Width="100">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock Text="{Binding name}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <Grid Grid.Row="0" VerticalAlignment="Center">
+                    <TextBlock x:Name="Id" Text="{Binding SanPham.MaSanPham}" Foreground="White"/>
+                    <TextBlock x:Name="ProductName" Text="{Binding SanPham.TenSanPham}" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.Resources>
@@ -47,21 +51,21 @@
                     </Grid.Resources>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <Button Height="15" Width="15" FontWeight="Medium" FontSize="16">
-                            <TextBlock Text="-" VerticalAlignment="Center" HorizontalAlignment="Center" Height="auto" Width="auto" ></TextBlock>
-                        </Button>
+                    <Grid Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock>SL :</TextBlock>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <TextBox Height="25" Width="15" BorderThickness="0" Text="{Binding soluong}" TextAlignment="Center"></TextBox>
-                    </Grid>
-                    <Grid Grid.Column="2">
-                        <Button Height="15" Width="15" FontWeight="Medium" FontSize="14">
-                            <TextBlock Text="+" VerticalAlignment="Center" HorizontalAlignment="Center" Height="auto" Width="auto" ></TextBlock>
-                        </Button>
+                        <TextBox x:Name="ProductQuantity" Height="25" Width="auto" BorderThickness="0" 
+                                 Text="{Binding SoLuong}" TextAlignment="Center">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="LostFocus">
+                                    <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.EditQuantityCommand}"
+                                                           CommandParameter="{Binding ElementName=CartItem}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBox>
                     </Grid>
                 </Grid>
             </Grid>
@@ -71,7 +75,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    <TextBlock Text="35.000"></TextBlock>
+                    <TextBlock x:Name="ProductPrice" Text="{Binding SanPham.GiaBan}"></TextBlock>
                 </Grid>
                 <Grid Grid.Row="1" HorizontalAlignment="Center">
                     <TextBlock Text="VND"></TextBlock>
@@ -93,7 +97,9 @@
                         </Setter>
                     </Style>
                 </Grid.Resources>
-                <Button Width="30">
+                <Button Width="30"
+                        Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.DeleteCartItemCommand}"
+                        CommandParameter="{Binding ElementName=CartItem}">
                     <materialDesign:PackIcon Height="20" Width="20" Kind="Delete" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="White"/>
                 </Button>
             </Grid>

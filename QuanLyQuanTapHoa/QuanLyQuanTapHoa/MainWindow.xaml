@@ -195,7 +195,7 @@
                 <uc:SettingControl></uc:SettingControl>
             </Grid>
             <Grid x:Name="grdBill" Visibility="Hidden">
-                <uc:BillControl></uc:BillControl>
+                <uc:BillControl x:Name="BillControl" Visibility="Hidden"></uc:BillControl>
             </Grid>
             <Grid x:Name="grdDiscount"  Visibility="Hidden">
                 <uc:DiscountControl></uc:DiscountControl>

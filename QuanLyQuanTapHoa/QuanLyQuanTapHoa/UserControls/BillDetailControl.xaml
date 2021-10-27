@@ -15,6 +15,7 @@
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
              Height="25" Width="500"
+             Name="BillDetailCT"
              Margin="0 3 0 3">
     <Border >
         <Grid>
@@ -35,17 +36,18 @@
                 </Style>
             </Grid.Resources>
             <Border Grid.Column="0" >
-                <TextBlock Text="Mã số"/>
+                <TextBlock x:Name="MaSo" Text="Mã số"/>
             </Border>
             <Border Grid.Column="1">
-                <TextBlock Text="Tổng tiền"/>
+                <TextBlock x:Name="TongTien" Text="Tổng tiền"/>
             </Border>
             <Border Grid.Column="2">
-                <TextBlock Text="Ngày lập"/>
+                <TextBlock x:Name="NgayLap" Text="Ngày lập"/>
             </Border>
             <Border Grid.Column="3" BorderThickness="0">
                 <Button Background="Transparent" Height="25" BorderThickness="0"
-                        Command="{Binding OpenDetailCommand}">
+                        Command="{Binding LoadBillDetailCommand}"
+                        CommandParameter="{Binding ElementName=BillDetailCT}">
                     <materialDesign:PackIcon Kind="EyeOutline" Foreground="Black"/>
                 </Button>
             </Border>

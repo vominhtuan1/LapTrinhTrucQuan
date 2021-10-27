@@ -1,0 +1,27 @@
+﻿<Window x:Class="QuanLyQuanTapHoa.CustomMessageBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyQuanTapHoa" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d"
+        Name="CustomMessage"
+        Title="CustomMessageBoxWindow" Height="90" Width="250" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Type" Grid.Column="0" Background="red"></Grid>
+        <materialDesign:PackIcon x:Name="MessageIcon" Grid.Column="1" Kind="CloseCircle" HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" Width="40" Height="40" Foreground="Red"/>
+        <Grid Grid.Column="2">
+            <TextBlock x:Name="TextMessage" Text="Message tai day." TextWrapping="Wrap"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
+            <materialDesign:PackIcon Kind="Close" HorizontalAlignment="Right"  Cursor="Hand"
+                                     Margin="4" MouseDown="PackIcon_MouseDown"/>
+        </Grid>
+    </Grid>
+</Window>

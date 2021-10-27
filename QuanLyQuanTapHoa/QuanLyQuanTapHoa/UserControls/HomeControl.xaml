@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
+             x:Name="HomeCT"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              DataContext="{StaticResource HomeVM}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
@@ -36,9 +38,15 @@
                     <Border Background="White" CornerRadius="15" Margin="30 15">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <materialDesign:PackIcon Kind="Magnify" Height="25" Width="30" Foreground="#747373" Background="Transparent"/>
-                            <TextBox Background="Transparent" Height="25" Width="200" BorderThickness="0"  Margin="0 0 10 0"
+                            <TextBox Name="SearchBox" Background="Transparent" Height="25" Width="200" BorderThickness="0"  Margin="0 0 10 0"
                                          HorizontalContentAlignment="Left" VerticalContentAlignment="Center" 
-                                         HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Tìm kiếm" FontSize="13"></TextBox>
+                                         HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Tìm kiếm" FontSize="13">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TextChanged">
+                                        <i:InvokeCommandAction Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=HomeCT}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -139,16 +147,16 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="3">
-                <ScrollViewer x:Name="scrlvProduct" VerticalScrollBarVisibility="Hidden">
-                    <ItemsControl x:Name="itemcontrol" ItemsSource="{Binding productList}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <local:ProductControl Height="150" Width="100" Margin="10"></local:ProductControl>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <ItemsControl x:Name="productList">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Loaded">
+                                <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=productList}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel/>
+                                <WrapPanel Margin="60 0 20 0"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
@@ -168,7 +176,7 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
-                                    <Border Background="#8EA0E0" CornerRadius="10" Margin="0 5">
+                                    <Border Background="#8EA0E0" CornerRadius="10" Margin="0 5" Padding="5 2">
                                         <Grid>
                                             <ContentPresenter Margin="5" Cursor="Hand" Content="Xóa tất cả"/>
                                         </Grid>
@@ -180,15 +188,15 @@
                 </Grid.Resources>
                 <StackPanel Orientation="Horizontal" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock FontSize="24" FontWeight="Light"  Text="Hóa đơn " Margin="0 0 60 0"></TextBlock>
-                    <Button Foreground="White"></Button>
+                    <Button Foreground="White" Command="{Binding ClearCartCommand}" CommandParameter="{Binding ElementName=DiscountBox}"></Button>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
                 <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                    <ItemsControl x:Name="CartItemControl"  ItemsSource="{Binding cartItemList}">
+                    <ItemsControl x:Name="cartItemListControl" ItemsSource="{Binding CartItemList}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <local:CartItemControl Height="60" Width="250" Margin="0 0 0 10"></local:CartItemControl>
+                                <local:CartItemControl></local:CartItemControl>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -215,7 +223,14 @@
                         <TextBlock Text="Mã giảm giá :" FontSize="15"></TextBlock>
                     </Grid>
                     <Grid Grid.Column="1" >
-                        <TextBox FontSize="15" Width="auto" materialDesign:HintAssist.Hint="Mã giảm giá"></TextBox>
+                        <TextBox x:Name="DiscountBox" FontSize="15" Width="auto" 
+                                 materialDesign:HintAssist.Hint="Mã giảm giá">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="TextChanged">
+                                    <i:InvokeCommandAction Command="{Binding DiscountCommand}" CommandParameter="{Binding ElementName=DiscountBox}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="1" Margin="0 5">
@@ -227,7 +242,8 @@
                         <TextBlock Text="Tổng :" FontSize="15"></TextBlock>
                     </Grid>
                     <Grid Grid.Column="1" HorizontalAlignment="Right">
-                        <TextBlock Text="65.000 VND" FontSize="15"></TextBlock>
+                        <TextBlock Text="{Binding Sum, Mode=OneWay}" FontSize="15">
+                        </TextBlock>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2" Margin="0 5">
@@ -239,7 +255,7 @@
                         <TextBlock Text="Giảm giá :" FontSize="15"></TextBlock>
                     </Grid>
                     <Grid Grid.Column="1" HorizontalAlignment="Right">
-                        <TextBlock Text="5.000 VND" FontSize="15"></TextBlock>
+                        <TextBlock Text="{Binding DiscountMoney}" FontSize="15"></TextBlock>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="3" Margin="0 5">
@@ -251,7 +267,7 @@
                         <TextBlock Text="Thành tiền :" FontSize="15"></TextBlock>
                     </Grid>
                     <Grid Grid.Column="1" HorizontalAlignment="Right">
-                        <TextBlock Text="60.000 VND" FontSize="15"></TextBlock>
+                        <TextBlock Text="{Binding Money}" FontSize="15"></TextBlock>
                     </Grid>
                 </Grid>
             </Grid>
@@ -261,18 +277,23 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
-                                    <Border Background="#8EA0E0" CornerRadius="15" Padding="15 2">
-                                        <Grid>
-                                            <ContentPresenter Cursor="Hand"/>
-                                        </Grid>
+                                    <Border x:Name="ButtonBorder" Background="#8EA0E0" CornerRadius="10" Padding="20 5">
+                                        <ContentPresenter Cursor="Hand"/>
                                     </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#0038FF" TargetName="ButtonBorder"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style>
                 </Grid.Resources>
-                <Button Content="Thanh toán" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                        Margin="0 10" FontSize="24"></Button>
+                <Button Content="Thanh toán" Foreground="White" 
+                        Command="{Binding PayCommand}" CommandParameter="{Binding ElementName=DiscountBox}"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" 
+                        Margin="0 10" FontSize="18"></Button>
             </Grid>
         </Grid>
     </Grid>

@@ -44,19 +44,17 @@ namespace QuanLyQuanTapHoa
             switch (type)
             {
                 case 1:
-                    Type.Background = (Brush)new BrushConverter().ConvertFrom("#FF0000");
-                    MessageIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.CloseCircle;
-                    MessageIcon.Foreground = (Brush)new BrushConverter().ConvertFrom("#FF0000");
+                    img.Source = new BitmapImage(new Uri(@"/Images/sad.png", UriKind.Relative));
+                    OK.Visibility = System.Windows.Visibility.Visible;
                     break;
                 case 2:
-                    Type.Background = (Brush)new BrushConverter().ConvertFrom("#FFFF00");
-                    MessageIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.AlertCircle;
-                    MessageIcon.Foreground = (Brush)new BrushConverter().ConvertFrom("#FFFF00");
+                    img.Source = new BitmapImage(new Uri(@"/Images/sad.png", UriKind.Relative));
+                    Yes.Visibility = System.Windows.Visibility.Visible;
+                    No.Visibility = System.Windows.Visibility.Visible;
                     break;
                 case 3:
-                    Type.Background = (Brush)new BrushConverter().ConvertFrom("#00DD00");
-                    MessageIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.CheckboxMarkedCircle;
-                    MessageIcon.Foreground = (Brush)new BrushConverter().ConvertFrom("#00DD00");
+                    img.Source = new BitmapImage(new Uri(@"/Images/smile.png", UriKind.Relative));
+                    OK.Visibility = System.Windows.Visibility.Visible;
                     break;
             }
         }
@@ -65,6 +63,30 @@ namespace QuanLyQuanTapHoa
         {
             Result = MessageBoxResult.OK;
             Close();
+        }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            Result = MessageBoxResult.OK;
+            Close();
+        }
+
+        private void Yes_Click(object sender, RoutedEventArgs e)
+        {
+            Result = MessageBoxResult.Yes;
+            Close();
+        }
+
+        private void No_Click(object sender, RoutedEventArgs e)
+        {
+            Result = MessageBoxResult.No;
+            Close();
+        }
+
+        private void CustomMessage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }

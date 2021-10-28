@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QuanLyQuanTapHoa",
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa",
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\ViewModel"
   ],
-  "SelectedNode": "\\QuanLyQuanTapHoa.sln",
+  "SelectedNode": "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\CustomMessageBoxWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

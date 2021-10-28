@@ -24,6 +24,8 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         public int TotalAmount = 0;
         public int IdDiscount = 0;
+        public string uid;
+        public bool isCategorySelecetd = false;
 
         private string _Sum = "0 VND";
         public string Sum { get => _Sum; set { _Sum = value; OnPropertyChanged(); } }
@@ -44,6 +46,10 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand DiscountCommand { get; set; }
         public ICommand ClearCartCommand { get; set; }
         public ICommand PayCommand { get; set; }
+        public ICommand FilterProductCommand { get; set; }
+        public ICommand GetUidCommand { get; set; }
+        public ICommand ReLoadCommand { get; set; }
+
         public HomeViewModel()
         {
             CartItemList = new ObservableCollection<CartItem>();
@@ -55,14 +61,55 @@ namespace QuanLyQuanTapHoa.ViewModel
             DiscountCommand = new RelayCommand<TextBox>((p) => { return true; }, (p) => { Discount(p); });
             ClearCartCommand = new RelayCommand<TextBox>((p) => { return true; }, (p) => { ClearCart(p); });
             PayCommand = new RelayCommand<TextBox>((p) => { return true; }, (p) => { Pay(p); });
+            GetUidCommand = new RelayCommand<Button>((p) => { return true; }, (p) => { uid = p.Uid; isCategorySelecetd = true; });
+            FilterProductCommand = new RelayCommand<HomeControl>((p) => { return true; }, (p) => { FilterProduct(p); });
+            ReLoadCommand = new RelayCommand<HomeControl>((p) => { return true; }, (p) => { ReLoad(p); });
         }
         public void Load(ItemsControl p)
         {
-            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
+            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
             foreach (SanPham a in SanPhamList)
             {
                 AddProductControlToScreen(a, p);
             }
+        }
+        public void ReLoad(HomeControl h)
+        {
+            if (h.IsVisible == true)
+            {
+                int index;
+                h.productList.Items.Clear();
+                SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
+                if (isCategorySelecetd)
+                {
+                    index = int.Parse(uid);
+                }
+                else
+                {
+                    index = 0;
+                }
+                 
+                if (index == 0)
+                {
+                    foreach (SanPham a in SanPhamList)
+                    {
+                        AddProductControlToScreen(a, h.productList);
+                    }
+                    return;
+                }
+                else
+                {
+                    foreach (SanPham a in SanPhamList)
+                    {
+                        if (a.MaLoai == index)
+                        {
+                            AddProductControlToScreen(a, h.productList);
+                        }
+                    }
+                    return;
+                }
+            }
+            return;
         }
         public void AddToCart(ProductControl p)
         {
@@ -230,6 +277,64 @@ namespace QuanLyQuanTapHoa.ViewModel
                 }
             }
             return b;
+        }
+        public void FilterProduct(HomeControl home)
+        {
+            int index = int.Parse(uid);
+
+            home.bdAll.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            home.bdDoUong.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            home.bdSua.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            home.bdMiGoi.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            home.bdDauGiaVi.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            home.bdVeSinh.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            home.bdBanhKeo.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+
+            switch (index)
+            {
+                case 0:
+                    home.bdAll.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+                case 1:
+                    home.bdDoUong.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+                case 2:
+                    home.bdSua.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+                case 3:
+                    home.bdMiGoi.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+                case 4:
+                    home.bdDauGiaVi.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+                case 5:
+                    home.bdVeSinh.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+                case 6:
+                    home.bdBanhKeo.Background = (Brush)new BrushConverter().ConvertFrom("#FFFFA500");
+                    break;
+            }
+
+            home.productList.Items.Clear();
+            if (index == 0)
+            {
+                foreach (SanPham a in SanPhamList)
+                {
+                    AddProductControlToScreen(a, home.productList);
+                }
+                return;
+            }
+            else
+            {
+                foreach (SanPham a in SanPhamList)
+                {
+                    if (a.MaLoai == index)
+                    {
+                        AddProductControlToScreen(a, home.productList);
+                    }
+                }
+                return;
+            }
         }
     }
 }

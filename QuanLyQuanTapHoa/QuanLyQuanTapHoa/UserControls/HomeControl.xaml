@@ -8,8 +8,14 @@
              mc:Ignorable="d" 
              x:Name="HomeCT"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              DataContext="{StaticResource HomeVM}"
              d:DesignHeight="450" d:DesignWidth="800">
+    <i:Interaction.Triggers>
+        <ei:PropertyChangedTrigger Binding="{Binding Visibility, ElementName=HomeCT}">
+            <i:InvokeCommandAction Command="{Binding ReLoadCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+        </ei:PropertyChangedTrigger>
+    </i:Interaction.Triggers>
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -67,75 +73,131 @@
                     </Style>
                 </Grid.Resources>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Uid="0" x:Name="btnAll">
+                        <Border  x:Name="bdAll" Background="Orange" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderBrush="#ccc" BorderThickness="2">
                                     <Image Source="/./images/all.png" Height="35" Width="35"/>
                                 </Border>
                                 <TextBlock Text="Tất cả" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnAll}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Uid="1" x:Name="btnDoUong">
+                        <Border x:Name="bdDoUong" Background="White" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderBrush="#ccc" BorderThickness="2">
                                     <Image Source="/./images/DoUong.png" Height="35" Width="35"/>
                                 </Border>
                                 <TextBlock Text="Đồ uống" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnDoUong}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Name="btnSua" x:Uid="2">
+                        <Border x:Name="bdSua" Background="White" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderBrush="#ccc" BorderThickness="2">
                                     <Image Source="/./images/Sua.png" Height="35" Width="35"/>
                                 </Border>
                                 <TextBlock Text="Sữa" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnSua}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Name="btnMiGoi" x:Uid="3">
+                        <Border x:Name="bdMiGoi" Background="White" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderBrush="#ccc" BorderThickness="2">
                                     <Image Source="/./images/MiGoi.png" Height="35" Width="35"/>
                                 </Border>
                                 <TextBlock Text="Mì gói" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnMiGoi}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Name="btnDauGiaVi"  x:Uid="4">
+                        <Border x:Name="bdDauGiaVi" Background="White" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderBrush="#ccc" BorderThickness="2">
                                     <Image Source="/./images/DauAn.png" Height="35" Width="35"/>
                                 </Border>
                                 <TextBlock Text="Dầu,gia vị" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnDauGiaVi}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Name="btnVeSinh" x:Uid="5">
+                        <Border x:Name="bdVeSinh" Background="White" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderBrush="#ccc" BorderThickness="2">
                                     <Image Source="/./images/CaNhan.png" Height="35" Width="35"/>
                                 </Border>
-                                <TextBlock Text="Cá nhân" TextAlignment="Center" Margin="0 5"></TextBlock>
+                                <TextBlock Text="Vệ sinh" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnVeSinh}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
-                    <Button Height="auto" Width="auto">
-                        <Border Background="Orange" Padding="4" CornerRadius="8">
+                    <Button Height="auto" Width="auto" x:Name="btnBanhKeo" x:Uid="6">
+                        <Border x:Name="bdBanhKeo" Background="White" Padding="4" CornerRadius="8">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border Background="White" CornerRadius="8" Padding="10 10">
+                                <Border Background="White" CornerRadius="8" Padding="10 10" BorderThickness="2" BorderBrush="#ccc">
                                     <Image Source="/./images/BanhKeo.png" Height="35" Width="35"/>
                                 </Border>
-                                <TextBlock Text="Bánh kẹo" TextAlignment="Center" Margin="0 5"></TextBlock>
+                                <TextBlock  Text="Bánh kẹo" TextAlignment="Center" Margin="0 5"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnBanhKeo}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -176,11 +238,14 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
-                                    <Border Background="#8EA0E0" CornerRadius="10" Margin="0 5" Padding="5 2">
-                                        <Grid>
-                                            <ContentPresenter Margin="5" Cursor="Hand" Content="Xóa tất cả"/>
-                                        </Grid>
+                                    <Border x:Name="ButtonBorder" Background="#8EA0E0" CornerRadius="10" Padding="20 5">
+                                        <ContentPresenter Cursor="Hand"/>
                                     </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#0038FF" TargetName="ButtonBorder"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
@@ -188,7 +253,8 @@
                 </Grid.Resources>
                 <StackPanel Orientation="Horizontal" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock FontSize="24" FontWeight="Light"  Text="Hóa đơn " Margin="0 0 60 0"></TextBlock>
-                    <Button Foreground="White" Command="{Binding ClearCartCommand}" CommandParameter="{Binding ElementName=DiscountBox}"></Button>
+                    <Button Content="Xóa tất cả" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" 
+                            Command="{Binding ClearCartCommand}" CommandParameter="{Binding ElementName=DiscountBox}"></Button>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">

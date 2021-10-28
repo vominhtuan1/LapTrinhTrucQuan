@@ -77,11 +77,22 @@
                             </PasswordBox>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <Button Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=loginWindow}"
-                                Width="110"  Style="{StaticResource MaterialDesignRaisedButton}" 
-                         materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="2" BorderBrush="white"
-                         materialDesign:RippleAssist.Feedback="#9c9c9c"
-                         Background="white" Foreground="#fe8f8f" ToolTip="Login"  Content="Đăng nhập">
+                            <Grid.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="ButtonBorder" Background="White" CornerRadius="10" Padding="30 8">
+                                                    <ContentPresenter Cursor="Hand"/>
+                                                </Border>
+                                                
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Grid.Resources>
+                            <Button HorizontalAlignment="Center" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=loginWindow}" 
+                                    Foreground="#fe8f8f" Content="Đăng nhập">
                             </Button>
                         </Grid>
                     </Grid>

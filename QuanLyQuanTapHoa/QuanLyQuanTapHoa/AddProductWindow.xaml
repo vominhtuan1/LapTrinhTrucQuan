@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
+        Name="AddProductWD"
+        DataContext="{StaticResource SettingVM}"
         WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -14,9 +17,11 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Thêm sản phẩm" Height="321" Width="250">
+        Title="Thêm sản phẩm mới từ kho" Height="430" Width="300">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="100" ></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -26,32 +31,52 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock Text="Thêm sản phẩm" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="Thêm sản phẩm mới từ kho" FontSize="19" HorizontalAlignment="Center"></TextBlock>
         </Grid>
-        <Grid Grid.Row="1" Margin="16 0">
-            <ComboBox materialDesign:HintAssist.Hint="Tên sản phẩm" MinWidth="72"
-                        ItemsSource="{Binding LongListToTestComboVirtualization}"
+        <Grid Grid.Row="1">
+            <Image x:Name="imgProduct" Source="/Images/1.jpg"></Image>
+        </Grid>
+        <Grid Grid.Row="2" Margin="16 0">
+            <ComboBox x:Name="cbProduct" materialDesign:HintAssist.Hint="Tên sản phẩm" MinWidth="72"
+                        ItemsSource="{Binding SanPhamKhoList}" DisplayMemberPath="TenSanPham"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel />
                     </ItemsPanelTemplate>
                 </ComboBox.ItemsPanel>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChanged }" CommandParameter="{Binding ElementName=AddProductWD}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </ComboBox>
         </Grid>
-        <Grid Grid.Row="2" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Số lượng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        </Grid>
         <Grid Grid.Row="3" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Giá nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="txbSLBayBan" materialDesign:HintAssist.Hint="Số lượng bày bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="4" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Giá bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="txbSLTrongKho" materialDesign:HintAssist.Hint="Số lượng trong kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsEnabled="False"/>
         </Grid>
         <Grid Grid.Row="5" Margin="16 0">
+            <TextBox x:Name="txbGiaNhap" materialDesign:HintAssist.Hint="Giá nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsEnabled="False" />
+        </Grid>
+        <Grid Grid.Row="6" Margin="16 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="txbGiaBan" materialDesign:HintAssist.Hint="Giá bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Text="VND" VerticalAlignment="Bottom" Margin="5 0 0 5"></TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="7" Margin="16 0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <ComboBox materialDesign:HintAssist.Hint="Đơn vị tính" MinWidth="72"
-                        ItemsSource="{Binding LongListToTestComboVirtualization}"
+                <ComboBox x:Name="cbDonViTinh" materialDesign:HintAssist.Hint="Đơn vị tính" MinWidth="72"
+                        ItemsSource="{Binding UnitList}" DisplayMemberPath="TenDonViTinh" IsEnabled="False"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -59,8 +84,8 @@
                         </ItemsPanelTemplate>
                     </ComboBox.ItemsPanel>
                 </ComboBox>
-                <ComboBox materialDesign:HintAssist.Hint="Loại" MinWidth="72" Margin="50 0 0 0"
-                        ItemsSource="{Binding LongListToTestComboVirtualization}"
+                <ComboBox x:Name="cbLoai" materialDesign:HintAssist.Hint="Loại" MinWidth="72" Margin="50 0 0 0"
+                        ItemsSource="{Binding CategoryList}" DisplayMemberPath="TenLoai" IsEnabled="False"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -70,23 +95,26 @@
                 </ComboBox>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="6" HorizontalAlignment="Center">
+        <Grid Grid.Row="8" HorizontalAlignment="Center">
             <Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-                                <Border Background="#F73B4F" CornerRadius="10" Margin="0 20" Padding="20 2">
-                                    <Grid>
-                                        <ContentPresenter Margin="5" Cursor="Hand"/>
-                                    </Grid>
+                                <Border x:Name="ButtonBorder" Background="#F73B4F" CornerRadius="10" Margin="20" Padding="20 5">
+                                    <ContentPresenter Cursor="Hand"/>
                                 </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#ff9800" TargetName="ButtonBorder"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
             </Grid.Resources>
-            <Button Content="Xác nhận" Foreground="White" FontSize="14"></Button>
+            <Button Command="{Binding SubmitAddProductFromWarehouse}" CommandParameter="{Binding ElementName=AddProductWD}" Content="Xác nhận" Foreground="White" FontSize="14"></Button>
         </Grid>
     </Grid>
 </Window>

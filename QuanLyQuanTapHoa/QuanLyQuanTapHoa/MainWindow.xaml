@@ -180,26 +180,13 @@
         
         <!--Các grid window-->
         <Grid Grid.Column="1">
-            <Grid x:Name="GridPrinciple"></Grid>
-            <Grid x:Name="grdHome" Visibility="Visible">
-                <uc:HomeControl></uc:HomeControl>
-            </Grid>
-            <Grid x:Name="grdReport" Background="Yellow" Visibility="Hidden"></Grid>
-            <Grid x:Name="grdWarehouse" Background="Pink" Visibility="Hidden">
-                <uc:WarehouseControl></uc:WarehouseControl>
-            </Grid>
-            <Grid x:Name="grdStaff" Background="Green" Visibility="Hidden">
-                <uc:StaffControl></uc:StaffControl>
-            </Grid>
-            <Grid x:Name="grdSetting" Visibility="Hidden">
-                <uc:SettingControl></uc:SettingControl>
-            </Grid>
-            <Grid x:Name="grdBill" Visibility="Hidden">
-                <uc:BillControl x:Name="BillControl" Visibility="Hidden"></uc:BillControl>
-            </Grid>
-            <Grid x:Name="grdDiscount"  Visibility="Hidden">
-                <uc:DiscountControl></uc:DiscountControl>
-            </Grid>
+            
+            <uc:HomeControl x:Name="Home" Visibility="Visible"></uc:HomeControl>
+            <uc:WarehouseControl x:Name="Warehouse" Visibility="Hidden"></uc:WarehouseControl>
+            <uc:StaffControl x:Name="Staff" Visibility="Hidden"></uc:StaffControl>
+            <uc:SettingControl x:Name="Setting" Visibility="Hidden"></uc:SettingControl>
+            <uc:BillControl x:Name="Bill" Visibility="Hidden"></uc:BillControl>
+            <uc:DiscountControl x:Name="Discount" Visibility="Hidden"></uc:DiscountControl>
         </Grid>
         
     </Grid>

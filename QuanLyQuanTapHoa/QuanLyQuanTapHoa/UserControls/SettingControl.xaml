@@ -8,8 +8,14 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              x:Name="SettingCT"
              mc:Ignorable="d" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              DataContext="{StaticResource SettingVM}"
              d:DesignHeight="623" d:DesignWidth="920">
+    <i:Interaction.Triggers>
+        <ei:PropertyChangedTrigger Binding="{Binding Visibility, ElementName=SettingCT}">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=SettingCT}"/>
+        </ei:PropertyChangedTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Border Background="Pink" CornerRadius="20 0 0 20">
             <Grid>
@@ -126,20 +132,26 @@
                                 <Border CornerRadius="0 10 0 0"></Border>
                             </Grid>
                         </Grid>
-                        <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden">
-                            <ItemsControl x:Name="productList">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=SettingCT}" />
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel/>
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                            </ItemsControl>
-                        </ScrollViewer>
+                        <Grid>
+                            <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden">
+                                <ItemsControl x:Name="productList" Visibility="Hidden">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Loaded">
+                                            <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=SettingCT}" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </ScrollViewer>
+                            <ProgressBar
+                                Name="progressBar" Width="80" Height="80"
+                                Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                Value="20" IsIndeterminate="True"/>
+                        </Grid>
                     </StackPanel>
                 </Grid>
             </Grid>

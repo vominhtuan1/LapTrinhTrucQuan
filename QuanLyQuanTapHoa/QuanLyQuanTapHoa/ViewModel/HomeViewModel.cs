@@ -3,6 +3,7 @@ using QuanLyQuanTapHoa.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,9 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         private ObservableCollection<CartItem> _CartItemList;
         public ObservableCollection<CartItem> CartItemList { get => _CartItemList; set { _CartItemList = value; OnPropertyChanged(); } }
+
+        private BackgroundWorker worker;
+
 
         public int TotalAmount = 0;
         public int IdDiscount = 0;
@@ -53,7 +57,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         public HomeViewModel()
         {
             CartItemList = new ObservableCollection<CartItem>();
-            LoadCommand = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { Load(p); });
+            LoadCommand = new RelayCommand<HomeControl>((p) => { return true; }, (p) => { Load(p); });
             AddToCartCommand = new RelayCommand<ProductControl>((p) => { return true; }, (p) => { AddToCart(p); });
             DeleteCartItemCommand = new RelayCommand<CartItemControl>((p) => { return true; }, (p) => { DeleteCartItem(p); });
             EditQuantityCommand = new RelayCommand<CartItemControl>((p) => { return true; }, (p) => { EditQuantity(p); });
@@ -65,14 +69,37 @@ namespace QuanLyQuanTapHoa.ViewModel
             FilterProductCommand = new RelayCommand<HomeControl>((p) => { return true; }, (p) => { FilterProduct(p); });
             ReLoadCommand = new RelayCommand<HomeControl>((p) => { return true; }, (p) => { ReLoad(p); });
         }
-        public void Load(ItemsControl p)
+        public void Load(HomeControl p)
         {
+            worker = new BackgroundWorker();
+            worker.DoWork += Worker_DoWork;
+            worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+            worker.RunWorkerAsync(p);
+
+        }
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            HomeControl p = (HomeControl)e.Result;
+            p.productList.Visibility = Visibility.Visible;
+            p.progressBar.Visibility = Visibility.Hidden;
+        }
+
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            HomeControl p = (HomeControl)e.Argument;
+            System.Windows.Threading.Dispatcher homeDispatcher = p.Dispatcher;
             SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
             foreach (SanPham a in SanPhamList)
             {
-                AddProductControlToScreen(a, p);
+                UpdateUi update = new UpdateUi(AddProductControlToScreen);
+                homeDispatcher.BeginInvoke(update, a, p.productList);
             }
+            e.Result = p;
         }
+
+        public delegate void UpdateUi(SanPham a, ItemsControl p);
         public void ReLoad(HomeControl h)
         {
             if (h.IsVisible == true)
@@ -264,7 +291,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                 DataProvider.Ins.DB.SaveChanges();
             }
             ClearCart(p);
-            MessageBox.Show("Thanh toan thanh cong!");
+            CustomMessageBox.CustomMessageBox.Show("Thanh toán thành công!", 3);
         }
         public string ReturnFormatNumber(string a)
         {

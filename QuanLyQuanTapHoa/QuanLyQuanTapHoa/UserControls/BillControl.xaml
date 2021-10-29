@@ -17,7 +17,7 @@
              FontFamily="{DynamicResource MaterialDesignFont}"
              DataContext="{StaticResource BillVM}"
              x:Name="BillCT"
-             Width="920" Height="623">
+             d:DesignHeight="623" d:DesignWidth="920">
     <i:Interaction.Triggers>
         <ei:PropertyChangedTrigger Binding="{Binding Visibility, ElementName=BillCT}">
             <i:InvokeCommandAction Command="{Binding ReLoadCommand}" CommandParameter="{Binding ElementName=BillCT}" />
@@ -83,12 +83,17 @@
                                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                     </Grid>
                                                 </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#1273de" TargetName="BorderFilter"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
                                             </ControlTemplate>
                                         </Setter.Value>
                                     </Setter>
                                 </Style>
                             </Grid.Resources>
-                            <Button Content="Loc" FontSize="15" Foreground="White"
+                            <Button Content="Lọc" FontSize="15" Foreground="White"
                                     Command="{Binding FilterCommand}" CommandParameter="{Binding ElementName=BillCT}"/>
                         </Grid>
                     </Grid>
@@ -128,11 +133,11 @@
                             <ScrollViewer Height="450" Width="500" Background="White"
                                           VerticalScrollBarVisibility="Hidden">
                                 <WrapPanel x:Name="ListBill">
-                                    <i:Interaction.Triggers>
+                                    <!--<i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Loaded">
                                             <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=ListBill}" />
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>
+                                    </i:Interaction.Triggers>-->
                                 </WrapPanel>
                             </ScrollViewer>
                         </StackPanel>

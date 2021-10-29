@@ -551,3 +551,9 @@ C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debu
 C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
 C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
 C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml

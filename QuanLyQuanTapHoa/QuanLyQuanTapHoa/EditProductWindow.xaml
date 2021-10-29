@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
+        Name="EditProductWD"
+        DataContext="{StaticResource SettingVM}"
         WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -28,7 +31,8 @@
             <TextBlock Text="Sửa sản phẩm" FontSize="20" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <Grid Grid.Row="1" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBlock x:Name="id"></TextBlock>
+            <TextBox IsEnabled="False" x:Name="txbProductName" materialDesign:HintAssist.Hint="Tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="2" Margin="16 0">
             <Grid.ColumnDefinitions>
@@ -36,14 +40,35 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="0 0 10 0">
-                <TextBox materialDesign:HintAssist.Hint="Số lượng bày bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="txbSoLuongBayBan" materialDesign:HintAssist.Hint="Số lượng bày bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding BringProductBackToWarehouse }" CommandParameter="{Binding ElementName=EditProductWD}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
             </Grid>
             <Grid Grid.Column="1" Margin="10 0 0 0">
-                <TextBox materialDesign:HintAssist.Hint="Thêm từ kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="txbThemTuKho" materialDesign:HintAssist.Hint="Thêm từ kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding AddProductFromWarehouse }" CommandParameter="{Binding ElementName=EditProductWD}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
             </Grid>
         </Grid>
         <Grid Grid.Row="3" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Thêm từ kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="txbPrice" Margin="0 0 5 0" materialDesign:HintAssist.Hint="Giá bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Text="VND" Margin="0 9 0 0" VerticalAlignment="Center"></TextBlock>
+            </Grid>
         </Grid>
         <Grid Grid.Row="4" Margin="16 0">
             <Grid.ColumnDefinitions>
@@ -51,8 +76,8 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <ComboBox materialDesign:HintAssist.Hint="Đơn vị tính"  MinWidth="72" Margin="0 0 10 0"
-                            ItemsSource="{Binding LongListToTestComboVirtualization}"
+                <ComboBox IsEnabled="False" Name="cbUnit" materialDesign:HintAssist.Hint="Đơn vị tính"  MinWidth="72" Margin="0 0 10 0"
+                            ItemsSource="{Binding UnitList}" DisplayMemberPath="TenDonViTinh"
                             Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -62,8 +87,8 @@
                 </ComboBox>
             </Grid>
             <Grid Grid.Column="1">
-                <ComboBox materialDesign:HintAssist.Hint="Loại"  MinWidth="72" Margin="10 0 0 0"
-                            ItemsSource="{Binding LongListToTestComboVirtualization}"
+                <ComboBox IsEnabled="False" Name="cbCategory" materialDesign:HintAssist.Hint="Loại"  MinWidth="72" Margin="10 0 0 0"
+                            ItemsSource="{Binding CategoryList}" DisplayMemberPath="TenLoai"
                             Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -79,17 +104,20 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-                                <Border Background="#F73B4F" CornerRadius="10" Margin="0 20" Padding="20 2">
-                                    <Grid>
-                                        <ContentPresenter Margin="5" Cursor="Hand"/>
-                                    </Grid>
+                                <Border x:Name="ButtonBorder" Background="#F73B4F" CornerRadius="10" Margin="20" Padding="20 5">
+                                    <ContentPresenter Cursor="Hand"/>
                                 </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#ff9800" TargetName="ButtonBorder"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
             </Grid.Resources>
-            <Button Content="Xác nhận" Foreground="White" FontSize="14"></Button>
+            <Button Command="{Binding EditProductCommand}" CommandParameter="{Binding ElementName=EditProductWD}" Content="Xác nhận" Foreground="White" FontSize="14"></Button>
         </Grid>
     </Grid>
 </Window>

@@ -27,14 +27,12 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             int index = int.Parse(uid);
 
-            mainWindow.grdHome.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.grdReport.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.grdWarehouse.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.grdStaff.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.grdSetting.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.grdBill.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.BillControl.Visibility = System.Windows.Visibility.Hidden;
-            mainWindow.grdDiscount.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Home.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Warehouse.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Staff.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Setting.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Bill.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Discount.Visibility = System.Windows.Visibility.Hidden;
 
             mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
             mainWindow.bdReport.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
@@ -63,44 +61,42 @@ namespace QuanLyQuanTapHoa.ViewModel
             switch (index)
             {
                 case 1:
-                    mainWindow.grdHome.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.Home.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 2:
-                    mainWindow.grdReport.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdReport.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 3:
-                    mainWindow.grdWarehouse.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.Warehouse.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdWareHouse.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 4:
-                    mainWindow.grdStaff.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.Staff.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdStaff.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 5:
-                    mainWindow.grdSetting.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.Setting.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdSetting.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 6:
-                    mainWindow.BillControl.Visibility = System.Windows.Visibility.Visible;
-                    mainWindow.grdBill.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.Bill.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdBill.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 7:
-                    mainWindow.grdDiscount.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.Discount.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdDiscount.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");

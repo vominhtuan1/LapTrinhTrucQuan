@@ -171,17 +171,17 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             if (Month == null || Year == null)
             {
-                if (Month == null)
+                if (Month == null && Year == null)
                 {
-                    CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn tháng.", 2);
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn tháng và năm.", 1);
                 }
                 else if (Year == null)
                 {
-                    CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn năm.", 2);
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn năm.", 1);
                 }
                 else
                 {
-                    CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn tháng và năm.", 2);
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn tháng.", 1);
                 }
             }
             else

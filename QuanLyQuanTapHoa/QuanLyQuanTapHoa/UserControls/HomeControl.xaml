@@ -209,11 +209,15 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="3">
+                <ProgressBar
+                    Name="progressBar" Width="50" Height="50"
+                    Style="{StaticResource MaterialDesignCircularProgressBar}"
+                    Value="20" IsIndeterminate="True"/>
                 <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                    <ItemsControl x:Name="productList">
+                    <ItemsControl x:Name="productList" Visibility="Hidden">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Loaded">
-                                <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=productList}" />
+                                <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=HomeCT}" />
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                         <ItemsControl.ItemsPanel>

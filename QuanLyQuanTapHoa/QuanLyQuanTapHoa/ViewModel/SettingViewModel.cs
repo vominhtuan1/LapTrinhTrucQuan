@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.ComponentModel;
 
 namespace QuanLyQuanTapHoa.ViewModel
 {
@@ -29,6 +30,9 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         public bool isUpdateProductSuccess = true;
         public bool isAddProductSuccess = true;
+        public bool isFistVisible = false;
+
+        private BackgroundWorker worker;
 
 
         public ICommand OpenAddProduct { get; set; }
@@ -46,7 +50,14 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             OpenAddProduct = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { OpenAddProductWD(p); });
             OpenEditProduct = new RelayCommand<ProductDetailControl>((p) => { return true; }, (p) => { OpenEditProductWD(p); });
-            LoadCommand = new RelayCommand<SettingControl>((p) => { return true; }, (p) => { Load(p); });
+            LoadCommand = new RelayCommand<SettingControl>((p) => {
+                if (p.IsVisible == true)
+                {
+                    isFistVisible = true;
+                    return true;
+                }
+                else
+                    return false; }, (p) => { Load(p); });
             EditProductCommand = new RelayCommand<EditProductWindow>((p) => { return true; }, (p) => { EditProduct(p); if (isUpdateProductSuccess) p.Close(); });
             DeleteProductCommand = new RelayCommand<ProductDetailControl>((p) => { return true; }, (p) => { DeleteProduct(p); });
             AddProductFromWarehouse = new RelayCommand<EditProductWindow>((p) => { return true; }, (p) => { p.txbSoLuongBayBan.IsEnabled = false; });
@@ -106,18 +117,39 @@ namespace QuanLyQuanTapHoa.ViewModel
             b.txbPrice.Text = a.GiaBan.ToString();
             p.Items.Add(b);
         }
-        public void Load(SettingControl setting)
+        public void Load(SettingControl p)
         {
+            worker = new BackgroundWorker();
+            worker.DoWork += Worker_DoWork;
+            worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+            worker.RunWorkerAsync(p);
+        }
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            SettingControl p = (SettingControl)e.Result;
+            p.progressBar.Visibility = Visibility.Hidden;
+            p.productList.Visibility = Visibility.Visible;
+        }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            SettingControl p = (SettingControl)e.Argument;
+            System.Windows.Threading.Dispatcher settingDispatcher = p.Dispatcher;
             SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
             SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0));
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
             UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
 
-            foreach(SanPham i in SanPhamList)
+            foreach (SanPham i in SanPhamList)
             {
-                AddProductToScreen(i, setting.productList);
+                UpdateUi update = new UpdateUi(AddProductToScreen);
+                settingDispatcher.BeginInvoke(update, i, p.productList);
             }
+            e.Result = p;
         }
+        public delegate void UpdateUi(SanPham a, ItemsControl p);
+
         public bool IsDigitsOnly(string str)
         {
             foreach (char c in str)

@@ -44,6 +44,7 @@
           <Property Name="IdGiamGia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Coupoun" Type="nvarchar" MaxLength="100" />
           <Property Name="SoTienGiam" Type="int" />
+          <Property Name="DonHangTu" Type="int" />
           <Property Name="NgayBatDau" Type="datetime" />
           <Property Name="NgayKetThuc" Type="datetime" />
         </EntityType>
@@ -358,6 +359,7 @@
           <Property Name="IdGiamGia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Coupoun" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SoTienGiam" Type="Int32" />
+          <Property Name="DonHangTu" Type="Int32" />
           <Property Name="NgayBatDau" Type="DateTime" Precision="3" />
           <Property Name="NgayKetThuc" Type="DateTime" Precision="3" />
           <NavigationProperty Name="HoaDons" Relationship="QuanLyQuanTapHoaModel.FK__HoaDon__TongTien__36B12243" FromRole="GiamGia" ToRole="HoaDon" />
@@ -537,7 +539,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -584,6 +586,7 @@
               <MappingFragment StoreEntitySet="GiamGia">
                 <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
                 <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+                <ScalarProperty Name="DonHangTu" ColumnName="DonHangTu" />
                 <ScalarProperty Name="SoTienGiam" ColumnName="SoTienGiam" />
                 <ScalarProperty Name="Coupoun" ColumnName="Coupoun" />
                 <ScalarProperty Name="IdGiamGia" ColumnName="IdGiamGia" />

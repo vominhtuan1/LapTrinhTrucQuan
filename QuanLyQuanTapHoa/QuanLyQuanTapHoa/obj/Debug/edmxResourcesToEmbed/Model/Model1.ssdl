@@ -39,6 +39,7 @@
     <Property Name="IdGiamGia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Coupoun" Type="nvarchar" MaxLength="100" />
     <Property Name="SoTienGiam" Type="int" />
+    <Property Name="DonHangTu" Type="int" />
     <Property Name="NgayBatDau" Type="datetime" />
     <Property Name="NgayKetThuc" Type="datetime" />
   </EntityType>

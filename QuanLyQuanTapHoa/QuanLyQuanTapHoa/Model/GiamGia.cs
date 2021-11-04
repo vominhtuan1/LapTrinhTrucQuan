@@ -23,6 +23,7 @@ namespace QuanLyQuanTapHoa.Model
         public int IdGiamGia { get; set; }
         public string Coupoun { get; set; }
         public Nullable<int> SoTienGiam { get; set; }
+        public Nullable<int> DonHangTu { get; set; }
         public Nullable<System.DateTime> NgayBatDau { get; set; }
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
     

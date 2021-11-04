@@ -67,6 +67,8 @@
     <Property Name="HoTen" Type="nvarchar(max)" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="100" />
     <Property Name="NamSinh" Type="int" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="Luong" Type="int" />
     <Property Name="MaTaiKhoan" Type="int" Nullable="false" />
     <Property Name="MaChucVu" Type="int" Nullable="false" />
   </EntityType>

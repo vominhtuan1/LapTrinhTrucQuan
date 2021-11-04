@@ -34,29 +34,46 @@ namespace QuanLyQuanTapHoa.ViewModel
             mainWindow.Bill.Visibility = System.Windows.Visibility.Hidden;
             mainWindow.Discount.Visibility = System.Windows.Visibility.Hidden;
 
-            mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-            mainWindow.bdReport.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-            mainWindow.bdWareHouse.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-            mainWindow.bdStaff.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-            mainWindow.bdSetting.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-            mainWindow.bdBill.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-            mainWindow.bdDiscount.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+            if(mainWindow.btnReport.IsEnabled == false)
+            {
+                mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdSetting.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdBill.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
 
-            mainWindow.icHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.icReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.icWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.icStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.icSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.icBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.icDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
 
-            mainWindow.txtHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.txtReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.txtWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.txtStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.txtBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-            mainWindow.txtDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+            }
+            else
+            {
+                mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdReport.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdWareHouse.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdStaff.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdSetting.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdBill.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+                mainWindow.bdDiscount.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
+
+                mainWindow.icHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.icDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+
+                mainWindow.txtHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+                mainWindow.txtDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
+            }
 
             switch (index)
             {

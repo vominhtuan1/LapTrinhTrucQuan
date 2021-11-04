@@ -18,6 +18,8 @@ namespace QuanLyQuanTapHoa.Model
         public string HoTen { get; set; }
         public string GioiTinh { get; set; }
         public Nullable<int> NamSinh { get; set; }
+        public string SoDienThoai { get; set; }
+        public Nullable<int> Luong { get; set; }
         public int MaTaiKhoan { get; set; }
         public int MaChucVu { get; set; }
     

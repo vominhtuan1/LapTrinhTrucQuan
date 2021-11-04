@@ -126,6 +126,8 @@
     <Property Name="HoTen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="GioiTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="NamSinh" Type="Int32" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Luong" Type="Int32" />
     <Property Name="MaTaiKhoan" Type="Int32" Nullable="false" />
     <Property Name="MaChucVu" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ChucVu" Relationship="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2D27B809" FromRole="NhanVien" ToRole="ChucVu" />

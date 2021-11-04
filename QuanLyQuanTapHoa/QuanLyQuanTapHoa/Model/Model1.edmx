@@ -72,6 +72,8 @@
           <Property Name="HoTen" Type="nvarchar(max)" />
           <Property Name="GioiTinh" Type="nvarchar" MaxLength="100" />
           <Property Name="NamSinh" Type="int" />
+          <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="Luong" Type="int" />
           <Property Name="MaTaiKhoan" Type="int" Nullable="false" />
           <Property Name="MaChucVu" Type="int" Nullable="false" />
         </EntityType>
@@ -391,6 +393,8 @@
           <Property Name="HoTen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="GioiTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NamSinh" Type="Int32" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Luong" Type="Int32" />
           <Property Name="MaTaiKhoan" Type="Int32" Nullable="false" />
           <Property Name="MaChucVu" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ChucVu" Relationship="QuanLyQuanTapHoaModel.FK__NhanVien__MaChuc__2D27B809" FromRole="NhanVien" ToRole="ChucVu" />
@@ -616,6 +620,8 @@
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="MaChucVu" ColumnName="MaChucVu" />
                 <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="Luong" ColumnName="Luong" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
                 <ScalarProperty Name="NamSinh" ColumnName="NamSinh" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />

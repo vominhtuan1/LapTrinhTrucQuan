@@ -94,6 +94,7 @@
     <Property Name="IdGiamGia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Coupoun" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="SoTienGiam" Type="Int32" />
+    <Property Name="DonHangTu" Type="Int32" />
     <Property Name="NgayBatDau" Type="DateTime" Precision="3" />
     <Property Name="NgayKetThuc" Type="DateTime" Precision="3" />
     <NavigationProperty Name="HoaDons" Relationship="QuanLyQuanTapHoaModel.FK__HoaDon__TongTien__36B12243" FromRole="GiamGia" ToRole="HoaDon" />

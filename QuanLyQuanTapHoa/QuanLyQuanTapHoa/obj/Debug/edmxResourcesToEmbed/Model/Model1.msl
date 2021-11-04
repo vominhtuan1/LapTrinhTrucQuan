@@ -42,6 +42,7 @@
         <MappingFragment StoreEntitySet="GiamGia">
           <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
           <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="DonHangTu" ColumnName="DonHangTu" />
           <ScalarProperty Name="SoTienGiam" ColumnName="SoTienGiam" />
           <ScalarProperty Name="Coupoun" ColumnName="Coupoun" />
           <ScalarProperty Name="IdGiamGia" ColumnName="IdGiamGia" />

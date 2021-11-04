@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace QuanLyQuanTapHoa.ViewModel
 {
@@ -20,6 +21,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         public string Username { get => _Username; set { _Username = value; OnPropertyChanged(); } }
         private string _Password = "";
         public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
+        public int maTK;
 
         public LoginViewModel()
         {
@@ -46,11 +48,30 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             else
             {
-                var accCount = DataProvider.Ins.DB.TaiKhoans.Where(x => x.Username == Username && x.Password == Password).Count();
-                if (accCount > 0)
+                var accCount = DataProvider.Ins.DB.TaiKhoans.Where(x => x.Username == Username && x.Password == Password).ToList();
+                if (accCount.Count > 0)
                 {
                     MainWindow mainWindow = new MainWindow();
+                    maTK = accCount[0].MaTaiKhoan;
+                    var tk = DataProvider.Ins.DB.NhanViens.Where(x => x.MaTaiKhoan == maTK).ToList();
                     loginWindow.Hide();
+                    if (tk[0].MaChucVu == 2)
+                    {
+                        mainWindow.btnReport.IsEnabled = false;
+                        mainWindow.btnStaff.IsEnabled = false;
+                        mainWindow.btnWarehouse.IsEnabled = false;
+                        mainWindow.btnDiscount.IsEnabled = false;
+
+                        mainWindow.icReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                        mainWindow.icWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                        mainWindow.icStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                        mainWindow.icDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+
+                        mainWindow.txtReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                        mainWindow.txtWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                        mainWindow.txtStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                        mainWindow.txtDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
+                    }
                     mainWindow.ShowDialog();
                     loginWindow.Show();
                 }

@@ -33,8 +33,10 @@ namespace QuanLyQuanTapHoa.ViewModel
             mainWindow.Setting.Visibility = System.Windows.Visibility.Hidden;
             mainWindow.Bill.Visibility = System.Windows.Visibility.Hidden;
             mainWindow.Discount.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.Report.Visibility = System.Windows.Visibility.Hidden;
 
-            if(mainWindow.btnReport.IsEnabled == false)
+
+            if (mainWindow.btnReport.IsEnabled == false)
             {
                 mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                 mainWindow.bdSetting.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
@@ -84,6 +86,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                     mainWindow.txtHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     break;
                 case 2:
+                    mainWindow.Report.Visibility = System.Windows.Visibility.Visible;
                     mainWindow.bdReport.Background = (Brush)new BrushConverter().ConvertFrom("#fe8f8f");
                     mainWindow.icReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                     mainWindow.txtReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#ffffff");

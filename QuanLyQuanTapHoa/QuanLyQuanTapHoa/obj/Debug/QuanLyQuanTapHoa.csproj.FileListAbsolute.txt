@@ -640,3 +640,15 @@ C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\Qu
 C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
 C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
 C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.baml

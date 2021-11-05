@@ -180,15 +180,15 @@
         
         <!--Các grid window-->
         <Grid Grid.Column="1">
-            
+
             <uc:HomeControl x:Name="Home" Visibility="Visible"></uc:HomeControl>
             <uc:WarehouseControl x:Name="Warehouse" Visibility="Hidden"></uc:WarehouseControl>
             <uc:StaffControl x:Name="Staff" Visibility="Hidden"></uc:StaffControl>
             <uc:SettingControl x:Name="Setting" Visibility="Hidden"></uc:SettingControl>
             <uc:BillControl x:Name="Bill" Visibility="Hidden"></uc:BillControl>
             <uc:DiscountControl x:Name="Discount" Visibility="Hidden"></uc:DiscountControl>
+            <uc:ReportControl x:Name="Report" Visibility="Hidden"></uc:ReportControl>
         </Grid>
-        
     </Grid>
 </Window>
 

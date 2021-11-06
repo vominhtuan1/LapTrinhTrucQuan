@@ -16,7 +16,7 @@
         WindowStartupLocation="CenterScreen"
         DataContext="{StaticResource StaffVM}"
              Name="editStaffWindow"
-        Title="EditStaffWindow" Height="400" Width="250">
+        Title="" Height="400" Width="300">
 
     <Window.Resources>
         <ControlTemplate x:Key="TextBox" TargetType="{x:Type TextBox}">
@@ -145,24 +145,26 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Margin="0 10 0 0">
-            <TextBlock Text="Thêm nhân viên" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="Cập nhật nhân viên" FontSize="20" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <Grid Grid.Row="1" Margin="16 0">
 
-            <TextBox materialDesign:HintAssist.Hint="Họ tên" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="txbStaffName" materialDesign:HintAssist.Hint="Họ tên" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="2" Margin="16 0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <ComboBox materialDesign:HintAssist.Hint="Giới tính" MinWidth="72"
+                <ComboBox x:Name="cbStaffSex" materialDesign:HintAssist.Hint="Giới tính" MinWidth="72"
                         ItemsSource="{Binding LongListToTestComboVirtualization}"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem Content="Nam"/>
+                    <ComboBoxItem Content="Nu"/>
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel />
                         </ItemsPanelTemplate>
                     </ComboBox.ItemsPanel>
                 </ComboBox>
-                <TextBox Margin="50 0 0 0" Width="70" materialDesign:HintAssist.Hint="Năm sinh" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="txbStaffBY" Margin="50 0 0 0" Width="70" materialDesign:HintAssist.Hint="Năm sinh" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <!--<ComboBox materialDesign:HintAssist.Hint="Tuổi" MinWidth="72" Margin="30 0 0 0"
                         ItemsSource="{Binding LongListToTestComboVirtualization}"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
@@ -175,11 +177,11 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="txbStaffPhone" materialDesign:HintAssist.Hint="Số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="4" Margin="16 0">
-            <ComboBox materialDesign:HintAssist.Hint="Chức vụ" MinWidth="72"
-                        ItemsSource="{Binding LongListToTestComboVirtualization}"
+            <ComboBox x:Name="cbStaffRole" materialDesign:HintAssist.Hint="Chức vụ" MinWidth="72"
+                        ItemsSource="{Binding RoleList}" DisplayMemberPath="TenChucVu"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -189,16 +191,26 @@
             </ComboBox>
         </Grid>
         <Grid Grid.Row="5" Margin="16 0">
-            <StackPanel Orientation="Horizontal">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="txbStaffSalary" materialDesign:HintAssist.Hint="Lương" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Text="VND" VerticalAlignment="Bottom" Margin="5 0 0 5"></TextBlock>
+            </Grid>
+            <!--<StackPanel Orientation="Horizontal">
                 <TextBox Margin="0 0 10 0" Width="160" materialDesign:HintAssist.Hint="Lương" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <TextBlock Text="VND" Margin="0 0 0 5" VerticalAlignment="Bottom"></TextBlock>
-            </StackPanel>
+            </StackPanel>-->
         </Grid>
         <Grid Grid.Row="6" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Thay đổi tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="txbStaffUser" materialDesign:HintAssist.Hint="Thay đổi tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="7" Margin="16 0">
-            <TextBox materialDesign:HintAssist.Hint="Thay đổi mật khẩu" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="txbStaffPass" materialDesign:HintAssist.Hint="Thay đổi mật khẩu" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="8" HorizontalAlignment="Center">
             <Grid.Resources>
@@ -216,7 +228,8 @@
                     </Setter>
                 </Style>
             </Grid.Resources>
-            <Button Content="Xác nhận" Foreground="White" FontSize="14"></Button>
+            <Button Content="Xác nhận" Foreground="White" FontSize="14"
+                    Command="{Binding EditStaffCommand}" CommandParameter="{Binding ElementName=editStaffWindow}"></Button>
         </Grid>
     </Grid>
 

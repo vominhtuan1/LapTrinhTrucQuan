@@ -51,7 +51,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             OpenAddProduct = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { OpenAddProductWD(p); });
             OpenEditProduct = new RelayCommand<ProductDetailControl>((p) => { return true; }, (p) => { OpenEditProductWD(p); });
             LoadCommand = new RelayCommand<SettingControl>((p) => {
-                if (p.IsVisible == true)
+                if (p.IsVisible == true && isFistVisible == false)
                 {
                     isFistVisible = true;
                     return true;
@@ -298,7 +298,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             setting.productList.Items.Clear();
             foreach(SanPham i in SanPhamList)
             {
-                string b = i.TenSanPham.ToLower();
+               string b = i.TenSanPham.ToLower();
                 if (b.Contains(a))
                 {
                     AddProductToScreen(i, setting.productList);

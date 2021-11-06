@@ -6,16 +6,18 @@
              xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              DataContext="{StaticResource StaffVM}"
-             d:DesignHeight="25" d:DesignWidth="800">
+             d:DesignHeight="25" d:DesignWidth="800"
+             x:Name="StaffDetailCT">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition Width="0.75*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
@@ -31,46 +33,55 @@
         </Grid.Resources>
         <Grid Grid.Column="0">
             <Border>
-                <TextBlock Text="Mã số"></TextBlock>
+                <TextBlock x:Name="txbID" Text="{Binding MaNhanVien}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="1">
             <Border>
-                <TextBlock Text="Tên nhân viên"></TextBlock>
+                <TextBlock x:Name="txbStaffName" Text="{Binding HoTen}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="2">
             <Border>
-                <TextBlock Text="Giới tính"></TextBlock>
+                <TextBlock x:Name="txbStaffSex" Text="{Binding GioiTinh}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="3">
             <Border>
-                <TextBlock Text="Tuổi"></TextBlock>
+                <TextBlock x:Name="txbStaffBY" Text="{Binding NamSinh}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="4">
             <Border>
-                <TextBlock Text="Số điện thoại"></TextBlock>
+                <TextBlock x:Name="txbStaffPhone" Text="{Binding SoDienThoai}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="5">
             <Border>
-                <TextBlock Text="Chức vụ"></TextBlock>
+                <TextBlock x:Name="txbStaffAccountName" Text="{Binding TaiKhoan.UserName}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="6">
             <Border>
-                <TextBlock Text="Lương"></TextBlock>
+                <TextBlock x:Name="txbStaffRole" Text="{Binding ChucVu.TenChucVu}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="7">
             <Border>
+                <TextBlock x:Name="txbStaffSalary" Text="{Binding Luong}"></TextBlock>
+            </Border>
+        </Grid>
+        <Grid Grid.Column="8">
+            <Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Command="{Binding EditStaff}" Background="Transparent" Height="25" BorderThickness="0" Padding="0" Margin="0 0 20 0">
+                    <Button Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.OpenEditStaff}"
+                            CommandParameter="{Binding ElementName=StaffDetailCT}"
+                            Background="Transparent" Height="25" BorderThickness="0" Padding="0" Margin="0 0 20 0">
                         <materialDesign:PackIcon Height="25" Width="25" Foreground="Blue" Kind="PencilBoxOutline" />
                     </Button>
-                    <Button Background="Transparent" Height="25" BorderThickness="0" Padding="0">
+                    <Button Background="Transparent" Height="25" BorderThickness="0" Padding="0"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.DeleteStaffCommand}"
+                            CommandParameter="{Binding ElementName=StaffDetailCT}">
                         <materialDesign:PackIcon Height="25" Width="25" Foreground="Red" Kind="Delete" />
                     </Button>
                 </StackPanel>

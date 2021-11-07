@@ -1,21 +1,22 @@
 ﻿<UserControl x:Class="QuanLyQuanTapHoa.UserControls.DiscountDetailControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" 
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              DataContext="{StaticResource DiscountVM}"
-             d:DesignHeight="25" d:DesignWidth="800">
+             d:DesignHeight="25" d:DesignWidth="800"
+             x:Name="DiscountDetailCT">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
             <Style TargetType="Border">
@@ -28,37 +29,46 @@
                 <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             </Style>
         </Grid.Resources>
+
         <Grid Grid.Column="0">
             <Border>
-                <TextBlock Text="STT"></TextBlock>
+                <TextBlock x:Name="tbSTT" Text="{Binding STT}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="1">
             <Border>
-                <TextBlock Text="Mã giảm giá"></TextBlock>
+                <TextBlock x:Name="tbCoupoun" Text="{Binding Coupount}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="2">
             <Border>
-                <TextBlock Text="Ngày bắt đầu"></TextBlock>
+                <TextBlock x:Name="tbNgayBatDau" Text="{Binding NgayBatDau}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="3">
             <Border>
-                <TextBlock Text="Ngày kết thúc"></TextBlock>
+                <TextBlock x:Name="tbNgayKetThuc" Text="{Binding NgayKetThuc}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="4">
             <Border>
-                <TextBlock Text="Đơn hàng từ"></TextBlock>
+                <TextBlock x:Name="tbSoTienGiam" Text="{Binding SoTienGiam}"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="5">
             <Border>
-                <Button Background="Transparent" Height="25" BorderThickness="0" Padding="0">
-                    <materialDesign:PackIcon Height="25" Width="25" Foreground="Red" Kind="Delete" />
+                <TextBlock x:Name="tbDonHangTu" Text="{Binding DonHangTu}"></TextBlock>
+            </Border>
+        </Grid>
+        <Grid Grid.Column="6">
+            <Border>
+                <Button  Background="Transparent" Height="25" BorderThickness="0" Padding="0"
+                             Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.DeleteDiscountCommand}"
+                             CommandParameter="{Binding ElementName=DiscountDetailCT}">
+                    <materialDesign:PackIcon Height="25" Width="25" Foreground="Red" Kind="Delete" HorizontalAlignment="Center"/>
                 </Button>
             </Border>
         </Grid>
     </Grid>
 </UserControl>
+

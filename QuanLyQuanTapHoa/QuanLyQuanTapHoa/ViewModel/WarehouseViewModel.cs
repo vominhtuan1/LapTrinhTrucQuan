@@ -99,7 +99,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             NhapKhoList = new ObservableCollection<NhapKho>(DataProvider.Ins.DB.NhapKhoes);
             ChiTietNhapKhoList = new ObservableCollection<ChiTietNhapKho>(DataProvider.Ins.DB.ChiTietNhapKhoes);
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
-            UnitList. = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);           
+            UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);           
             e.Result = p;
 
         }

@@ -51,8 +51,8 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         public StaffViewModel()
         {
-            OpenAddStaff = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { OpenAddProductWD(p); });
-            OpenEditStaff = new RelayCommand<StaffDetailControl>((p) => { return true; }, (p) => { OpenEditProductWD(p); });
+            OpenAddStaff = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { OpenAddStaffWD(p); });
+            OpenEditStaff = new RelayCommand<StaffDetailControl>((p) => { return true; }, (p) => { OpenEditStaffWD(p); });
             LoadCommand = new RelayCommand<StaffControl>((p) =>
             {
                 if (p.IsVisible == true && isFistVisible == false)
@@ -63,15 +63,14 @@ namespace QuanLyQuanTapHoa.ViewModel
                 else
                     return false;
             }, (p) => { Load(p); });
-            EditStaffCommand = new RelayCommand<EditStaffWindow>((p) => { return true; }, (p) => { EditProduct(p); if (isUpdateStaffSuccess) p.Close(); });
+            EditStaffCommand = new RelayCommand<EditStaffWindow>((p) => { return true; }, (p) => { EditStaff(p); if (isUpdateStaffSuccess) p.Close(); });
             DeleteStaffCommand = new RelayCommand<StaffDetailControl>((p) => { return true; }, (p) => { DeleteStaff(p); });
-            //SelectionChanged = new RelayCommand<AddStaffWindow>((p) => { return true; }, (p) => { SelectedStaff(p); });
             SubmitAddStaff = new RelayCommand<AddStaffWindow>((p) => { return true; }, (p) => { SubmitAdd(p); if (isAddStaffSuccess) p.Close(); });
-            SearchCommand = new RelayCommand<StaffControl>((p) => { return true; }, (p) => { SearchProduct(p); });
+            SearchCommand = new RelayCommand<StaffControl>((p) => { return true; }, (p) => { SearchStaff(p); });
 
         }
 
-        public void OpenAddProductWD(ItemsControl p)
+        public void OpenAddStaffWD(ItemsControl p)
         {
             AddStaffWindow addStaffWindow = new AddStaffWindow();
             addStaffWindow.ShowDialog();
@@ -86,7 +85,7 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         }
 
-        public void OpenEditProductWD(StaffDetailControl staffDetail)
+        public void OpenEditStaffWD(StaffDetailControl staffDetail)
         {
             id_selected = int.Parse(staffDetail.txbID.Text);
             //MessageBox.Show(id_selected.ToString());
@@ -157,7 +156,6 @@ namespace QuanLyQuanTapHoa.ViewModel
             StaffControl p = (StaffControl)e.Argument;
             System.Windows.Threading.Dispatcher settingDispatcher = p.Dispatcher;
             StaffList = new ObservableCollection<NhanVien>(DataProvider.Ins.DB.NhanViens);
-            //SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0));
             AccountList = new List<TaiKhoan>(DataProvider.Ins.DB.TaiKhoans);
             RoleList = new List<ChucVu>(DataProvider.Ins.DB.ChucVus);
 
@@ -179,7 +177,7 @@ namespace QuanLyQuanTapHoa.ViewModel
 
             return true;
         }
-        public void EditProduct(EditStaffWindow edit)
+        public void EditStaff(EditStaffWindow edit)
         {
             if (!IsAccountValid(edit)) return;
             var staff = DataProvider.Ins.DB.NhanViens.Where(x => x.MaNhanVien == id_selected).SingleOrDefault();
@@ -240,28 +238,6 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
 
         }
-        //public void SelectedStaff(AddStaffWindow addStaffWindow)
-        //{
-        //    //NhanVien p = (NhanVien)addStaffWindow.cbStaffRole.SelectedItem;
-        //    //if (p == null) return;
-        //    //ImageSourceConverter c = new ImageSourceConverter();
-        //    //addStaffWindow.imgProduct.Source = (ImageSource)c.ConvertFrom(p.Image);
-        //    //addStaffWindow.txbSLTrongKho.Text = p.SLTrongKho.ToString();
-        //    //addStaffWindow.txbGiaBan.Text = p.GiaBan.ToString();
-        //    //addStaffWindow.txbGiaNhap.Text = p.GiaNhap.ToString();
-        //    //addStaffWindow.cbDonViTinh.SelectedIndex = p.MaDonViTinh - 1;
-        //    //addStaffWindow.cbLoai.SelectedIndex = p.MaLoai - 1;
-        //    //MessageBox.Show("hah");
-        //    //addStaffWindow.txbStaffName.Text = p.HoTen;
-        //    //addStaffWindow.txbStaffBY.Text = p.NamSinh.ToString();
-        //    //addStaffWindow.txbStaffPhone.Text = p.SoDienThoai;
-        //    //addStaffWindow.txbStaffSalary.Text = p.Luong.ToString();
-        //    //addStaffWindow.cbStaffSex.SelectedIndex = (p.GioiTinh == "Nam") ? 0 : 1;
-        //    //addStaffWindow.txbStaffUser.Text = p.TaiKhoan.Username;
-        //    //addStaffWindow.txbStaffPass.Text = p.
-
-
-        //}
         public void SubmitAdd(AddStaffWindow add)
         {
 
@@ -292,7 +268,6 @@ namespace QuanLyQuanTapHoa.ViewModel
             StaffList = new ObservableCollection<NhanVien>(DataProvider.Ins.DB.NhanViens);
 
             isAddStaffSuccess = true;
-            //StaffList.Add(staff);
             CustomMessageBox.CustomMessageBox.Show("Thêm nhân viên thành công!", 3);
 
         }
@@ -400,7 +375,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             return true;
         }
         // Search nhân viên theo họ tên
-        public void SearchProduct(StaffControl staff)
+        public void SearchStaff(StaffControl staff)
         {
             string a = staff.txbSearch.Text.ToLower();
             staff.staffList.Items.Clear();

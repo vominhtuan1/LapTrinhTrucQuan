@@ -18,6 +18,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Thêm mã giảm giá" Height="320" Width="250">
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -27,44 +28,44 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <TextBlock Text="Thêm Mã Giảm Giá" FontSize="20" HorizontalAlignment="Center" Margin="35,7,38,-7"></TextBlock>
-        </Grid>        
-        <Grid Grid.Row="1" Margin="16 0">
+        <Grid Grid.Row="0" >
+            <TextBlock Text="Thêm Mã Giảm Giá" FontSize="18" HorizontalAlignment="Center" Width="165" />
+        </Grid>
+        <Grid Grid.Row="1" Margin="16 0" Grid.ColumnSpan="2">
             <TextBox x:Name="tbCoupoun" materialDesign:HintAssist.Hint="Mã giảm giá" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
-        <Grid Grid.Row="2" Margin="16 0">
-             <DatePicker materialDesign:HintAssist.Hint="Ngày bắt đầu"  x:Name="tbNgayBatDau" HorizontalAlignment="Left" Height="28" Margin="0,9,0,0" VerticalAlignment="Top" Width="184"/>
+        <Grid Grid.Row="2" Margin="16 0" Grid.ColumnSpan="2">
+            <DatePicker materialDesign:HintAssist.Hint="Ngày bắt đầu"  x:Name="tbNgayBatDau" HorizontalAlignment="Left" Height="28" Margin="0,9,0,0" VerticalAlignment="Top" Width="184"/>
         </Grid>
-        <Grid Grid.Row="3" Margin="16 0">
-             
-             <DatePicker  materialDesign:HintAssist.Hint="Ngày kết thúc" x:Name="tbNgayKetThuc" HorizontalAlignment="Left" Height="28" Margin="0,9,0,0" VerticalAlignment="Top" Width="184"/>
+        <Grid Grid.Row="3" Margin="16 0" Grid.ColumnSpan="2">
+
+            <DatePicker  materialDesign:HintAssist.Hint="Ngày kết thúc" x:Name="tbNgayKetThuc" HorizontalAlignment="Left" Height="28" Margin="0,9,0,0" VerticalAlignment="Top" Width="184"/>
         </Grid>
-        <Grid Grid.Row="4" Margin="16 0">
+        <Grid Grid.Row="4" Margin="16 0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Width="150">
-                <TextBox x:Name="tbDonHangTu" HorizontalAlignment="Left" Margin="0 0 10 0" Width="160" materialDesign:HintAssist.Hint="Số tiền giảm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="tbSoTienGiam" HorizontalAlignment="Left" Margin="0 0 10 0" Width="160" materialDesign:HintAssist.Hint="Số tiền giảm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </Grid>
             <Grid Grid.Column="1" Width="30">
                 <TextBlock HorizontalAlignment="Right" Text="VND" Margin="0 0 0 5" VerticalAlignment="Bottom"></TextBlock>
             </Grid>
         </Grid>
-        <Grid Grid.Row="5" Margin="16 0">
+        <Grid Grid.Row="5" Margin="16 0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Width="150">
-                <TextBox x:Name="tbSoTienGiam" HorizontalAlignment="Left" Margin="0 0 10 0" Width="160" materialDesign:HintAssist.Hint="Đơn hàng từ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="tbDonHangTu" HorizontalAlignment="Left" Margin="0,0,-10,0" Width="160" materialDesign:HintAssist.Hint="Đơn hàng từ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </Grid>
             <Grid Grid.Column="1" Width="30">
                 <TextBlock HorizontalAlignment="Right" Text="VND" Margin="0 0 0 5" VerticalAlignment="Bottom"></TextBlock>
             </Grid>
         </Grid>
-        <Grid Grid.Row="6" HorizontalAlignment="Center">
+        <Grid Grid.Row="6" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="68,0">
             <Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Template">
@@ -81,11 +82,11 @@
                 </Style>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="107"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
             <Button Content="Xác nhận" Foreground="White" FontSize="14"
-                    Command="{Binding SubmitAddDiscount}" CommandParameter="{Binding ElementName=AddDiscountWD}" Margin="-10,0,10,0"></Button>
+                    Command="{Binding SubmitAddDiscount}" CommandParameter="{Binding ElementName=AddDiscountWD}"/>
 
         </Grid>
     </Grid>

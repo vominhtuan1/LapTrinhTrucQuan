@@ -188,3 +188,563 @@ C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapH
 C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
 C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
 C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+<<<<<<< HEAD
+=======
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\courses uit\IT008\FinalProject\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+C:\Users\vomin\Desktop\New folder (2)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+C:\Users\voxua\OneDrive\Desktop\New folder (6)\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.g.cs
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.baml
+C:\Users\vomin\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.pdb
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.pdb
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+E:\Push\.vs\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe.config
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.exe
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\QuanLyQuanTapHoa.pdb
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.dll
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.pdb
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.pdb
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignColors.pdb
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\Microsoft.Expression.Interactions.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\System.Windows.Interactivity.xml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.AssemblyReference.cache
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.cache
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_MarkupCompile.lref
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\App.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddDiscountWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddProductWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\AddStaffWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\BillDetailWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditProductWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\EditStaffWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\LoginWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\MainWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\MainResource.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\BillDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\CartItemControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\DiscountDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\HomeControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ProductOfBillDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\SettingControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\StaffDetailControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.g.resources
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.Properties.Resources.resources
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.GenerateResource.cache
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CoreCompileInputs.cache
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
+E:\UIT\IT008\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.dll
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.dll
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.xml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.pdb
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.xml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa_Content.g.cs
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\CustomMessageBoxWindow.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ImportProductWindow.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ReportDetailWindow.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonMonthControl.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ButtonYearControl.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ImportProductDetailControl.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportControl.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\ReportDetailControl.baml
+C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\UserControls\WarehouseControl.baml
+>>>>>>> e28ff1ab5d109a40471cd4b0b607f91337c85e10

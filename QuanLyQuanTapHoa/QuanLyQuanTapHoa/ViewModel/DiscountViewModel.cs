@@ -72,7 +72,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                 isAddDiscountSuccess = false;
             }
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> e28ff1ab5d109a40471cd4b0b607f91337c85e10
         public void AddDiscountToScreen(GiamGia a, ItemsControl p, int count)
         {
             DiscountDetailControl b = new DiscountDetailControl();
@@ -106,7 +110,11 @@ namespace QuanLyQuanTapHoa.ViewModel
             DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
 
             int index = 0;
+<<<<<<< HEAD
             while (index < DiscountList.Count)
+=======
+            while(index < DiscountList.Count)
+>>>>>>> e28ff1ab5d109a40471cd4b0b607f91337c85e10
             {
                 GiamGia i = DiscountList[index];
                 DateTime dateNow = Convert.ToDateTime(DateTime.Now.ToShortDateString());
@@ -124,8 +132,13 @@ namespace QuanLyQuanTapHoa.ViewModel
                 }
                 else index++;
             }
+<<<<<<< HEAD
 
 
+=======
+           
+            
+>>>>>>> e28ff1ab5d109a40471cd4b0b607f91337c85e10
             foreach (GiamGia i in DiscountList)
             {
                 UpdateUi update = new UpdateUi(AddDiscountToScreen);
@@ -136,7 +149,11 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         public void ShowMessageBox(string s)
         {
+<<<<<<< HEAD
             CustomMessageBox.CustomMessageBox.Show(s, 3);
+=======
+            CustomMessageBox.CustomMessageBox.Show(s,3);
+>>>>>>> e28ff1ab5d109a40471cd4b0b607f91337c85e10
         }
         public delegate void ShowMessage(string s);
         public delegate void UpdateUi(GiamGia a, ItemsControl p, int count);

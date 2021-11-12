@@ -32,32 +32,32 @@
 
         <Grid Grid.Column="0">
             <Border>
-                <TextBlock x:Name="tbSTT" Text="{Binding STT}"></TextBlock>
+                <TextBlock x:Name="tbSTT"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="1">
             <Border>
-                <TextBlock x:Name="tbCoupoun" Text="{Binding Coupount}"></TextBlock>
+                <TextBlock x:Name="tbCoupoun" ></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="2">
             <Border>
-                <TextBlock x:Name="tbNgayBatDau" Text="{Binding NgayBatDau}"></TextBlock>
+                <TextBlock x:Name="tbNgayBatDau" ></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="3">
             <Border>
-                <TextBlock x:Name="tbNgayKetThuc" Text="{Binding NgayKetThuc}"></TextBlock>
+                <TextBlock x:Name="tbNgayKetThuc"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="4">
             <Border>
-                <TextBlock x:Name="tbSoTienGiam" Text="{Binding SoTienGiam}"></TextBlock>
+                <TextBlock x:Name="tbSoTienGiam"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="5">
             <Border>
-                <TextBlock x:Name="tbDonHangTu" Text="{Binding DonHangTu}"></TextBlock>
+                <TextBlock x:Name="tbDonHangTu"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="6">

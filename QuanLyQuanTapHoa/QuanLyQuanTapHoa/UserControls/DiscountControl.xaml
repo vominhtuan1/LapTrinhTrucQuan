@@ -47,8 +47,8 @@
                             </Setter>
                         </Style>
                     </Grid.Resources>
-                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding OpenAddDiscount}" CommandParameter="{Binding ElementName=discountList}"
-                                Content="Thêm sản phẩm" Foreground="White" Margin="75,0,-75,0"></Button>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Center" Command="{Binding OpenAddDiscount}" CommandParameter="{Binding ElementName=discountList}"
+                                Content="Thêm mã giảm giá" Foreground="White"  Width="175" Margin="55,-10,-40,10"></Button>
                 </Grid>
                 <Grid Grid.Row="2">
                     <StackPanel Margin="20 5">
@@ -74,7 +74,7 @@
                                     <Setter Property="Foreground" Value="White"></Setter>
                                 </Style>
                             </Grid.Resources>
-                            
+
                             <Grid Grid.Column="0">
                                 <Border >
                                     <TextBlock Text="STT"></TextBlock>

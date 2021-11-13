@@ -110,7 +110,7 @@
                     </Border>
                 </Grid>
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" Width="750" Height="200">
-                    <WrapPanel Name="Content"></WrapPanel>
+                    <WrapPanel x:Name="WrapContent"></WrapPanel>
                 </ScrollViewer>
             </StackPanel>
         </Grid>

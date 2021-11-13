@@ -68,12 +68,12 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button x:Name="btnReport" Grid.Row="2" Uid="2" >
-                <Grid Width="70" Height="70"   Background="White">
-                    <Border x:Name="bdReport" Background="White" CornerRadius="20">
+            <Button x:Name="btnSetting" Grid.Row="2" Uid="5">
+                <Grid  Width="70" Height="70">
+                    <Border x:Name="bdSetting" Background="White" CornerRadius="20">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon x:Name="icReport" HorizontalAlignment="Center" Kind="ChartPie" Width="30" Height="30" Foreground="Black"/>
-                            <TextBlock x:Name="txtReport" Text="Báo cáo" Foreground="Black" ></TextBlock>
+                            <materialDesign:PackIcon x:Name="icSetting" HorizontalAlignment="Center" Kind="Settings" Width="30" Height="30" Foreground="Black"/>
+                            <TextBlock x:Name="txtSetting" Text="Cài đặt" Foreground="Black" ></TextBlock>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -82,16 +82,16 @@
                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=wdMain}"/>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseMove">
-                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnReport}"/>
+                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnSetting}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button x:Name="btnWarehouse" Grid.Row="3" Uid="3">
+            <Button x:Name="btnBill" Grid.Row="3" Uid="6">
                 <Grid  Width="70" Height="70">
-                    <Border x:Name="bdWareHouse"  Background="White" CornerRadius="20">
+                    <Border x:Name="bdBill" Background="White" CornerRadius="20">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon x:Name="icWareHouse" HorizontalAlignment="Center" Kind="PackageVariantClosed" Width="30" Height="30" Foreground="Black"/>
-                            <TextBlock x:Name="txtWareHouse" Text="Kho" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+                            <materialDesign:PackIcon x:Name="icBill" HorizontalAlignment="Center" Kind="Receipt" Width="30" Height="30" Foreground="Black"/>
+                            <TextBlock x:Name="txtBill" Text="Hóa đơn" Foreground="Black" ></TextBlock>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -100,7 +100,7 @@
                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=wdMain}"/>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseMove">
-                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnWarehouse}"/>
+                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnBill}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
@@ -122,12 +122,12 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button x:Name="btnSetting" Grid.Row="5" Uid="5">
-                <Grid  Width="70" Height="70">
-                    <Border x:Name="bdSetting" Background="White" CornerRadius="20">
+            <Button x:Name="btnReport" Grid.Row="5" Uid="2" >
+                <Grid Width="70" Height="70"   Background="White">
+                    <Border x:Name="bdReport" Background="White" CornerRadius="20">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon x:Name="icSetting" HorizontalAlignment="Center" Kind="Settings" Width="30" Height="30" Foreground="Black"/>
-                            <TextBlock x:Name="txtSetting" Text="Cài đặt" Foreground="Black" ></TextBlock>
+                            <materialDesign:PackIcon x:Name="icReport" HorizontalAlignment="Center" Kind="ChartPie" Width="30" Height="30" Foreground="Black"/>
+                            <TextBlock x:Name="txtReport" Text="Báo cáo" Foreground="Black" ></TextBlock>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -136,16 +136,16 @@
                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=wdMain}"/>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseMove">
-                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnSetting}"/>
+                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnReport}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button x:Name="btnBill" Grid.Row="6" Uid="6">
+            <Button x:Name="btnWarehouse" Grid.Row="6" Uid="3">
                 <Grid  Width="70" Height="70">
-                    <Border x:Name="bdBill" Background="White" CornerRadius="20">
+                    <Border x:Name="bdWareHouse"  Background="White" CornerRadius="20">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon x:Name="icBill" HorizontalAlignment="Center" Kind="Receipt" Width="30" Height="30" Foreground="Black"/>
-                            <TextBlock x:Name="txtBill" Text="Hóa đơn" Foreground="Black" ></TextBlock>
+                            <materialDesign:PackIcon x:Name="icWareHouse" HorizontalAlignment="Center" Kind="PackageVariantClosed" Width="30" Height="30" Foreground="Black"/>
+                            <TextBlock x:Name="txtWareHouse" Text="Kho" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -154,7 +154,7 @@
                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=wdMain}"/>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseMove">
-                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnBill}"/>
+                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnWarehouse}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>

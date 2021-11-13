@@ -3,6 +3,7 @@ using QuanLyQuanTapHoa.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,8 +30,31 @@ namespace QuanLyQuanTapHoa.ViewModel
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
 
         }
+        public static string GetHash(HashAlgorithm hashAlgorithm, string input)
+        {
+            // Convert the input string to a byte array and compute the hash.
+            byte[] data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            // Create a new Stringbuilder to collect the bytes
+            // and create a string.
+            var sBuilder = new StringBuilder();
+
+            // Loop through each byte of the hashed data
+            // and format each one as a hexadecimal string.
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            // Return the hexadecimal string.
+            return sBuilder.ToString();
+        }
         public void Login(LoginWindow loginWindow)
         {
+            SHA256 sha256Hash = SHA256.Create();
+            Password = GetHash(sha256Hash, Password);
+            //MessageBox.Show(Password);
+
             if (Username.Length == 0 || Password.Length == 0)
             {
                 if (Username.Length == 0)

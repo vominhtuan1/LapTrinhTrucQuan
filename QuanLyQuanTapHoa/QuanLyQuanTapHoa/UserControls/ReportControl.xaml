@@ -20,9 +20,9 @@
              Name="ReportCT"
              d:DesignHeight="623" d:DesignWidth="920">
     <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
+        <ei:PropertyChangedTrigger Binding="{Binding Visibility, ElementName=ReportCT}">
             <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=ReportCT}"/>
-        </i:EventTrigger>
+        </ei:PropertyChangedTrigger>
     </i:Interaction.Triggers>
     <Grid>
         <Border CornerRadius="20 0 0 20" Background="Pink">

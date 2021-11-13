@@ -115,8 +115,8 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.5*"></ColumnDefinition>
                                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                                <ColumnDefinition Width="0.75*"></ColumnDefinition>
                                 <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.75*"></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -152,7 +152,7 @@
                             </Grid>
                             <Grid Grid.Column="3">
                                 <Border>
-                                    <TextBlock Text="Tuổi"></TextBlock>
+                                    <TextBlock Text="Năm sinh"></TextBlock>
                                 </Border>
                             </Grid>
                             <Grid Grid.Column="4">
@@ -190,7 +190,11 @@
                             </StackPanel>
                         </ScrollViewer>-->
                         <Grid>
-                            <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="163*"/>
+                                <ColumnDefinition Width="277*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2">
                                 <ItemsControl x:Name="staffList" Visibility="Hidden">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Loaded">
@@ -207,7 +211,7 @@
                             <ProgressBar
                                 Name="progressBar" Width="80" Height="80"
                                 Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                Value="20" IsIndeterminate="True"/>
+                                Value="20" IsIndeterminate="True" Grid.Column="1" Margin="74.394,185,400,185"/>
                         </Grid>
 
                     </StackPanel>

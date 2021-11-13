@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\
+C:\Users\vomin\Desktop\laptrinhtrucquan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\
 QuanLyQuanTapHoa
 none
 false
 DEBUG;TRACE
-C:\Users\19520\OneDrive\Desktop\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml
+C:\Users\vomin\Desktop\laptrinhtrucquan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\App.xaml
 30251872876
 2-1556844510
 60797853807
-24-788413611
+24807814012
 AddDiscountWindow.xaml;AddProductWindow.xaml;AddStaffWindow.xaml;BillDetailWindow.xaml;CustomMessageBoxWindow.xaml;EditProductWindow.xaml;EditStaffWindow.xaml;ImportProductWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ReportDetailWindow.xaml;ResourceXAML\MainResource.xaml;UserControls\BillControl.xaml;UserControls\BillDetailControl.xaml;UserControls\ButtonMonthControl.xaml;UserControls\ButtonYearControl.xaml;UserControls\CartItemControl.xaml;UserControls\DiscountControl.xaml;UserControls\DiscountDetailControl.xaml;UserControls\HomeControl.xaml;UserControls\ImportProductDetailControl.xaml;UserControls\ProductControl.xaml;UserControls\ProductDetailControl.xaml;UserControls\ProductOfBillDetailControl.xaml;UserControls\ReportControl.xaml;UserControls\ReportDetailControl.xaml;UserControls\SettingControl.xaml;UserControls\StaffControl.xaml;UserControls\StaffDetailControl.xaml;UserControls\WarehouseControl.xaml;
 
 False

@@ -265,9 +265,42 @@ namespace QuanLyQuanTapHoa.ViewModel
             IdDiscount = 0;
             p.Text = "";
         }
+        public bool ValidateDiscount()
+        {
+            var discount = DataProvider.Ins.DB.GiamGias.Where(x => x.IdGiamGia == IdDiscount).SingleOrDefault();
+            if(discount.NgayKetThuc < DateTime.Today)
+            {
+                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này đã hết hạn!", 1);
+                return false;
+            }
+            if(discount.DonHangTu > int.Parse(ReturnFormatNumber(Money)))
+            {
+                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này chỉ áp dụng cho đơn hàng từ " + discount.DonHangTu.ToString() + "!", 1);
+                return false;
+            }
+            return true;
+        }
+        public bool ValidateQuantityProduct()
+        {
+            foreach (CartItem i in CartItemList)
+            {
+                var product = DataProvider.Ins.DB.SanPhams.Where(x => x.MaSanPham == i.SanPham.MaSanPham).SingleOrDefault();
+                if(product.SLBayBan < i.SoLuong)
+                {
+                    CustomMessageBox.CustomMessageBox.Show("Không đủ số lượng cho " + product.TenSanPham + "!", 1);
+                    return false;
+                }
+            }
+            return true;
+        }
         public void Pay(TextBox p)
         {
-            HoaDon bill;
+            if(CartItemList.Count == 0)
+            {
+                CustomMessageBox.CustomMessageBox.Show("Không có sản phẩm nào trong giỏ hàng!", 1);
+                return;
+            }
+            HoaDon bill = new HoaDon();
             if (IdDiscount == 0)
             {
                 bill = new HoaDon() { NgayLapHoaDon = System.DateTime.Now, TongTien = int.Parse(ReturnFormatNumber(Money)) };
@@ -275,23 +308,32 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             else
             {
-                bill = new HoaDon() { NgayLapHoaDon = System.DateTime.Now, TongTien = int.Parse(ReturnFormatNumber(Money)), IdGiamGia = IdDiscount };
-
+                if (ValidateDiscount())
+                {
+                    bill = new HoaDon() { NgayLapHoaDon = System.DateTime.Now, TongTien = int.Parse(ReturnFormatNumber(Money)), IdGiamGia = IdDiscount };
+                }
+                else
+                {
+                    return;
+                }
             }
-            DataProvider.Ins.DB.HoaDons.Add(bill);
-            DataProvider.Ins.DB.SaveChanges();
-            var b = DataProvider.Ins.DB.HoaDons.ToList().LastOrDefault();
-
-            foreach (CartItem i in CartItemList)
+            if (ValidateQuantityProduct())
             {
-                var billdetail = new ChiTietHoaDon() { MaHoaDon = b.MaHoaDon, MaSanPham = i.SanPham.MaSanPham, SoLuong = i.SoLuong };
-                var product = DataProvider.Ins.DB.SanPhams.Where(x => x.MaSanPham == i.SanPham.MaSanPham).SingleOrDefault();
-                product.SLBayBan -= i.SoLuong;
-                DataProvider.Ins.DB.ChiTietHoaDons.Add(billdetail);
+                DataProvider.Ins.DB.HoaDons.Add(bill);
                 DataProvider.Ins.DB.SaveChanges();
+                var b = DataProvider.Ins.DB.HoaDons.ToList().LastOrDefault();
+
+                foreach (CartItem i in CartItemList)
+                {
+                    var billdetail = new ChiTietHoaDon() { MaHoaDon = b.MaHoaDon, MaSanPham = i.SanPham.MaSanPham, SoLuong = i.SoLuong };
+                    var product = DataProvider.Ins.DB.SanPhams.Where(x => x.MaSanPham == i.SanPham.MaSanPham).SingleOrDefault();
+                    product.SLBayBan -= i.SoLuong;
+                    DataProvider.Ins.DB.ChiTietHoaDons.Add(billdetail);
+                    DataProvider.Ins.DB.SaveChanges();
+                }
+                ClearCart(p);
+                CustomMessageBox.CustomMessageBox.Show("Thanh toán thành công!", 3);
             }
-            ClearCart(p);
-            CustomMessageBox.CustomMessageBox.Show("Thanh toán thành công!", 3);
         }
         public string ReturnFormatNumber(string a)
         {

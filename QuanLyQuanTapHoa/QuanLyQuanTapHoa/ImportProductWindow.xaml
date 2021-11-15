@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        mc:Ignorable="d"
-        Title="ImportProductWindow" Height="470" Width="250"
-        DataContext="{StaticResource WarehouseVM}" Name="OpenImportProductWD">
+        mc:Ignorable="d" 
+        Title="ImportProductWindow" Height="470" Width="300"  
+        DataContext="{StaticResource WarehouseVM}" Name="OpenImportProductWD"
+        WindowStartupLocation="CenterScreen"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        >
     <!--<Border CornerRadius=" 10 10 10 10">
         <Grid HorizontalAlignment="Center">
             <StackPanel>
@@ -68,60 +77,55 @@
     </Border>-->
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="SelectionChanged">
-            <i:InvokeCommandAction Command="{Binding SelectionChanged }" CommandParameter="{Binding ElementName=addStaffWD}" />
+            <i:InvokeCommandAction Command="{Binding SelectionChanged }" CommandParameter="{Binding ElementName=OpenImportProductWD}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <Border CornerRadius=" 10 10 10 10">
-        <Grid HorizontalAlignment="Center">
-            <StackPanel>
-                <Label x:Name="lblForm" Content="Phiếu nhập kho" HorizontalAlignment="Center"  VerticalAlignment="Top" FontWeight="Bold"/>
-                <Image Source="Images\unknowncircle.jpg " HorizontalAlignment="Center"  VerticalAlignment="Top" Height="94" Margin="72,0,83,0" Width="87" />
-                <Label x:Name="lblUserName" Content="Tên sản phẩm" HorizontalAlignment="Left"  VerticalAlignment="Center" />
-                <Border CornerRadius="10 10 10 10">
-                    <TextBox x:Name="txbNameProduct" HorizontalAlignment="Center" Width="200" 
-                             Background="White" BorderThickness="1" BorderBrush="Black" />
-                </Border>
-                <Label x:Name="lblQuantity" Content="Số lượng" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                <Border CornerRadius="10 10 10 10">
-                    <TextBox x:Name="txbQuantity" HorizontalAlignment="Center" Width="200" 
-                         Background="White" BorderThickness="1" BorderBrush="Black"/>
-                </Border>
-                <Label x:Name="lblCost" Content="Giá nhập" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                <Border CornerRadius="10 10 10 10">
-                    <TextBox x:Name="txbCost" HorizontalAlignment="Center" Width="200" Background="White" 
-                 BorderThickness="1" BorderBrush="Black" />
-                </Border>
+    <Grid HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="238*"/>
+            <RowDefinition Height="201*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="-122,3,-122,-3" Grid.RowSpan="2">
+            <Label x:Name="lblForm" Content="Phiếu nhập kho" HorizontalAlignment="Center"  VerticalAlignment="Top" FontWeight="Bold"/>
+            <Image Source="Images\unknowncircle.jpg " HorizontalAlignment="Center"  VerticalAlignment="Top" Height="94" Margin="72,0,83,0" Width="87" />
+            <Border CornerRadius="10 10 10 10">
+                <TextBox x:Name="txbNameProduct" HorizontalAlignment="Center" Width="274" 
+                              materialDesign:HintAssist.Hint="Tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0"  />
+            </Border>
+            <Border CornerRadius="10 10 10 10">
+                <TextBox x:Name="txbQuantity" HorizontalAlignment="Center" Width="274" 
+                         materialDesign:HintAssist.Hint="Số lượng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" />
+            </Border>
+            <Border CornerRadius="10 10 10 10">
+                <TextBox x:Name="txbCost" HorizontalAlignment="Center" Width="274" materialDesign:HintAssist.Hint="Giá nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" />
+            </Border>
 
-                <DockPanel Height="62">
-                    <Label x:Name="lblUnit" Content="Đơn vị tính"  VerticalAlignment="Center"
-                           Width="100" HorizontalContentAlignment="Center"/>
-                    <Border CornerRadius="10 10 10 10">
-                        <ComboBox  Name="cbxUnit"  VerticalAlignment="Center" Width="120" Height="30" 
-                                ItemsSource="{Binding UnitList}" DisplayMemberPath="TenDonViTinh" IsEnabled="False"
-                                Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                            <ComboBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <VirtualizingStackPanel />
-                                </ItemsPanelTemplate>
-                            </ComboBox.ItemsPanel>
-                        </ComboBox>
-                    </Border>
-                </DockPanel>
-                <DockPanel Height="54" >
-                    <Label x:Name="lblKindsofGoods" Content="Loại" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="100" HorizontalContentAlignment="Center" />
-                    <Border CornerRadius="15">
-                        <ComboBox  Name="cbxKindsofGoods"  VerticalAlignment="Center" Width="120" Height="27" Background="White" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.669,0.408" Margin="0,15,0,12"
-                            ItemsSource="{Binding CategoryList.}" DisplayMemberPath="TenLoai" IsEnabled="False"
-                            Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                            <ComboBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <VirtualizingStackPanel />
-                                </ItemsPanelTemplate>
-                            </ComboBox.ItemsPanel>
-                        </ComboBox>
-                    </Border>
-                </DockPanel>
-                <Button x:Name="btnSubmit" Content="Submit" Height="35"
+            <DockPanel Height="62">
+                <ComboBox  Name="cbxUnit"  VerticalAlignment="Bottom" Width="272" Height="38" 
+                                ItemsSource="{Binding UnitList}" DisplayMemberPath="TenDonViTinh" IsEnabled="True"                              
+                               materialDesign:HintAssist.Hint="Đơn vị" 
+                           Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,0,0,24">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel Height="54" >
+                <Border CornerRadius="15">
+                    <ComboBox  Name="cbxKindsofGoods"  VerticalAlignment="Bottom"                               
+                            ItemsSource="{Binding CategoryList}" DisplayMemberPath="TenLoai" IsEnabled="True" Margin="0,-8,0,25" Height="37" Width="268"
+                               materialDesign:HintAssist.Hint="Loại" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                </Border>
+            </DockPanel>
+            <Button x:Name="btnSubmit" Content="Submit" Height="35"
                 HorizontalAlignment="Center" Width="120" 
                  Style="{StaticResource MaterialDesignRaisedButton}" 
                  materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="1" 
@@ -129,7 +133,6 @@
                  Foreground="White"
                 VerticalAlignment="Bottom"   Background="#F73B4F"
                 Command="{Binding SubmitImportProducttoWarehouse}" CommandParameter="{Binding ElementName=OpenImportProductWD}"/>
-            </StackPanel>
-        </Grid>
-    </Border>
+        </StackPanel>
+    </Grid>
 </Window>

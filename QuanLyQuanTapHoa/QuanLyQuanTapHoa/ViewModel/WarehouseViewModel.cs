@@ -95,11 +95,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                     WarehouseDispatcher.BeginInvoke(update, i, p.importList);
                 }
             }
-                
+            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
             NhapKhoList = new ObservableCollection<NhapKho>(DataProvider.Ins.DB.NhapKhoes);
             ChiTietNhapKhoList = new ObservableCollection<ChiTietNhapKho>(DataProvider.Ins.DB.ChiTietNhapKhoes);
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
-            UnitList. = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);           
+            UnitList= new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);           
             e.Result = p;
 
         }
@@ -160,23 +160,23 @@ namespace QuanLyQuanTapHoa.ViewModel
                         break;
                     }
                 }
-                CustomMessageBox.CustomMessageBox.Show("Bạn đã xóa nhân viên!", 3);
+                CustomMessageBox.CustomMessageBox.Show("Bạn đã xóa sản phẩm!", 3);
             }
         }
         public void SubmitImportProduct(ImportProductWindow import)
         {
-            if (!IsProductExists(import)) return;
-            SanPham temp = new SanPham();
-            SanPham sp = new SanPham();
-            sp = DataProvider.Ins.DB.SanPhams.Where(x => x.TenSanPham == import.txbNameProduct.Text).FirstOrDefault();
-            sp.TenSanPham = temp.TenSanPham;
+            if (IsProductExists(import)) return;
+            SanPham sp = new SanPham();        
+            sp.TenSanPham = import.txbNameProduct.Text;
             sp.GiaNhap = int.Parse(import.txbCost.Text);
             sp.GiaBan = 0;
             sp.SLBayBan = 0;
             sp.SLTrongKho = int.Parse(import.txbQuantity.Text);
             sp.Image = null;
-            sp.MaLoai = temp.MaLoai;
-            sp.MaDonViTinh = sp.MaDonViTinh;         
+            LoaiSanPham tempL = (LoaiSanPham)import.cbxKindsofGoods.SelectedItem;
+            sp.MaLoai = tempL.MaLoai;
+            DonViTinh tempD = (DonViTinh) import.cbxUnit.SelectedItem;          
+            sp.MaDonViTinh = tempD.Id;         
             DataProvider.Ins.DB.SanPhams.Add(sp);
             SanPhamKhoList.Clear();
             SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
@@ -214,15 +214,16 @@ namespace QuanLyQuanTapHoa.ViewModel
                 if (s.TenSanPham == i.txbNameProduct.Text && s.GiaNhap == int.Parse(i .txbCost.Text))
                 {
                     CustomMessageBox.CustomMessageBox.Show("Sản phẩm đã tồn tại và nhập thêm số lượng trong kho" ,1 );
-                    DataProvider.Ins.DB.SanPhams.Where(x => x.TenSanPham == i.txbNameProduct.Text && x.GiaNhap == int.Parse(i.txbCost.Text)).FirstOrDefault().SLTrongKho += int.Parse(i.txbQuantity.Text);
+                    var edit = DataProvider.Ins.DB.SanPhams.Where(x => x.TenSanPham == i.txbNameProduct.Text && x.GiaNhap.ToString() == i.txbCost.Text).FirstOrDefault();
+                    edit.SLTrongKho += int.Parse(i.txbQuantity.Text);
                     ImportTableKho_CTNK(i, s);
                     DataProvider.Ins.DB.SaveChanges();
-                    return false;
+                    return true;
                 }
             }
 
 
-            return true;
+            return false;
         }
     }
 

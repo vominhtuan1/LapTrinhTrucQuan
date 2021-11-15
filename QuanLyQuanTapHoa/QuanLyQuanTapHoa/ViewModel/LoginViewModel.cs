@@ -81,16 +81,19 @@ namespace QuanLyQuanTapHoa.ViewModel
                     loginWindow.Hide();
                     if (tk[0].MaChucVu == 2)
                     {
+                        mainWindow.btnSetting.IsEnabled = false;
                         mainWindow.btnReport.IsEnabled = false;
                         mainWindow.btnStaff.IsEnabled = false;
                         mainWindow.btnWarehouse.IsEnabled = false;
                         mainWindow.btnDiscount.IsEnabled = false;
 
+                        mainWindow.icSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.icReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.icWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.icStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.icDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
 
+                        mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.txtReport.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.txtWareHouse.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                         mainWindow.txtStaff.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");

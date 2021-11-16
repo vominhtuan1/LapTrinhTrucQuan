@@ -121,6 +121,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                 product.Loai.Text = i.SanPham.LoaiSanPham.TenLoai;
                 product.Tong.Text = FormatNumber((i.SoLuong * i.SanPham.GiaBan).ToString()) + " VND";
                 billDetailWindow.ListProductOfBill.Children.Add(product);
+                count++;
             }
             billDetailWindow.ShowDialog();
         }

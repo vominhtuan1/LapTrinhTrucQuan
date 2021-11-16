@@ -12,8 +12,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition Width="0.75*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.75*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -33,42 +33,42 @@
         </Grid.Resources>
         <Grid Grid.Column="0">
             <Border>
-                <TextBlock x:Name="txbID" Text="{Binding MaNhanVien}"></TextBlock>
+                <TextBlock x:Name="txbID"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="1">
             <Border>
-                <TextBlock x:Name="txbStaffName" Text="{Binding HoTen}"></TextBlock>
+                <TextBlock x:Name="txbStaffName" ></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="2">
             <Border>
-                <TextBlock x:Name="txbStaffSex" Text="{Binding GioiTinh}"></TextBlock>
+                <TextBlock x:Name="txbStaffSex" ></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="3">
             <Border>
-                <TextBlock x:Name="txbStaffBY" Text="{Binding NamSinh}"></TextBlock>
+                <TextBlock x:Name="txbStaffBY"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="4">
             <Border>
-                <TextBlock x:Name="txbStaffPhone" Text="{Binding SoDienThoai}"></TextBlock>
+                <TextBlock x:Name="txbStaffPhone"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="5">
             <Border>
-                <TextBlock x:Name="txbStaffAccountName" Text="{Binding TaiKhoan.UserName}"></TextBlock>
+                <TextBlock x:Name="txbStaffAccountName"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="6">
             <Border>
-                <TextBlock x:Name="txbStaffRole" Text="{Binding ChucVu.TenChucVu}"></TextBlock>
+                <TextBlock x:Name="txbStaffRole" ></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="7">
             <Border>
-                <TextBlock x:Name="txbStaffSalary" Text="{Binding Luong}"></TextBlock>
+                <TextBlock x:Name="txbStaffSalary"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="8">

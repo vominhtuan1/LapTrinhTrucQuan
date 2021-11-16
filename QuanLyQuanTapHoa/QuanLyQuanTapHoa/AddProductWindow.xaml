@@ -56,7 +56,11 @@
             <TextBox x:Name="txbSLBayBan" materialDesign:HintAssist.Hint="Số lượng bày bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="4" Margin="16 0">
-            <TextBox x:Name="txbSLTrongKho" materialDesign:HintAssist.Hint="Số lượng trong kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsEnabled="False"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="13*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txbSLTrongKho" materialDesign:HintAssist.Hint="Số lượng trong kho" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsEnabled="False" Grid.ColumnSpan="2"/>
         </Grid>
         <Grid Grid.Row="5" Margin="16 0">
             <TextBox x:Name="txbGiaNhap" materialDesign:HintAssist.Hint="Giá nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsEnabled="False" />

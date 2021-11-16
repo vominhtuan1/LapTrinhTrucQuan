@@ -67,7 +67,13 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand TakeCaptureCommand { get; set; }
         public ReportViewModel()
         {
-            LoadCommand = new RelayCommand<ReportControl>((p) => { return true; }, (p) => { Load(p); });
+            LoadCommand = new RelayCommand<ReportControl>((p) => {
+                if(p.IsVisible == true)
+                {
+                    return true;
+                }
+                return false;
+            }, (p) => { Load(p); });
             ReloadPieChartCommand = new RelayCommand<ComboBox>((p) => { return true; }, (p) => { ReloadPieChart(p); });
             ReloadColChartCommand = new RelayCommand<ComboBox>((p) => { return true; }, (p) => { ReloadColChart(p); });
             OpenReportDetailWindowCommand = new RelayCommand<ComboBox>((p) => { return true; }, (p) => { OpenReportDetailWindow(); });
@@ -266,7 +272,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                 }
             }
             int len = MaSP.Count;
-            p.Content.Children.Clear();
+            p.WrapContent.Children.Clear();
             int sum = 0;
             for (int i = 0; i < len; i++)
             {
@@ -275,13 +281,13 @@ namespace QuanLyQuanTapHoa.ViewModel
                 ReportDetailControl reportDetail = new ReportDetailControl();
                 reportDetail.STT.Text = (i + 1).ToString();
                 reportDetail.txbProductName.Text = a.TenSanPham;
-                reportDetail.txtUnit.Text = a.LoaiSanPham.TenLoai;
+                reportDetail.txtUnit.Text = a.DonViTinh.TenDonViTinh;
                 reportDetail.txbQuantity.Text = QTY[i].ToString();
                 reportDetail.txbRevenue.Text = FormatNumber((QTY[i] * a.GiaBan).ToString());
                 reportDetail.txbPrice.Text = FormatNumber((QTY[i] * a.GiaNhap).ToString());
                 reportDetail.txbProfitLoss.Text = FormatNumber((QTY[i] * (a.GiaBan - a.GiaNhap)).ToString());
                 sum += (int)(QTY[i] * (a.GiaBan - a.GiaNhap));
-                p.Content.Children.Add(reportDetail);
+                p.WrapContent.Children.Add(reportDetail);
             }
             p.txbTong.Text = FormatNumber(sum.ToString()) + " VNĐ";
         }

@@ -55,7 +55,7 @@
                             </Style>
                         </Grid.Resources>
                         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding OpenAddProduct}" CommandParameter="{Binding ElementName=productList}"
-                                Content="Thêm sản phẩm" Foreground="White"></Button>
+                                Content="Thêm sản phẩm từ kho" Foreground="White"></Button>
                     </Grid >
                     <Grid Grid.Column="1" HorizontalAlignment="Center">
                         <Border Background="White" CornerRadius="15" Margin="30 15">

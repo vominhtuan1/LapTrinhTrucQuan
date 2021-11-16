@@ -68,15 +68,15 @@ namespace QuanLyQuanTapHoa.ViewModel
                 int index = DiscountList.Count;
                 GiamGia a = new GiamGia();
                 a = DiscountList[index - 1];
-                AddDiscountToScreen(a, p);
+                AddDiscountToScreen(a, p, index);
                 isAddDiscountSuccess = false;
             }
         }
-        
-        public void AddDiscountToScreen(GiamGia a, ItemsControl p)
+
+        public void AddDiscountToScreen(GiamGia a, ItemsControl p, int count)
         {
             DiscountDetailControl b = new DiscountDetailControl();
-            b.tbSTT.Text = a.IdGiamGia.ToString();
+            b.tbSTT.Text = count.ToString();
             b.tbCoupoun.Text = a.Coupoun;
             b.tbNgayBatDau.Text = a.NgayBatDau.Value.ToString("dd/M/yyyy");
             b.tbNgayKetThuc.Text = a.NgayKetThuc.Value.ToString("dd/M/yyyy");
@@ -100,18 +100,49 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            int count = 1;
             DiscountControl p = (DiscountControl)e.Argument;
             System.Windows.Threading.Dispatcher settingDispatcher = p.Dispatcher;
             DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
 
+            int index = 0;
+
+            while(index < DiscountList.Count)
+
+            {
+                GiamGia i = DiscountList[index];
+                DateTime dateNow = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                //DateTime dateNow = DateTime.Now;
+                if (DateTime.Compare(dateNow, Convert.ToDateTime(i.NgayKetThuc)) > 0)
+                {
+                    DataProvider.Ins.DB.GiamGias.Remove(i);
+                    DataProvider.Ins.DB.SaveChanges();
+                    DiscountList.Clear();
+                    DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
+                    string s = "Mã giảm giá " + i.Coupoun + " đã hết hạn !!";
+                    ShowMessage showMess = new ShowMessage(ShowMessageBox);
+                    settingDispatcher.BeginInvoke(showMess, s);
+                    //ShowMessagerBox(s);
+                }
+                else index++;
+            }
+
             foreach (GiamGia i in DiscountList)
-            {                
+            {
                 UpdateUi update = new UpdateUi(AddDiscountToScreen);
-                settingDispatcher.BeginInvoke(update, i, p.discountList);
+                settingDispatcher.BeginInvoke(update, i, p.discountList, count);
+                count++;
             }
             e.Result = p;
         }
-        public delegate void UpdateUi(GiamGia a, ItemsControl p);
+        public void ShowMessageBox(string s)
+        {
+
+            CustomMessageBox.CustomMessageBox.Show(s,3);
+
+        }
+        public delegate void ShowMessage(string s);
+        public delegate void UpdateUi(GiamGia a, ItemsControl p, int count);
         public bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
@@ -132,11 +163,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                 foreach (GiamGia discount in DiscountList)
                 {
                     if (discount.Coupoun == ss)
-                    {                    
+                    {
                         DataProvider.Ins.DB.GiamGias.Remove(discount);
                         DataProvider.Ins.DB.SaveChanges();
                         DiscountList.Clear();
-                        DiscountList = new ObservableCollection< GiamGia >(DataProvider.Ins.DB.GiamGias);
+                        DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
 
                         ItemsControl p = (ItemsControl)discountDetail.Parent;
                         p.Items.Remove(discountDetail);
@@ -156,7 +187,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             {
                 IdGiamGia = 1,
                 Coupoun = add.tbCoupoun.Text,
-                NgayBatDau = Convert.ToDateTime(add.tbNgayKetThuc.Text),
+                NgayBatDau = Convert.ToDateTime(add.tbNgayBatDau.Text),
                 NgayKetThuc = Convert.ToDateTime(add.tbNgayKetThuc.Text),
                 DonHangTu = int.Parse(add.tbDonHangTu.Text),
                 SoTienGiam = int.Parse(add.tbSoTienGiam.Text),
@@ -165,7 +196,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             DataProvider.Ins.DB.SaveChanges();
             DiscountList.Clear();
             DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
-          
+
             isAddDiscountSuccess = true;
             CustomMessageBox.CustomMessageBox.Show("Thêm mã khuyến mãi thành công!", 3);
 
@@ -175,7 +206,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         public bool IsAccountValid(AddDiscountWindow Discount)
         {
             // Kiểm tra trường hợp nhập thiếu
-            if ( String.IsNullOrEmpty(Discount.tbCoupoun.Text) || String.IsNullOrEmpty(Discount.tbNgayBatDau.Text)
+            if (String.IsNullOrEmpty(Discount.tbCoupoun.Text) || String.IsNullOrEmpty(Discount.tbNgayBatDau.Text)
                 || String.IsNullOrEmpty(Discount.tbNgayKetThuc.Text) || String.IsNullOrEmpty(Discount.tbDonHangTu.Text) || String.IsNullOrEmpty(Discount.tbSoTienGiam.Text))
             {
                 CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập thông tin đầy đủ", 1);
@@ -190,29 +221,29 @@ namespace QuanLyQuanTapHoa.ViewModel
                     return false;
                 }
             }
-            if (!IsDigitsOnly(Discount.tbDonHangTu.Text) | !IsDigitsOnly(Discount.tbSoTienGiam.Text) )
+            if (!IsDigitsOnly(Discount.tbDonHangTu.Text) | !IsDigitsOnly(Discount.tbSoTienGiam.Text))
             {
                 CustomMessageBox.CustomMessageBox.Show("Nhập tiền là số nguyên", 1);
                 return false;
             }
             // Kiểm tra Ngày bắt đầu và kết thúc
-            DateTime dateNow = DateTime.Now;
+            DateTime dateNow = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             DateTime dateFirst = Convert.ToDateTime(Discount.tbNgayBatDau.Text);
             DateTime dateEnd = Convert.ToDateTime(Discount.tbNgayKetThuc.Text);
-            if (DateTime.Compare(dateNow, dateFirst) > 1)
+            if (DateTime.Compare(dateFirst, dateNow) < 0)
             {
                 CustomMessageBox.CustomMessageBox.Show("Nhập ngày bắt đầu lớn hơn bằng ngày hiện tại", 1);
                 return false;
             }
-            if (DateTime.Compare(dateFirst, dateEnd) > 0)
+            if (DateTime.Compare(dateEnd, dateFirst) < 0)
             {
                 CustomMessageBox.CustomMessageBox.Show("Nhập ngày bắt đầu bé hơn ngày kết thúc khuyến mãi", 1);
                 return false;
             }
 
             return true;
-        }              
-       
+        }
+
     }
 
 }

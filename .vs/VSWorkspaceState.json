@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QuanLyQuanTapHoa",
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa",
+    "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\ViewModel"
   ],
-  "SelectedNode": "\\E:\\Push\\.vs",
+  "SelectedNode": "\\QuanLyQuanTapHoa\\QuanLyQuanTapHoa\\ViewModel\\ReportViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

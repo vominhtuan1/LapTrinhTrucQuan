@@ -51,7 +51,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             OpenAddProduct = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { OpenAddProductWD(p); });
             OpenEditProduct = new RelayCommand<ProductDetailControl>((p) => { return true; }, (p) => { OpenEditProductWD(p); });
             LoadCommand = new RelayCommand<SettingControl>((p) => {
-                if (p.IsVisible == true)
+                if (p.IsVisible == true && isFistVisible==false)
                 {
                     isFistVisible = true;
                     return true;

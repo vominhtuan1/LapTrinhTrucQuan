@@ -23,5 +23,10 @@ namespace QuanLyQuanTapHoa
         {
             InitializeComponent();
         }
+
+        private void cbxKindsofGoods_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

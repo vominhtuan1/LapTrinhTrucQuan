@@ -1,10 +1,14 @@
-﻿using QuanLyQuanTapHoa.Model;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Microsoft.Win32;
+using QuanLyQuanTapHoa.Model;
 using QuanLyQuanTapHoa.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -293,9 +297,26 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             return true;
         }
+        public bool ValidateDiscount(TextBox p)
+        {
+            var discount = DataProvider.Ins.DB.GiamGias.Where(x => x.IdGiamGia == IdDiscount).SingleOrDefault();
+
+            if (discount.NgayKetThuc < DateTime.Today)
+            {
+                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này đã hết hạn!", 1);
+                return false;
+            }
+            if (discount.DonHangTu > int.Parse(ReturnFormatNumber(Sum)))
+            {
+                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này chỉ áp dụng cho đơn hàng từ " + discount.DonHangTu.ToString() + "!", 1);
+                return false;
+            }
+
+            return true;
+        }
         public void Pay(TextBox p)
         {
-            if(CartItemList.Count == 0)
+            if (CartItemList.Count == 0)
             {
                 CustomMessageBox.CustomMessageBox.Show("Không có sản phẩm nào trong giỏ hàng!", 1);
                 return;
@@ -303,12 +324,20 @@ namespace QuanLyQuanTapHoa.ViewModel
             HoaDon bill = new HoaDon();
             if (IdDiscount == 0)
             {
-                bill = new HoaDon() { NgayLapHoaDon = System.DateTime.Now, TongTien = int.Parse(ReturnFormatNumber(Money)) };
+                if (p.Text.Length == 0)
+                {
+                    bill = new HoaDon() { NgayLapHoaDon = System.DateTime.Now, TongTien = int.Parse(ReturnFormatNumber(Money)) };
+                }
+                else
+                {
+                    CustomMessageBox.CustomMessageBox.Show("Mã giảm giá không tồn tại!", 1);
+                    return;
+                }
 
             }
             else
             {
-                if (ValidateDiscount())
+                if (ValidateDiscount(p))
                 {
                     bill = new HoaDon() { NgayLapHoaDon = System.DateTime.Now, TongTien = int.Parse(ReturnFormatNumber(Money)), IdGiamGia = IdDiscount };
                 }
@@ -319,6 +348,14 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             if (ValidateQuantityProduct())
             {
+                // in hóa đơn
+                var res = CustomMessageBox.CustomMessageBox.Show("Bạn có muốn in hóa đơn không?", 4);
+                if (res == MessageBoxResult.Yes)
+                {
+                    SaveBillPDF();
+                }
+
+                // lưu dữ liệu
                 DataProvider.Ins.DB.HoaDons.Add(bill);
                 DataProvider.Ins.DB.SaveChanges();
                 var b = DataProvider.Ins.DB.HoaDons.ToList().LastOrDefault();
@@ -332,6 +369,8 @@ namespace QuanLyQuanTapHoa.ViewModel
                     DataProvider.Ins.DB.SaveChanges();
                 }
                 ClearCart(p);
+
+                // hiển thị thông báo
                 CustomMessageBox.CustomMessageBox.Show("Thanh toán thành công!", 3);
             }
         }
@@ -403,6 +442,105 @@ namespace QuanLyQuanTapHoa.ViewModel
                     }
                 }
                 return;
+            }
+        }
+        public string NamePDF()
+        {
+            var time = DateTime.Now;
+            return "Hóa đơn " + time.ToString("dd-MM-yyyy") + " " + time.Hour.ToString() + " giờ " + time.Minute.ToString() + " phút";
+        }
+        public void SaveBillPDF()
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "PDF (*.pdf)|*.pdf";
+            saveFile.FileName = NamePDF();
+
+            string ARIALUNI_TFF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.TTF");
+            BaseFont bf = BaseFont.CreateFont(ARIALUNI_TFF, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+
+            Font f = new Font(bf, 10, Font.NORMAL);
+            Font f1 = new Font(bf, 18, Font.NORMAL);
+
+            if (saveFile.ShowDialog() == true)
+            {
+                var columnWidths = new[] { 0.5f, 2f, 1f, 1f, 1f, 1f };
+                var table = new PdfPTable(columnWidths)
+                {
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    WidthPercentage = 100,
+                    DefaultCell = { MinimumHeight = 22f }
+                };
+                table.AddCell(new Phrase("STT", f));
+                table.AddCell(new Phrase("Tên sản phẩm", f));
+                table.AddCell(new Phrase("Loại", f));
+                table.AddCell(new Phrase("Đơn vị tính", f));
+                table.AddCell(new Phrase("Số lượng", f));
+                table.AddCell(new Phrase("Tổng", f));
+
+                int count = 1;
+                foreach (CartItem i in CartItemList)
+                {
+                    table.AddCell(new Phrase(count.ToString(), f));
+                    table.AddCell(new Phrase(i.SanPham.TenSanPham, f));
+                    table.AddCell(new Phrase(i.SanPham.LoaiSanPham.TenLoai, f));
+                    table.AddCell(new Phrase(i.SanPham.DonViTinh.TenDonViTinh, f));
+                    table.AddCell(new Phrase(i.SoLuong.ToString(), f));
+                    table.AddCell(new Phrase((i.SoLuong * i.SanPham.GiaBan).ToString(), f));
+                    count++;
+                }
+
+                using (FileStream stream = new FileStream(saveFile.FileName, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 40f, 40f, 60f, 60f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+
+                    pdfDoc.Open();
+
+                    Paragraph para = new Paragraph(NamePDF(), f1);
+                    Paragraph para1 = new Paragraph("Ngày tạo : " + DateTime.Now.ToString("dd/MM/yyyy"), f);
+                    Paragraph para2;
+                    Paragraph para3 = new Paragraph("Tổng tiền : " + Sum, f);
+                    Paragraph para4 = new Paragraph("Giảm giá : " + DiscountMoney, f);
+                    Paragraph para5 = new Paragraph("Thành tiền : " + Money, f);
+
+                    if (IdDiscount == 0)
+                    {
+                        para2 = new Paragraph("Mã giảm giá : ", f);
+                    }
+                    else
+                    {
+                        var discount = DataProvider.Ins.DB.GiamGias.Where(x => x.IdGiamGia == IdDiscount).SingleOrDefault();
+                        para2 = new Paragraph("Mã giảm giá : " + discount.Coupoun, f);
+
+                    }
+                    para.Alignment = Element.ALIGN_CENTER;
+                    para1.Alignment = Element.ALIGN_CENTER;
+                    para2.Alignment = Element.ALIGN_CENTER;
+                    para3.Alignment = Element.ALIGN_CENTER;
+                    para4.Alignment = Element.ALIGN_CENTER;
+                    para5.Alignment = Element.ALIGN_CENTER;
+
+                    pdfDoc.Add(para);
+                    pdfDoc.Add(para1);
+                    pdfDoc.Add(para2);
+
+                    var spacer = new Paragraph("")
+                    {
+                        SpacingBefore = 10f,
+                        SpacingAfter = 10f,
+                    };
+                    pdfDoc.Add(spacer);
+
+                    pdfDoc.Add(table);
+
+                    pdfDoc.Add(spacer);
+                    pdfDoc.Add(para3);
+                    pdfDoc.Add(para4);
+                    pdfDoc.Add(para5);
+
+                    pdfDoc.Close();
+                }
+                CustomMessageBox.CustomMessageBox.Show("Xuất file PFD thành công.", 3);
             }
         }
     }

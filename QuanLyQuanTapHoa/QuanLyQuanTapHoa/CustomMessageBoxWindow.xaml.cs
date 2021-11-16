@@ -56,6 +56,11 @@ namespace QuanLyQuanTapHoa
                     img.Source = new BitmapImage(new Uri(@"/Images/smile.png", UriKind.Relative));
                     OK.Visibility = System.Windows.Visibility.Visible;
                     break;
+                case 4:
+                    img.Source = new BitmapImage(new Uri(@"/Images/smile.png", UriKind.Relative));
+                    Yes.Visibility = System.Windows.Visibility.Visible;
+                    No.Visibility = System.Windows.Visibility.Visible;
+                    break;
             }
         }
 

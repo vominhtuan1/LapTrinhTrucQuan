@@ -35,7 +35,8 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Chọn Tháng" VerticalAlignment="Center"/>
             <ComboBox MinWidth="72" Margin="10 0 0 0" SelectedItem="{Binding Month}"
-                      materialDesign:HintAssist.Hint="11" ItemsSource="{Binding Months}">
+                      materialDesign:HintAssist.Hint="11" ItemsSource="{Binding Months}"
+                      x:Name="cbbMonth">
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel/>
@@ -49,7 +50,8 @@
             </ComboBox>
             <TextBlock Text="Chọn Năm" VerticalAlignment="Center" Margin="100 0 0 0"/>
             <ComboBox MinWidth="72" Margin="10 0 0 0" SelectedItem="{Binding Year}"
-                      materialDesign:HintAssist.Hint="2021" ItemsSource="{Binding Years}">
+                      materialDesign:HintAssist.Hint="2021" x:Name="cbbYear"
+                      ItemsSource="{Binding Years}">
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel/>

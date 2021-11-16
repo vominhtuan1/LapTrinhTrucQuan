@@ -1,9 +1,13 @@
-﻿using QuanLyQuanTapHoa.Model;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Microsoft.Win32;
+using QuanLyQuanTapHoa.Model;
 using QuanLyQuanTapHoa.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +39,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand LoadYearCommand { get; set; }
         public ICommand GetYearCommand { get; set; }
         public ICommand FilterCommand { get; set; }
+        public ICommand SavePDFCommand { get; set; }
 
         public BillViewModel()
         {
@@ -47,6 +52,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             LoadYearCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) => { LoadYear(p); });
             GetYearCommand = new RelayCommand<ButtonYearControl>((p) => { return true; }, (p) => { GetYear(p); });
             FilterCommand = new RelayCommand<BillControl>((p) => { return true; }, (p) => { Filter(p); });
+            SavePDFCommand = new RelayCommand<BillDetailWindow>((p) => { return true; }, (p) => { SavePDF(p); });
 
         }
         public void OpenDetail()
@@ -199,6 +205,94 @@ namespace QuanLyQuanTapHoa.ViewModel
                         p.ListBill.Children.Add(billDetailControl);
                     }
                 }
+            }
+        }
+        public string NameOfPDF(TextBlock p)
+        {
+            return "Hóa đơn " + p.Text.Replace('/', '-');
+        }
+
+        public void SavePDF(BillDetailWindow p)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "PDF (*.pdf)|*.pdf";
+            saveFile.FileName = NameOfPDF(p.NgayLap);
+
+            string ARIALUNI_TFF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.TTF");
+            BaseFont bf = BaseFont.CreateFont(ARIALUNI_TFF, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+
+            Font f = new Font(bf, 10, Font.NORMAL);
+            Font f1 = new Font(bf, 18, Font.NORMAL);
+
+            if (saveFile.ShowDialog() == true)
+            {
+                var columnWidths = new[] { 0.5f, 2f, 1f, 1f, 1f, 1f };
+                var table = new PdfPTable(columnWidths)
+                {
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    WidthPercentage = 100,
+                    DefaultCell = { MinimumHeight = 22f }
+                };
+                table.AddCell(new Phrase("STT", f));
+                table.AddCell(new Phrase("Tên hàng hóa", f));
+                table.AddCell(new Phrase("Loại", f));
+                table.AddCell(new Phrase("Đơn vị tính", f));
+                table.AddCell(new Phrase("Số lượng", f));
+                table.AddCell(new Phrase("Tổng", f));
+
+                foreach (ProductOfBillDetailControl i in p.ListProductOfBill.Children)
+                {
+                    table.AddCell(new Phrase(i.Stt.Text, f));
+                    table.AddCell(new Phrase(i.TenSanPham.Text, f));
+                    table.AddCell(new Phrase(i.Loai.Text, f));
+                    table.AddCell(new Phrase(i.DonViTinh.Text, f));
+                    table.AddCell(new Phrase(i.SoLuong.Text, f));
+                    table.AddCell(new Phrase(i.Tong.Text, f));
+                }
+
+                using (FileStream stream = new FileStream(saveFile.FileName, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 40f, 40f, 60f, 60f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+
+                    pdfDoc.Open();
+
+                    Paragraph para = new Paragraph(NameOfPDF(p.NgayLap), f1);
+                    Paragraph para1 = new Paragraph("Ngày lập : " + p.NgayLap.Text, f);
+                    Paragraph para2 = new Paragraph("Mã giảm giá : " + p.MaGG.Text, f);
+                    Paragraph para3 = new Paragraph("Tổng  : " + p.Tong.Text, f);
+                    Paragraph para4 = new Paragraph("Giảm giá : " + p.Giamgia.Text, f);
+                    Paragraph para5 = new Paragraph("Thành tiền: " + p.ThanhTien.Text, f);
+
+                    para.Alignment = Element.ALIGN_CENTER;
+                    para1.Alignment = Element.ALIGN_CENTER;
+                    para2.Alignment = Element.ALIGN_CENTER;
+                    para3.Alignment = Element.ALIGN_CENTER;
+                    para4.Alignment = Element.ALIGN_CENTER;
+                    para5.Alignment = Element.ALIGN_CENTER;
+
+                    pdfDoc.Add(para);
+                    pdfDoc.Add(para1);
+                    pdfDoc.Add(para2);
+
+                    var spacer = new Paragraph("")
+                    {
+                        SpacingBefore = 10f,
+                        SpacingAfter = 10f,
+                    };
+                    pdfDoc.Add(spacer);
+
+                    pdfDoc.Add(table);
+
+                    pdfDoc.Add(spacer);
+
+                    pdfDoc.Add(para3);
+                    pdfDoc.Add(para4);
+                    pdfDoc.Add(para5);
+
+                    pdfDoc.Close();
+                }
+                CustomMessageBox.CustomMessageBox.Show("Xuất file PFD thành công.", 3);
             }
         }
     }

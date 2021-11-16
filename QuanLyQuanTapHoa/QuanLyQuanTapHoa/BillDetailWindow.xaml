@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa" xmlns:usercontrols="clr-namespace:QuanLyQuanTapHoa.UserControls"
         mc:Ignorable="d"
+        DataContext="{StaticResource BillVM}"
+        x:Name="BillDetailWD"
         Title="Chi tiết hóa đơn" Height="450" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Chi tiết hóa đơn" FontSize="20" HorizontalAlignment="Center" Margin="10"/>
         <Grid Grid.Row="1">
@@ -102,6 +105,31 @@
                     <TextBlock x:Name="ThanhTien" Text="1500000"/>
                 </StackPanel>
             </StackPanel>
+        </Grid>
+        <Grid Grid.Row="4" >
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="BorderFilter" Background="#F73B4F" CornerRadius="8"
+                                                        Width="150" Height="30" Cursor="Hand">
+                                    <Grid>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#F73B4F" TargetName="BorderFilter"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Button Content="Lưu thành PDF" FontSize="15" Foreground="White"
+                                        Command="{Binding SavePDFCommand}" CommandParameter="{Binding ElementName=BillDetailWD}"/>
         </Grid>
     </Grid>
 </Window>

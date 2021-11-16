@@ -135,7 +135,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Background="Transparent" Height="25" BorderThickness="0" Padding="0"
                         Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.DeleteProductCommand}"                       
-                        CommandParameter="{Binding ElementName=ImportProductDetailCT}">
+                        CommandParameter="{Binding ElementName=ImportDetailCT}">
                         <materialDesign:PackIcon Height="25" Width="25" Foreground="Red" Kind="Delete" />
                     </Button>
                 </StackPanel>

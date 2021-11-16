@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace QuanLyQuanTapHoa.ViewModel
 {
@@ -30,7 +31,6 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         public bool isUpdateProductSuccess = true;
         public bool isAddProductSuccess = true;
-        public bool isFistVisible = false;
 
         private BackgroundWorker worker;
 
@@ -51,9 +51,8 @@ namespace QuanLyQuanTapHoa.ViewModel
             OpenAddProduct = new RelayCommand<ItemsControl>((p) => { return true; }, (p) => { OpenAddProductWD(p); });
             OpenEditProduct = new RelayCommand<ProductDetailControl>((p) => { return true; }, (p) => { OpenEditProductWD(p); });
             LoadCommand = new RelayCommand<SettingControl>((p) => {
-                if (p.IsVisible == true && isFistVisible==false)
+                if (p.IsVisible == true)
                 {
-                    isFistVisible = true;
                     return true;
                 }
                 else
@@ -114,7 +113,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             b.txbQuantity.Text = a.SLBayBan.ToString();
             b.txbUnit.Text = a.DonViTinh.TenDonViTinh;
             b.txbCategory.Text = a.LoaiSanPham.TenLoai;
-            b.txbPrice.Text = a.GiaBan.ToString();
+            b.txbPrice.Text = FormatNumber(a.GiaBan.ToString()) + " VND";
             p.Items.Add(b);
         }
         public void Load(SettingControl p)
@@ -141,6 +140,9 @@ namespace QuanLyQuanTapHoa.ViewModel
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
             UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
 
+            ClearUI clear = new ClearUI(ClearItemsControl);
+            settingDispatcher.BeginInvoke(clear, p.productList);
+
             foreach (SanPham i in SanPhamList)
             {
                 UpdateUi update = new UpdateUi(AddProductToScreen);
@@ -149,6 +151,13 @@ namespace QuanLyQuanTapHoa.ViewModel
             e.Result = p;
         }
         public delegate void UpdateUi(SanPham a, ItemsControl p);
+
+        public delegate void ClearUI(ItemsControl p);
+
+        public void ClearItemsControl(ItemsControl p)
+        {
+            p.Items.Clear();
+        }
 
         public bool IsDigitsOnly(string str)
         {
@@ -164,7 +173,6 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             int id = int.Parse(editProductWindow.id.Text);
             var product = DataProvider.Ins.DB.SanPhams.Where(x => x.MaSanPham == id).SingleOrDefault();
-            product.GiaBan = int.Parse(editProductWindow.txbPrice.Text);
 
             if (editProductWindow.txbSoLuongBayBan.IsEnabled == false)
             {
@@ -204,7 +212,14 @@ namespace QuanLyQuanTapHoa.ViewModel
                 product.SLTrongKho += product.SLBayBan - SLBayBan;
                 product.SLBayBan = SLBayBan;
             }
+            if (!IsDigitsOnly(editProductWindow.txbPrice.Text))
+            {
+                CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại giá bán. Giá bán chỉ chứa số!", 1);
+                isUpdateProductSuccess = false;
+                return;
+            }
 
+            product.GiaBan = int.Parse(editProductWindow.txbPrice.Text);
             isUpdateProductSuccess = true;
             DataProvider.Ins.DB.SaveChanges();
             CustomMessageBox.CustomMessageBox.Show("Cập nhập sản phẩm thành công!",3);
@@ -255,6 +270,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             SanPham p = (SanPham)addProductWindow.cbProduct.SelectedItem;
             int SLBayBan = 0;
             string tempSLBayBan = addProductWindow.txbSLBayBan.Text;
+            string tempPrice = addProductWindow.txbGiaBan.Text;
             if (tempSLBayBan.Length > 0 && IsDigitsOnly(tempSLBayBan))
             {
                 SLBayBan = int.Parse(tempSLBayBan);
@@ -282,10 +298,16 @@ namespace QuanLyQuanTapHoa.ViewModel
                 p.SLBayBan = SLBayBan;
                 p.SLTrongKho -= SLBayBan;
             }
+            if (!IsDigitsOnly(tempPrice))
+            {
+                isAddProductSuccess = false;
+                CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại giá bán. Chỉ nhập các chữ số từ 0 - 9 !", 1);
+                return;
+            }
             var product = DataProvider.Ins.DB.SanPhams.Where(x => x.MaSanPham == p.MaSanPham).SingleOrDefault();
             product.SLBayBan = p.SLBayBan;
             product.SLTrongKho = p.SLTrongKho;
-            product.GiaBan = p.GiaBan;
+            product.GiaBan = int.Parse(tempPrice);
             DataProvider.Ins.DB.SaveChanges();
             isAddProductSuccess = true;
             SanPhamList.Add(p);
@@ -304,6 +326,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                     AddProductToScreen(i, setting.productList);
                 }
             }
+        }
+        public string FormatNumber(string a)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return double.Parse(a).ToString("#,###", cul.NumberFormat);
         }
     }
 }

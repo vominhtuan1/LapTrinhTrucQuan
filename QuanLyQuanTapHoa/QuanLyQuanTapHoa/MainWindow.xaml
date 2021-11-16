@@ -68,25 +68,7 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button x:Name="btnSetting" Grid.Row="2" Uid="5">
-                <Grid  Width="70" Height="70">
-                    <Border x:Name="bdSetting" Background="White" CornerRadius="20">
-                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon x:Name="icSetting" HorizontalAlignment="Center" Kind="Settings" Width="30" Height="30" Foreground="Black"/>
-                            <TextBlock x:Name="txtSetting" Text="Cài đặt" Foreground="Black" ></TextBlock>
-                        </StackPanel>
-                    </Border>
-                </Grid>
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=wdMain}"/>
-                    </i:EventTrigger>
-                    <i:EventTrigger EventName="MouseMove">
-                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnSetting}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
-            <Button x:Name="btnBill" Grid.Row="3" Uid="6">
+            <Button x:Name="btnBill" Grid.Row="2" Uid="6">
                 <Grid  Width="70" Height="70">
                     <Border x:Name="bdBill" Background="White" CornerRadius="20">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -101,6 +83,24 @@
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseMove">
                         <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnBill}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button x:Name="btnSetting" Grid.Row="3" Uid="5">
+                <Grid  Width="70" Height="70">
+                    <Border x:Name="bdSetting" Background="White" CornerRadius="20">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon x:Name="icSetting" HorizontalAlignment="Center" Kind="Settings" Width="30" Height="30" Foreground="Black"/>
+                            <TextBlock x:Name="txtSetting" Text="Cài đặt" Foreground="Black" ></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=wdMain}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="MouseMove">
+                        <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnSetting}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>

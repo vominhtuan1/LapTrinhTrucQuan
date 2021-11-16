@@ -24,5 +24,6 @@ namespace QuanLyQuanTapHoa.UserControls
         {
             InitializeComponent();
         }
+
     }
 }

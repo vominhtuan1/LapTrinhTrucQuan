@@ -39,15 +39,12 @@ namespace QuanLyQuanTapHoa.ViewModel
             if (mainWindow.btnReport.IsEnabled == false)
             {
                 mainWindow.bdHome.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
-                mainWindow.bdSetting.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
                 mainWindow.bdBill.Background = (Brush)new BrushConverter().ConvertFrom("#ffffff");
 
                 mainWindow.icHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-                mainWindow.icSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
                 mainWindow.icBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
 
                 mainWindow.txtHome.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
-                mainWindow.txtSetting.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
                 mainWindow.txtBill.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
             }
             else

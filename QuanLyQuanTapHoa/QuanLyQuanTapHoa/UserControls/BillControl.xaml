@@ -131,7 +131,7 @@
                                 <Border Grid.Column="3" CornerRadius="0 10 0 0"></Border>
                             </Grid>
                             <ScrollViewer Height="450" Width="500" Background="White"
-                                          VerticalScrollBarVisibility="Hidden">
+                                          VerticalScrollBarVisibility="Auto">
                                 <WrapPanel x:Name="ListBill">
                                     <!--<i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Loaded">

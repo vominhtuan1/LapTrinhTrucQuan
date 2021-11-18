@@ -79,7 +79,7 @@
                     </Border>
                 </Grid>
                 <Border Width="550"  BorderThickness="1" BorderBrush="#cccccc">
-                    <ScrollViewer MaxHeight="250"  VerticalScrollBarVisibility="Hidden">
+                    <ScrollViewer MaxHeight="150" VerticalScrollBarVisibility="Auto">
                         <WrapPanel Name="ListProductOfBill"></WrapPanel>
                     </ScrollViewer>
                 </Border>

@@ -213,7 +213,7 @@
                     Name="progressBar" Width="50" Height="50"
                     Style="{StaticResource MaterialDesignCircularProgressBar}"
                     Value="20" IsIndeterminate="True"/>
-                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ItemsControl x:Name="productList" Visibility="Hidden">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Loaded">
@@ -262,7 +262,7 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
-                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ItemsControl x:Name="cartItemListControl" ItemsSource="{Binding CartItemList}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>

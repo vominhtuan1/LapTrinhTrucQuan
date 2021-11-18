@@ -191,3 +191,7 @@ C:\Users\vomin\Source\Repos\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\o
 C:\Users\vomin\Source\Repos\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.csproj.CopyComplete
 C:\Users\vomin\Source\Repos\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.exe
 C:\Users\vomin\Source\Repos\LapTrinhTrucQuan\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\QuanLyQuanTapHoa.pdb
+C:\Users\voxua\OneDrive\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\voxua\OneDrive\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\itextsharp.dll
+C:\Users\voxua\OneDrive\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\bin\Debug\itextsharp.xml
+C:\Users\voxua\OneDrive\Desktop\New folder\QuanLyQuanTapHoa\QuanLyQuanTapHoa\obj\Debug\ResourceXAML\Scroll.baml

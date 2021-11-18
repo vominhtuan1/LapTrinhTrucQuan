@@ -133,7 +133,7 @@
                             </Grid>
                         </Grid>
                         <Grid>
-                            <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden">
+                            <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Auto">
                                 <ItemsControl x:Name="productList" Visibility="Hidden">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Loaded">

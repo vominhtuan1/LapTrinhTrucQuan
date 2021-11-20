@@ -112,6 +112,9 @@
     <Compile Include="EditStaffWindow.xaml.cs">
       <DependentUpon>EditStaffWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImportDetailWindow.xaml.cs">
+      <DependentUpon>ImportDetailWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImportProductWindow.xaml.cs">
       <DependentUpon>ImportProductWindow.xaml</DependentUpon>
     </Compile>
@@ -195,6 +198,9 @@
     <Compile Include="UserControls\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ImportDetailControl.xaml.cs">
+      <DependentUpon>ImportDetailControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ImportProductDetailControl.xaml.cs">
       <DependentUpon>ImportProductDetailControl.xaml</DependentUpon>
     </Compile>
@@ -263,6 +269,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ImportDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ImportProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -324,6 +334,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\HomeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ImportDetailControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -432,13 +446,11 @@
   <ItemGroup>
     <Resource Include="Images\BanhKeo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\unknowncircle.jpg" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\smile.png" />
     <Resource Include="Images\sad.png" />
+    <Resource Include="Images\Goods.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

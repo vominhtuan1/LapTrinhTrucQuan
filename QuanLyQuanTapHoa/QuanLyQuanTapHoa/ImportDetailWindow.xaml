@@ -1,0 +1,108 @@
+﻿<Window x:Class="QuanLyQuanTapHoa.ImportDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyQuanTapHoa"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d"
+        DataContext="{StaticResource WarehouseVM}" 
+        x:Name="ImportDetailWD"
+        Title="Chi tiết nhập kho" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Chi tiết nhập kho" FontSize="20" HorizontalAlignment="Center" Margin="0 10" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10">
+            <TextBlock Text="Chọn Tháng" VerticalAlignment="Center"/>
+            <ComboBox MinWidth="72" Margin="10 0 0 0" SelectedItem="{Binding Month}"
+                      materialDesign:HintAssist.Hint="11" ItemsSource="{Binding Months}"
+                      x:Name="cbbMonth">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding ReloadImportDetailWDCommand}" CommandParameter="{Binding ElementName=ImportDetailWD}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+            <TextBlock Text="Chọn Năm" VerticalAlignment="Center" Margin="100 0 0 0"/>
+            <ComboBox MinWidth="72" Margin="10 0 0 0" SelectedItem="{Binding Year}"
+                      materialDesign:HintAssist.Hint="2021" x:Name="cbbYear"
+                      ItemsSource="{Binding Years}">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding ReloadImportDetailWDCommand}" CommandParameter="{Binding ElementName=ImportDetailWD}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <StackPanel>
+                <Grid Height="25" Width="700">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="1.25*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                        <Style TargetType="Border">
+                            <Setter Property="BorderBrush" Value="White"/>
+                            <Setter Property="BorderThickness" Value="0 0 2 0"/>
+                            <Setter Property="Background" Value="#8EA0E0"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Border Grid.Column="0" CornerRadius="10 0 0 0">
+                        <TextBlock Text="STT"/>
+                    </Border>
+                    <Border Grid.Column="1">
+                        <TextBlock Text="Tên sản phẩm"/>
+                    </Border>
+                    <Border Grid.Column="2">
+                        <TextBlock Text="Loại"/>
+                    </Border>
+                    <Border Grid.Column="3">
+                        <TextBlock Text="Đơn vị tính"/>
+                    </Border>
+                    <Border Grid.Column="4">
+                        <TextBlock Text="Số lượng nhập"/>
+                    </Border>
+                    <Border Grid.Column="5">
+                        <TextBlock Text="Giá nhập"/>
+                    </Border>
+                    <Border Grid.Column="6" CornerRadius="0 10 0 0" BorderThickness="0">
+                        <TextBlock Text="Ngày nhập"/>
+                    </Border>
+                </Grid>
+                <Border Width="700" BorderBrush="#cccccc">
+                    <ScrollViewer Width="700" MaxHeight="250"  VerticalScrollBarVisibility="Hidden">
+                        <WrapPanel Name="ListImportProductDetail"></WrapPanel>
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

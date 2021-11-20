@@ -3,128 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              DataContext="{StaticResource WarehouseVM}"
-             d:DesignHeight="450" d:DesignWidth="800" x:Name="ImportCT">
-    <!--<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Border Background="Pink" CornerRadius="20 0 0 20"  ></Border>
-        <Grid Grid.Column="0" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0" VerticalAlignment="Top" Height="30">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" HorizontalAlignment="Left" Width="250">
-                    <StackPanel Orientation="Horizontal" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock FontSize="24" FontWeight="Light"  Text="Danh mục "></TextBlock>
-                        <TextBlock FontSize="24" FontWeight="Bold" Width="auto" Text="Kho" />
-                    </StackPanel>
-                </Grid>
-            </Grid>
-            <Grid Grid.Row="1" VerticalAlignment="Center" Height="50"  >
-                <Grid.Resources>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="#6F89E9" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Grid>
-                                            <ContentPresenter Margin="5" Cursor="Hand"/>
-                                        </Grid>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Grid.Resources>
-                <Button Command="{Binding OpenImportProduct}" Content="Nhập kho" Foreground="White" Margin="45,10,-45,-10" ></Button>
-            </Grid>
-            <Grid Grid.Row="2" VerticalAlignment="Bottom" Height="450">
-                <StackPanel Margin="20 5">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                            <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="Background" Value="#6F89E9"></Setter>
-                                <Setter Property="BorderThickness" Value="1"></Setter>
-                                <Setter Property="BorderBrush" Value="White"></Setter>
-                            </Style>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="Margin" Value="0 2"></Setter>
-                                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                                <Setter Property="Foreground" Value="White"></Setter>
-                            </Style>
-                        </Grid.Resources>
-                        <Grid Grid.Column="0">
-                            <Border CornerRadius="10 0 0 0">
-                                <TextBlock Text="Mã số"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Border>
-                                <TextBlock Text="Tên sản phẩm"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="2">
-                            <Border>
-                                <TextBlock Text="Số lượng"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="3">
-                            <Border>
-                                <TextBlock Text="Đơn vị"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="4">
-                            <Border>
-                                <TextBlock Text="Loại"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="5">
-                            <Border>
-                                <TextBlock Text="Giá nhập"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="6">
-                            <Border>
-                                <TextBlock Text="Ngày nhập"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="7">
-                            <Border CornerRadius="0 10 0 0">
-                                <TextBlock Text=" "></TextBlock>
-                            </Border>
-                        </Grid>
-                    </Grid>
-                    <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden" >
-                        <StackPanel>
-                            <local:ImportProductDetail></local:ImportProductDetail>
-                            <local:ImportProductDetail></local:ImportProductDetail>
-                            <local:ImportProductDetail></local:ImportProductDetail>
-                            <local:ImportProductDetail></local:ImportProductDetail>
-                        </StackPanel>
-                    </ScrollViewer>
-                </StackPanel>
-            </Grid>
-        </Grid>
-    </Grid>-->
+             d:DesignHeight="623" d:DesignWidth="920" x:Name="ImportCT">
     <i:Interaction.Triggers>
         <ei:PropertyChangedTrigger Binding="{Binding Visibility, ElementName=ImportCT}">
             <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=ImportCT}"/>
@@ -152,7 +36,7 @@
                     </StackPanel>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" VerticalAlignment="Center" Height="50"  >
+            <Grid Grid.Row="1" VerticalAlignment="Center" Height="50">
                 <Grid.Resources>
                     <Style TargetType="Button">
                         <Setter Property="Template">
@@ -169,23 +53,43 @@
                     </Style>
                 </Grid.Resources>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="26*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="129*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Command="{Binding OpenImportProduct}" Content="Nhập kho" Foreground="White" Margin="45,10,-45,-10"  CommandParameter="{Binding ElementName= importList}" />
+                <Button Grid.Column="0" Command="{Binding OpenImportProduct}" Content="Nhập kho" VerticalAlignment="Center"
+                        Foreground="White" Margin="45 0"  CommandParameter="{Binding ElementName= importList}" />
+                <Button Grid.Column="1" Command="{Binding OpenImportDetailWDCommand}" 
+                        Content="Xem chi tiết nhập kho" Foreground="White" 
+                         VerticalAlignment="Center"/>
+                <Grid Grid.Column="2" HorizontalAlignment="Right">
+                    <Border Background="White" CornerRadius="15" Margin="40 10 100 10">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Magnify" Height="25" Width="30" Foreground="#747373" Background="Transparent"/>
+                            <TextBox x:Name="txbSearch" Background="Transparent" Height="25" Width="150" BorderThickness="0"  Margin="0 0 10 0"
+                                         HorizontalContentAlignment="Left" VerticalContentAlignment="Center" 
+                                         HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Tìm kiếm" FontSize="14">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TextChanged">
+                                        <i:InvokeCommandAction Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=ImportCT}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </Grid>
             <Grid Grid.Row="2" VerticalAlignment="Bottom" Height="450">
-                <StackPanel Margin="20 5">
+                <StackPanel Margin="20 0">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.75*"></ColumnDefinition>
                             <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.Resources>
@@ -212,7 +116,7 @@
                         </Grid>
                         <Grid Grid.Column="2">
                             <Border>
-                                <TextBlock Text="Số lượng"></TextBlock>
+                                <TextBlock Text="Số lượng trong kho"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid Grid.Column="3">
@@ -231,24 +135,14 @@
                             </Border>
                         </Grid>
                         <Grid Grid.Column="6">
-                            <Border>
-                                <TextBlock Text="Ngày nhập"></TextBlock>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="7">
                             <Border CornerRadius="0 10 0 0">
-                                <TextBlock Text=" "></TextBlock>
+                                <TextBlock Text=""></TextBlock>
                             </Border>
                         </Grid>
                     </Grid>
                     <Grid>
-                        <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Hidden">
+                        <ScrollViewer Height="430" Background="White" VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2">
                             <ItemsControl x:Name="importList" Visibility="Hidden">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName= ImportCT}" />
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel/>
@@ -259,9 +153,8 @@
                         <ProgressBar
                                 x:Name="progressBar" Width="80" Height="80"
                                 Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                Value="20" IsIndeterminate="True" RenderTransformOrigin="0.722,-1.304" Margin="40,0"/>
+                                Value="20" IsIndeterminate="True" RenderTransformOrigin="0.722,-1.304" Margin="400,175,371,175"/>
                     </Grid>
-
                 </StackPanel>
             </Grid>
         </Grid>

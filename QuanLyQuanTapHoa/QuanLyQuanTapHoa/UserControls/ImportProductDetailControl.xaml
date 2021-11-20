@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls" DataContext="{StaticResource WarehouseVM}"
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Name="ImportDetailCT"
-             mc:Ignorable="d" d:DesignWidth="800" Height="34.406">
+             mc:Ignorable="d" d:DesignWidth="800" Height="25">
     <!--<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
@@ -75,13 +75,12 @@
     </Grid>-->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.75*"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
@@ -97,40 +96,35 @@
         </Grid.Resources>
         <Grid Grid.Column="0">
             <Border>
-                <TextBlock x:Name="txbID" Text="{Binding MaSanPham}"></TextBlock>
+                <TextBlock x:Name="txbID" Text="id"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="1">
             <Border>
-                <TextBlock x:Name="txbProductName" Text="{Binding TenSanPham}"></TextBlock>
+                <TextBlock x:Name="txbProductName" Text="ten san pham"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="2">
             <Border>
-                <TextBlock x:Name="txbQuantity"  Text="{Binding SLNhap}"></TextBlock>
+                <TextBlock x:Name="txbQuantity"  Text="so luong"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="3">
             <Border>
-                <TextBlock x:Name="txbUnit" Text="{Binding DonViTinh.TenDonViTinh}"></TextBlock>
+                <TextBlock x:Name="txbUnit" Text="don vi"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="4">
             <Border>
-                <TextBlock x:Name="txbCategory" Text="{Binding LoaiSanPham.TenLoai}"></TextBlock>
+                <TextBlock x:Name="txbCategory" Text="loai"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="5">
             <Border>
-                <TextBlock  x:Name="txbPrice" Text="{Binding GiaNhap}"></TextBlock>
+                <TextBlock  x:Name="txbPrice" Text="gia nhap"></TextBlock>
             </Border>
         </Grid>
         <Grid Grid.Column="6">
-            <Border>
-                <TextBlock x:Name="txbDate" Text="{Binding NgayNhap}"></TextBlock>
-            </Border>
-        </Grid>
-        <Grid Grid.Column="7">
             <Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Background="Transparent" Height="25" BorderThickness="0" Padding="0"

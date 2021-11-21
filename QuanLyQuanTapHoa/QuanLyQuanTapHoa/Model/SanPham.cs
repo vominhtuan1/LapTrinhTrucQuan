@@ -27,6 +27,7 @@ namespace QuanLyQuanTapHoa.Model
         public Nullable<int> GiaBan { get; set; }
         public Nullable<int> SLBayBan { get; set; }
         public Nullable<int> SLTrongKho { get; set; }
+        public Nullable<System.DateTime> HanSuDung { get; set; }
         public byte[] Image { get; set; }
         public int MaLoai { get; set; }
         public int MaDonViTinh { get; set; }

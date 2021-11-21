@@ -47,6 +47,7 @@
           <Property Name="DonHangTu" Type="int" />
           <Property Name="NgayBatDau" Type="datetime" />
           <Property Name="NgayKetThuc" Type="datetime" />
+          <Property Name="DaXoa" Type="int" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -94,6 +95,7 @@
           <Property Name="GiaBan" Type="int" />
           <Property Name="SLBayBan" Type="int" />
           <Property Name="SLTrongKho" Type="int" />
+          <Property Name="HanSuDung" Type="datetime" />
           <Property Name="Image" Type="varbinary(max)" />
           <Property Name="MaLoai" Type="int" Nullable="false" />
           <Property Name="MaDonViTinh" Type="int" Nullable="false" />
@@ -364,6 +366,7 @@
           <Property Name="DonHangTu" Type="Int32" />
           <Property Name="NgayBatDau" Type="DateTime" Precision="3" />
           <Property Name="NgayKetThuc" Type="DateTime" Precision="3" />
+          <Property Name="DaXoa" Type="Int32" />
           <NavigationProperty Name="HoaDons" Relationship="QuanLyQuanTapHoaModel.FK__HoaDon__TongTien__36B12243" FromRole="GiamGia" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="HoaDon">
@@ -418,6 +421,7 @@
           <Property Name="GiaBan" Type="Int32" />
           <Property Name="SLBayBan" Type="Int32" />
           <Property Name="SLTrongKho" Type="Int32" />
+          <Property Name="HanSuDung" Type="DateTime" Precision="3" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="MaLoai" Type="Int32" Nullable="false" />
           <Property Name="MaDonViTinh" Type="Int32" Nullable="false" />
@@ -588,6 +592,7 @@
           <EntitySetMapping Name="GiamGias">
             <EntityTypeMapping TypeName="QuanLyQuanTapHoaModel.GiamGia">
               <MappingFragment StoreEntitySet="GiamGia">
+                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
                 <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
                 <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
                 <ScalarProperty Name="DonHangTu" ColumnName="DonHangTu" />
@@ -643,6 +648,7 @@
                 <ScalarProperty Name="MaDonViTinh" ColumnName="MaDonViTinh" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="HanSuDung" ColumnName="HanSuDung" />
                 <ScalarProperty Name="SLTrongKho" ColumnName="SLTrongKho" />
                 <ScalarProperty Name="SLBayBan" ColumnName="SLBayBan" />
                 <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />

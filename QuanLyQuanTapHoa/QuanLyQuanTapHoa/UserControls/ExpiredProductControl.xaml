@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="QuanLyQuanTapHoa.UserControls.ExpiredProductControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyQuanTapHoa.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             x:Name="ExpiredProductCT"
+             mc:Ignorable="d" 
+             Height="25" Width="548"
+             Background="White">
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#cccccc"/>
+                    <Setter Property="BorderThickness" Value="0 0 2 1"/>
+                </Style>
+            </Grid.Resources>
+            <Grid Grid.Column="0">
+                <TextBlock x:Name="id" Text="id" Foreground="White"/>
+                <Border>
+                    <TextBlock x:Name="MaSo" Text="Mã số"/>
+                </Border>
+            </Grid>
+            <Border Grid.Column="1">
+                <TextBlock x:Name="TenSanPham" Text="Tên sản phẩm"/>
+            </Border>
+            <Border Grid.Column="2">
+                <TextBlock x:Name="DonViTinh" Text="Đơn vị tính"/>
+            </Border>
+            <Border Grid.Column="3">
+                <TextBlock x:Name="LoaiSanPham" Text="Loại sản phẩm"/>
+            </Border>
+            <Border Grid.Column="4">
+                <TextBlock x:Name="HanSuDung" Text="Hạn sử dụng"/>
+            </Border>
+            <Border Grid.Column="5" BorderThickness="0 0 0 1">
+                <Button  Background="Transparent" Height="25" BorderThickness="0" Padding="0"
+                             Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}, Path=DataContext.DeleteExpiredProductCommand}"
+                             CommandParameter="{Binding ElementName=ExpiredProductCT}">
+                    <materialDesign:PackIcon Height="25" Width="25" Foreground="Red" Kind="Delete" />
+                </Button>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

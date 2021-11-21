@@ -7,15 +7,15 @@
       <Diagram DiagramId="537fae049d964aa89ccc1030261212ba" Name="Diagram1" ZoomLevel="77">
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChiTietHoaDon" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChiTietNhapKho" Width="1.5" PointX="5.25" PointY="3.75" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChucVu" Width="1.5" PointX="10.25" PointY="7.5" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.DonViTinh" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.ChucVu" Width="1.5" PointX="5.75" PointY="7.875" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.DonViTinh" Width="1.5" PointX="0.75" PointY="4" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.GiamGia" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.HoaDon" Width="1.5" PointX="3" PointY="7.875" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.HoaDon" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.NhanVien" Width="1.5" PointX="8" PointY="7.125" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.NhapKho" Width="1.5" PointX="8.125" PointY="4" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.SanPham" Width="1.5" PointX="3" PointY="3.125" />
-        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.NhapKho" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.SanPham" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="QuanLyQuanTapHoaModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="10.75" />
         <AssociationConnector Association="QuanLyQuanTapHoaModel.FK__ChiTietHo__MaHoa__3A81B327" />
         <AssociationConnector Association="QuanLyQuanTapHoaModel.FK__ChiTietHo__SoLuo__398D8EEE" />
         <AssociationConnector Association="QuanLyQuanTapHoaModel.FK__ChiTietNh__MaNha__403A8C7D" />

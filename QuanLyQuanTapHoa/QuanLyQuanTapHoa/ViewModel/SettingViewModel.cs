@@ -136,7 +136,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             SettingControl p = (SettingControl)e.Argument;
             System.Windows.Threading.Dispatcher settingDispatcher = p.Dispatcher;
             SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
-            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0));
+            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0 && x.SLTrongKho > 0));
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
             UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
 

@@ -26,6 +26,7 @@ namespace QuanLyQuanTapHoa.Model
         public Nullable<int> DonHangTu { get; set; }
         public Nullable<System.DateTime> NgayBatDau { get; set; }
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
+        public Nullable<int> DaXoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }

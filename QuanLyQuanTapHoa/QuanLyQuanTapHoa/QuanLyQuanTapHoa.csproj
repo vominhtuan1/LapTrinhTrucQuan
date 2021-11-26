@@ -471,6 +471,8 @@
     <Resource Include="Images\smile.png" />
     <Resource Include="Images\sad.png" />
     <Resource Include="Images\Goods.png" />
+    <Resource Include="Images\AKIKO_free-file.png" />
+    <Resource Include="AKIKO_free-file.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

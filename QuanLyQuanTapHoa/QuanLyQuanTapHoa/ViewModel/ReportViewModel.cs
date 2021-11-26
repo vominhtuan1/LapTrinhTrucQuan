@@ -363,12 +363,23 @@ namespace QuanLyQuanTapHoa.ViewModel
 
                     pdfDoc.Open();
 
+                    string root = System.IO.Directory.GetCurrentDirectory();
+                    root = root.Remove(root.Length - 10);
+
+                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine(root, "Images", "AKIKO_free-file.png"));
+
                     Paragraph para = new Paragraph(NameOfPDF(p.cbbMonth, p.cbbYear), f1);
                     Paragraph para1 = new Paragraph("Tổng lãi/lỗ : " + p.txbTong.Text, f1);
 
                     para.Alignment = Element.ALIGN_CENTER;
                     para1.Alignment = Element.ALIGN_CENTER;
 
+                    jpg.ScaleToFit(100f, 100f);
+                    jpg.SpacingBefore = 5f;
+                    jpg.SpacingAfter = 5f;
+                    jpg.Alignment = Element.ALIGN_CENTER;
+
+                    pdfDoc.Add(jpg);
                     pdfDoc.Add(para);
 
                     var spacer = new Paragraph("")

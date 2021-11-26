@@ -145,11 +145,25 @@ namespace QuanLyQuanTapHoa.ViewModel
         public void AddToCart(ProductControl p)
         {
             int index = int.Parse(p.id.Text);
-            CartItem a = new CartItem();
             foreach (SanPham i in SanPhamList)
             {
                 if (i.MaSanPham == index)
                 {
+                    for(int j=0; j< CartItemList.Count; j++)
+                    {
+                        if (CartItemList[j].SanPham.MaSanPham == i.MaSanPham)
+                        {
+                            CartItem replace = new CartItem();
+                            replace.SanPham = i;
+                            replace.SoLuong = CartItemList[j].SoLuong + 1;
+                            CartItemList[j] = replace;
+                            TotalAmount += (int)CartItemList[j].SanPham.GiaBan;
+                            Sum = FormatNumber(TotalAmount.ToString()) + " VND";
+                            Money = Sum;
+                            return;
+                        }
+                    }
+                    CartItem a = new CartItem();
                     a.SanPham = i;
                     a.SoLuong = 1;
                     TotalAmount += (int)a.SanPham.GiaBan;
@@ -195,7 +209,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             {
                 if (i.SanPham.MaSanPham == index)
                 {
-                    i.SoLuong = qty;
+                    i.SoLuong = qty;                   
                     TotalAmount += (int)((i.SoLuong - 1) * i.SanPham.GiaBan);
                     Sum = FormatNumber(TotalAmount.ToString()) + " VND";
                     Money = Sum;

@@ -16,6 +16,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Messages;
+using ToastNotifications.Position;
 
 namespace QuanLyQuanTapHoa.ViewModel
 {
@@ -23,6 +27,9 @@ namespace QuanLyQuanTapHoa.ViewModel
     {
         private ObservableCollection<SanPham> _SanPhamList;
         public ObservableCollection<SanPham> SanPhamList { get => _SanPhamList; set { _SanPhamList = value; OnPropertyChanged(); } }
+
+        private ObservableCollection<SanPham> _SanPhamKhongBayBanList;
+        public ObservableCollection<SanPham> SanPhamKhongBayBanList { get => _SanPhamKhongBayBanList; set { _SanPhamKhongBayBanList = value; OnPropertyChanged(); } }
 
         private ObservableCollection<CartItem> _CartItemList;
         public ObservableCollection<CartItem> CartItemList { get => _CartItemList; set { _CartItemList = value; OnPropertyChanged(); } }
@@ -58,6 +65,21 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand GetUidCommand { get; set; }
         public ICommand ReLoadCommand { get; set; }
 
+        Notifier notifier = new Notifier(cfg =>
+        {
+            cfg.PositionProvider = new WindowPositionProvider(
+                parentWindow: Application.Current.MainWindow,
+                corner: Corner.TopLeft,
+                offsetX: 820,
+                offsetY: 495);
+
+            cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(
+                notificationLifetime: TimeSpan.FromSeconds(8),
+                maximumNotificationCount: MaximumNotificationCount.FromCount(5));
+
+            cfg.Dispatcher = Application.Current.Dispatcher;
+        });
+
         public HomeViewModel()
         {
             CartItemList = new ObservableCollection<CartItem>();
@@ -87,6 +109,22 @@ namespace QuanLyQuanTapHoa.ViewModel
             HomeControl p = (HomeControl)e.Result;
             p.productList.Visibility = Visibility.Visible;
             p.progressBar.Visibility = Visibility.Hidden;
+            foreach (SanPham i in SanPhamList)
+            {
+                if ((int)SubtractDay((DateTime)i.HanSuDung, DateTime.Now) <= 14)
+                {
+                    ShowNotification();
+                    return;
+                }
+            }
+            foreach (SanPham i in SanPhamKhongBayBanList)
+            {
+                if ((int)SubtractDay((DateTime)i.HanSuDung, DateTime.Now) <= 14)
+                {
+                    ShowNotification();
+                    return;
+                }
+            }
         }
 
 
@@ -95,6 +133,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             HomeControl p = (HomeControl)e.Argument;
             System.Windows.Threading.Dispatcher homeDispatcher = p.Dispatcher;
             SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
+            SanPhamKhongBayBanList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0 && x.SLTrongKho > 0));
             foreach (SanPham a in SanPhamList)
             {
                 UpdateUi update = new UpdateUi(AddProductControlToScreen);
@@ -511,6 +550,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                     pdfDoc.Open();
 
                     Paragraph para = new Paragraph(NamePDF(), f1);
+
+                    string root = System.IO.Directory.GetCurrentDirectory();
+                    root = root.Remove(root.Length - 10);
+
+                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine( root ,"Images" ,"AKIKO_free-file.png"));
                     Paragraph para1 = new Paragraph("Ngày tạo : " + DateTime.Now.ToString("dd/MM/yyyy"), f);
                     Paragraph para2;
                     Paragraph para3 = new Paragraph("Tổng tiền : " + Sum, f);
@@ -534,6 +578,12 @@ namespace QuanLyQuanTapHoa.ViewModel
                     para4.Alignment = Element.ALIGN_CENTER;
                     para5.Alignment = Element.ALIGN_CENTER;
 
+                    jpg.ScaleToFit(100f, 100f);
+                    jpg.SpacingBefore = 5f;
+                    jpg.SpacingAfter = 5f;
+                    jpg.Alignment = Element.ALIGN_CENTER;
+
+                    pdfDoc.Add(jpg);
                     pdfDoc.Add(para);
                     pdfDoc.Add(para1);
                     pdfDoc.Add(para2);
@@ -556,6 +606,15 @@ namespace QuanLyQuanTapHoa.ViewModel
                 }
                 CustomMessageBox.CustomMessageBox.Show("Xuất file PFD thành công.", 3);
             }
+        }
+        public void ShowNotification()
+        {
+            notifier.ShowWarning("Có sản phẩm sắp hết hạn. Hãy vô kho xem ngay!!!");
+        }
+        public double SubtractDay(DateTime d1, DateTime d2)
+        {
+            TimeSpan time = d1 - d2;
+            return time.TotalDays;
         }
     }
 }

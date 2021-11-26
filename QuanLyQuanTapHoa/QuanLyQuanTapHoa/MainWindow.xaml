@@ -35,11 +35,6 @@
                                     <ContentPresenter Margin="5 0 5 0"
                                                       Cursor="Hand"/>
                                 </Border>
-                                <!--<ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#fe8f8f" TargetName="btnBorder"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>-->
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -55,6 +50,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+            <Image Source="AKIKO_free-file.png" Width="50" Height="50"/>
             <Button x:Name="btnHome" Grid.Row="1" Uid="1">
                 <Grid  Width="70" Height="70">
                     <Border x:Name="bdHome" Background="#fe8f8f" CornerRadius="20" >

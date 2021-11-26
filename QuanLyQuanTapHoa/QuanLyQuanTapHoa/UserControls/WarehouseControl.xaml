@@ -56,14 +56,17 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Command="{Binding OpenImportProduct}" Content="Nhập kho" VerticalAlignment="Center"
                         Foreground="White" Margin="45 0"  CommandParameter="{Binding ElementName= importList}" />
                 <Button Grid.Column="1" Command="{Binding OpenImportDetailWDCommand}" 
                         Content="Xem chi tiết nhập kho" Foreground="White" 
                          VerticalAlignment="Center"/>
-                <Grid Grid.Column="2" HorizontalAlignment="Right">
+                <Button Grid.Column="2" Margin="45 0" Command="{Binding OpendExpiredProductCommand}" 
+                        Content="Sản phẩm sắp hết hạn" Foreground="White" 
+                         VerticalAlignment="Center"/>
+                <Grid Grid.Column="3" HorizontalAlignment="Right">
                     <Border Background="White" CornerRadius="15" Margin="40 10 100 10">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <materialDesign:PackIcon Kind="Magnify" Height="25" Width="30" Foreground="#747373" Background="Transparent"/>
@@ -141,7 +144,7 @@
                         </Grid>
                     </Grid>
                     <Grid>
-                        <ScrollViewer Height="430" Background="White" VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2">
+                        <ScrollViewer Height="430" Background="White" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
                             <ItemsControl x:Name="importList" Visibility="Hidden">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>

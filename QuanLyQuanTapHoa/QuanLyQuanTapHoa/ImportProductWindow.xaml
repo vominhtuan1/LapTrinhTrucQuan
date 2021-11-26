@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d" 
-        Title="ImportProductWindow" Height="470" Width="300"  
+        Title="ImportProductWindow" Height="420" Width="300"  
         DataContext="{StaticResource WarehouseVM}" Name="OpenImportProductWD"
         WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"

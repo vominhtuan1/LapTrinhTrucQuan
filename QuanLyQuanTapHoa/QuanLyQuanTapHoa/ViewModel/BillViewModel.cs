@@ -257,6 +257,10 @@ namespace QuanLyQuanTapHoa.ViewModel
 
                     pdfDoc.Open();
 
+                    string root = System.IO.Directory.GetCurrentDirectory();
+                    root = root.Remove(root.Length - 10);
+                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine(root, "Images", "AKIKO_free-file.png"));
+
                     Paragraph para = new Paragraph(NameOfPDF(p.NgayLap), f1);
                     Paragraph para1 = new Paragraph("Ngày lập : " + p.NgayLap.Text, f);
                     Paragraph para2 = new Paragraph("Mã giảm giá : " + p.MaGG.Text, f);
@@ -270,6 +274,13 @@ namespace QuanLyQuanTapHoa.ViewModel
                     para3.Alignment = Element.ALIGN_CENTER;
                     para4.Alignment = Element.ALIGN_CENTER;
                     para5.Alignment = Element.ALIGN_CENTER;
+
+                    jpg.ScaleToFit(100f, 100f);
+                    jpg.SpacingBefore = 5f;
+                    jpg.SpacingAfter = 5f;
+                    jpg.Alignment = Element.ALIGN_CENTER;
+
+                    pdfDoc.Add(jpg);
 
                     pdfDoc.Add(para);
                     pdfDoc.Add(para1);

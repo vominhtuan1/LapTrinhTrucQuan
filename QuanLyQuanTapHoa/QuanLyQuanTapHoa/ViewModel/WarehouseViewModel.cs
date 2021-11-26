@@ -22,6 +22,8 @@ namespace QuanLyQuanTapHoa.ViewModel
         private ObservableCollection<NhapKho> _NhapKhoList;
         private ObservableCollection<ChiTietNhapKho> _ChiTietNhapKhoList;
         private ObservableCollection<SanPham> _SanPhamKhoList;
+        private ObservableCollection<SanPham> _SanPhamHetHanList;
+        private ObservableCollection<SanPham> _SanPhamList;
         private List<DonViTinh> _UnitList;
         private List<LoaiSanPham> _CategoryList;
         private BitmapImage _ImageProduct;
@@ -35,6 +37,8 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ObservableCollection<NhapKho> NhapKhoList { get => _NhapKhoList; set { _NhapKhoList = value; OnPropertyChanged(); } }
         public ObservableCollection<ChiTietNhapKho> ChiTietNhapKhoList { get => _ChiTietNhapKhoList; set { _ChiTietNhapKhoList = value; OnPropertyChanged(); } }
         public ObservableCollection<SanPham> SanPhamKhoList { get => _SanPhamKhoList; set { _SanPhamKhoList = value; OnPropertyChanged(); } }
+        public ObservableCollection<SanPham> SanPhamHetHanList { get => _SanPhamHetHanList; set { _SanPhamHetHanList = value; OnPropertyChanged(); } }
+        public ObservableCollection<SanPham> SanPhamList { get => _SanPhamList; set { _SanPhamList = value; OnPropertyChanged(); } }
         public List<DonViTinh> UnitList { get => _UnitList; set => _UnitList = value; }
         public List<LoaiSanPham> CategoryList { get => _CategoryList; set => _CategoryList = value; }
         public BitmapImage ImageProduct { get => _ImageProduct; set { _ImageProduct = value; } }
@@ -55,6 +59,9 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand OpenImportDetailWDCommand { get; set; }
         public ICommand ReloadImportDetailWDCommand { get; set; }
         public ICommand SearchCommand { get; set; }
+        public ICommand OpendExpiredProductCommand { get; set; }
+        public ICommand LoadExpiredProductCommand { get; set; }
+        public ICommand DeleteExpiredProductCommand { get; set; }
 
         #endregion
 
@@ -78,9 +85,77 @@ namespace QuanLyQuanTapHoa.ViewModel
             OpenImportDetailWDCommand = new RelayCommand<Image>((p) => { return true; }, (p) => { OpenImportDetailWindow(); });
             ReloadImportDetailWDCommand = new RelayCommand<ImportDetailWindow>((p) => { return true; }, (p) => { LoadImportDetailWindow(p, Month, Year); });
             SearchCommand = new RelayCommand<WarehouseControl>((p) => { return true; }, (p) => { SearchDetail(p); });
+            OpendExpiredProductCommand = new RelayCommand<WarehouseControl>((p) => { return true; }, (p) => { OpenExpiredWD(); });
+            LoadExpiredProductCommand = new RelayCommand<ExpiredProductWindow>((p) => { return true; }, (p) => { LoadExpiredProduct(p); });
+            DeleteExpiredProductCommand = new RelayCommand<ExpiredProductControl>((p) => { return true; }, (p) => { DeleteExpiredProduct(p); });
         }
 
-
+        public void OpenExpiredWD()
+        {
+            ExpiredProductWindow expiredProductWindow = new ExpiredProductWindow();
+            SanPhamHetHanList = new ObservableCollection<SanPham>();
+            DateTime date = DateTime.Now;
+            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
+            for (int j = 0; j < SanPhamList.Count; j++)
+            {
+                if ((int)SubtractDay((DateTime)SanPhamList[j].HanSuDung, date) <= 14 && (SanPhamList[j].SLTrongKho > 0 || SanPhamList[j].SLBayBan > 0))
+                {
+                    SanPhamHetHanList.Add(SanPhamList[j]);
+                }
+            }
+            expiredProductWindow.ShowDialog();
+        }
+        public void LoadExpiredProduct(ExpiredProductWindow expiredProductWindow)
+        {
+            int count = 1;
+            for (int i = 0; i < SanPhamHetHanList.Count; i++)
+            {
+                ExpiredProductControl expired = new ExpiredProductControl();
+                expired.MaSo.Text = count.ToString();
+                expired.id.Text = SanPhamHetHanList[i].MaSanPham.ToString();
+                expired.TenSanPham.Text = SanPhamHetHanList[i].TenSanPham;
+                expired.DonViTinh.Text = SanPhamHetHanList[i].DonViTinh.TenDonViTinh;
+                expired.LoaiSanPham.Text = SanPhamHetHanList[i].LoaiSanPham.TenLoai;
+                expired.HanSuDung.Text = SanPhamHetHanList[i].HanSuDung.Value.ToString("dd/MM/yyyy");
+                expiredProductWindow.ExpiredProductList.Items.Add(expired);
+                count++;
+            }
+        }
+        public double SubtractDay(DateTime d1, DateTime d2)
+        {
+            TimeSpan time = d1 - d2;
+            return time.TotalDays;
+        }
+        public void DeleteExpiredProduct(ExpiredProductControl expiredProduct)
+        {
+            MessageBoxResult result = CustomMessageBox.CustomMessageBox.Show("Bạn muốn xóa sản phẩm hết hạn này không?", 2);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    int index = int.Parse(expiredProduct.id.Text);
+                    foreach (SanPham i in SanPhamList)
+                    {
+                        if (i.MaSanPham == index)
+                        {
+                            var product = DataProvider.Ins.DB.SanPhams.Where(x => x.MaSanPham == index).SingleOrDefault();
+                            product.SLTrongKho += product.SLBayBan;
+                            product.SLBayBan = 0;
+                            product.SLTrongKho = 0;
+                            DataProvider.Ins.DB.SaveChanges();
+                            //SanPhamKhoList.Clear();
+                            //SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0));
+                            SanPhamHetHanList.Remove(i);
+                            ItemsControl p = (ItemsControl)expiredProduct.Parent;
+                            p.Items.Remove(expiredProduct);
+                            break;
+                        }
+                    }
+                    CustomMessageBox.CustomMessageBox.Show("Bạn đã xóa sản phẩm khỏi kho và gian hàng thành công !", 3);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+        }
         public void OpenImportProductWD(ItemsControl p)
         {
             ImportProductWindow ImportProduct = new ImportProductWindow();
@@ -121,11 +196,10 @@ namespace QuanLyQuanTapHoa.ViewModel
             ClearUI clearUI = new ClearUI(ClearProduct);
             WarehouseDispatcher.BeginInvoke(clearUI, p.importList);
 
-            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
+            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLTrongKho > 0));
             NhapKhoList = new ObservableCollection<NhapKho>(DataProvider.Ins.DB.NhapKhoes);
             UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
-            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
             ChiTietNhapKhoList = new ObservableCollection<ChiTietNhapKho>(DataProvider.Ins.DB.ChiTietNhapKhoes);
 
             foreach (SanPham i in SanPhamKhoList)

@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Security.Cryptography;
+using System.Globalization;
 
 namespace QuanLyQuanTapHoa.ViewModel
 {
@@ -136,7 +137,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             b.txbStaffPhone.Text = a.SoDienThoai;
             b.txbStaffRole.Text = a.ChucVu.TenChucVu;
             b.txbStaffAccountName.Text = a.TaiKhoan.Username;
-            b.txbStaffSalary.Text = a.Luong.ToString();
+            b.txbStaffSalary.Text = FormatNumber(a.Luong.ToString()) + " VND";
             p.Items.Add(b);
         }
 
@@ -412,10 +413,10 @@ namespace QuanLyQuanTapHoa.ViewModel
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
+        public string FormatNumber(string a)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return double.Parse(a).ToString("#,###", cul.NumberFormat);
+        }
     }
-
-
-
-
-
 }

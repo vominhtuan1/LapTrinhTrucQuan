@@ -288,7 +288,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             if (DisCountList == null)
             {
-                DisCountList = new List<GiamGia>(DataProvider.Ins.DB.GiamGias);
+                DisCountList = new List<GiamGia>(DataProvider.Ins.DB.GiamGias.Where(x => x.DaXoa != 1));
             }
             string a = p.Text;
             foreach (GiamGia i in DisCountList)
@@ -322,21 +322,6 @@ namespace QuanLyQuanTapHoa.ViewModel
             IdDiscount = 0;
             p.Text = "";
         }
-        public bool ValidateDiscount()
-        {
-            var discount = DataProvider.Ins.DB.GiamGias.Where(x => x.IdGiamGia == IdDiscount).SingleOrDefault();
-            if(discount.NgayKetThuc < DateTime.Today)
-            {
-                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này đã hết hạn!", 1);
-                return false;
-            }
-            if(discount.DonHangTu > int.Parse(ReturnFormatNumber(Money)))
-            {
-                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này chỉ áp dụng cho đơn hàng từ " + discount.DonHangTu.ToString() + "!", 1);
-                return false;
-            }
-            return true;
-        }
         public bool ValidateQuantityProduct()
         {
             foreach (CartItem i in CartItemList)
@@ -361,7 +346,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             if (discount.DonHangTu > int.Parse(ReturnFormatNumber(Sum)))
             {
-                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này chỉ áp dụng cho đơn hàng từ " + discount.DonHangTu.ToString() + "!", 1);
+                CustomMessageBox.CustomMessageBox.Show("Mã giảm giá này chỉ áp dụng cho đơn hàng từ " + FormatNumber(discount.DonHangTu.ToString()) + " VND!", 1);
                 return false;
             }
 
@@ -554,7 +539,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                     string root = System.IO.Directory.GetCurrentDirectory();
                     root = root.Remove(root.Length - 10);
 
-                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine( root ,"Images" ,"AKIKO_free-file.png"));
+                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine( root ,"Images" , "LogoApp.png"));
                     Paragraph para1 = new Paragraph("Ngày tạo : " + DateTime.Now.ToString("dd/MM/yyyy"), f);
                     Paragraph para2;
                     Paragraph para3 = new Paragraph("Tổng tiền : " + Sum, f);

@@ -100,6 +100,8 @@ namespace QuanLyQuanTapHoa.ViewModel
                         mainWindow.txtDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom("#d4d4d4");
                     }
                     mainWindow.ShowDialog();
+                    loginWindow.Username.Text = "";
+                    loginWindow.PasswordBox.Password = "";
                     loginWindow.Show();
                 }
                 else

@@ -286,9 +286,9 @@ namespace QuanLyQuanTapHoa.ViewModel
                 reportDetail.txbProductName.Text = a.TenSanPham;
                 reportDetail.txtUnit.Text = a.DonViTinh.TenDonViTinh;
                 reportDetail.txbQuantity.Text = QTY[i].ToString();
-                reportDetail.txbRevenue.Text = FormatNumber((QTY[i] * a.GiaBan).ToString());
-                reportDetail.txbPrice.Text = FormatNumber((QTY[i] * a.GiaNhap).ToString());
-                reportDetail.txbProfitLoss.Text = FormatNumber((QTY[i] * (a.GiaBan - a.GiaNhap)).ToString());
+                reportDetail.txbRevenue.Text = FormatNumber((QTY[i] * a.GiaBan).ToString()) + " VND";
+                reportDetail.txbPrice.Text = FormatNumber((QTY[i] * a.GiaNhap).ToString()) + " VND";
+                reportDetail.txbProfitLoss.Text = FormatNumber((QTY[i] * (a.GiaBan - a.GiaNhap)).ToString()) + " VND";
                 sum += (int)(QTY[i] * (a.GiaBan - a.GiaNhap));
                 p.WrapContent.Children.Add(reportDetail);
             }
@@ -366,7 +366,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                     string root = System.IO.Directory.GetCurrentDirectory();
                     root = root.Remove(root.Length - 10);
 
-                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine(root, "Images", "AKIKO_free-file.png"));
+                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine(root, "Images", "LogoApp.png"));
 
                     Paragraph para = new Paragraph(NameOfPDF(p.cbbMonth, p.cbbYear), f1);
                     Paragraph para1 = new Paragraph("Tổng lãi/lỗ : " + p.txbTong.Text, f1);

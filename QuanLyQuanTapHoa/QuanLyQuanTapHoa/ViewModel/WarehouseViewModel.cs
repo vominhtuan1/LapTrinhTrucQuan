@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -239,7 +240,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             b.txbUnit.Text = donViTinh.TenDonViTinh;
             LoaiSanPham loaiSanPham = DataProvider.Ins.DB.LoaiSanPhams.Where(x => x.MaLoai == i.MaLoai).SingleOrDefault();
             b.txbCategory.Text = loaiSanPham.TenLoai;
-            b.txbPrice.Text = i.GiaNhap.ToString();
+            b.txbPrice.Text = FormatNumber(i.GiaNhap.ToString()) + " VND";
             p.Items.Add(b);
         }
         public void DeleteProduct(ImportProductDetail ImportProductDT)
@@ -427,7 +428,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                         importDetailControl.txbCategory.Text = loai.TenLoai;
                         importDetailControl.txbUnit.Text = donVi.TenDonViTinh;
                         importDetailControl.txbQuantity.Text = j.SoLuong.ToString();
-                        importDetailControl.txbPrice.Text = product.GiaNhap.ToString();
+                        importDetailControl.txbPrice.Text = FormatNumber(product.GiaNhap.ToString()) + " VND";
                         importDetailControl.txbDate.Text = i.NgayNhap.Value.ToString("dd/MM//yyyy");
 
                         p.ListImportProductDetail.Children.Add(importDetailControl);
@@ -448,6 +449,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                     AddProductToScreen(i, product.importList);
                 }
             }
+        }
+        public string FormatNumber(string a)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return double.Parse(a).ToString("#,###", cul.NumberFormat);
         }
 
     }

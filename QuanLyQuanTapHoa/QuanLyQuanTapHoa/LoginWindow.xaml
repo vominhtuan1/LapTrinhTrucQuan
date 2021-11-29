@@ -44,7 +44,7 @@
                         </Grid>
                         <Grid Grid.Row="1">
                             <TextBox Foreground="White" Width="150" BorderBrush="White" CaretBrush="White" SelectionBrush="White"
-                             materialDesign:HintAssist.Hint="Tài khoản"
+                             materialDesign:HintAssist.Hint="Tài khoản" x:Name="Username"
                              Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" >
                                 <Validation.ErrorTemplate>

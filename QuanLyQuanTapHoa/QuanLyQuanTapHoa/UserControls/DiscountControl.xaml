@@ -37,7 +37,7 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Background="#6F89E9" CornerRadius="10" Margin="45 10 0 10">
+                                        <Border Background="#6F89E9" CornerRadius="10" Margin="45 10 0 10" HorizontalAlignment="Center" Padding="10 2">
                                             <Grid>
                                                 <ContentPresenter Margin="5" Cursor="Hand"/>
                                             </Grid>
@@ -47,8 +47,8 @@
                             </Setter>
                         </Style>
                     </Grid.Resources>
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Center" Command="{Binding OpenAddDiscount}" CommandParameter="{Binding ElementName=discountList}"
-                                Content="Thêm mã giảm giá" Foreground="White"  Width="175" Margin="55,-10,-40,10"></Button>
+                    <Button  VerticalAlignment="Center" Command="{Binding OpenAddDiscount}" CommandParameter="{Binding ElementName=discountList}"
+                                Content="Thêm mã giảm giá" Foreground="White"  Width="190" Margin="55,-10,-40,10"></Button>
                 </Grid>
                 <Grid Grid.Row="2">
                     <StackPanel Margin="20 5">

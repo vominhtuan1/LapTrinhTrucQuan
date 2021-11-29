@@ -259,7 +259,7 @@ namespace QuanLyQuanTapHoa.ViewModel
 
                     string root = System.IO.Directory.GetCurrentDirectory();
                     root = root.Remove(root.Length - 10);
-                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine(root, "Images", "AKIKO_free-file.png"));
+                    iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(Path.Combine(root, "Images", "LogoApp.png"));
 
                     Paragraph para = new Paragraph(NameOfPDF(p.NgayLap), f1);
                     Paragraph para1 = new Paragraph("Ngày lập : " + p.NgayLap.Text, f);

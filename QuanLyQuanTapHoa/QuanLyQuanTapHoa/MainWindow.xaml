@@ -50,7 +50,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="AKIKO_free-file.png" Width="50" Height="50"/>
+            <Image Source="Images/LogoApp.png" Width="55" Height="55"/>
             <Button x:Name="btnHome" Grid.Row="1" Uid="1">
                 <Grid  Width="70" Height="70">
                     <Border x:Name="bdHome" Background="#fe8f8f" CornerRadius="20" >

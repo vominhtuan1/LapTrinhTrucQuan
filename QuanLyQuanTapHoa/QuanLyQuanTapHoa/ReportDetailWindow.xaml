@@ -17,7 +17,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         DataContext="{StaticResource ReportVM}"
         x:Name="ReportDetailWD"
-        Title="Báo cáo chi tiết" Height="450" Width="800">
+        Title="Báo cáo chi tiết" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadContentForReportDetailCommand}" CommandParameter="{Binding ElementName=ReportDetailWD}"/>
@@ -111,7 +111,7 @@
                         <TextBlock Text="Lãi/lỗ"/>
                     </Border>
                 </Grid>
-                <ScrollViewer VerticalScrollBarVisibility="Hidden" Width="750" Height="200">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Width="750" Height="200">
                     <WrapPanel x:Name="WrapContent"></WrapPanel>
                 </ScrollViewer>
             </StackPanel>

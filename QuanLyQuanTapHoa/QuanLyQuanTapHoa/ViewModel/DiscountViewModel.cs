@@ -80,8 +80,8 @@ namespace QuanLyQuanTapHoa.ViewModel
             b.tbCoupoun.Text = a.Coupoun;
             b.tbNgayBatDau.Text = a.NgayBatDau.Value.ToString("dd/M/yyyy");
             b.tbNgayKetThuc.Text = a.NgayKetThuc.Value.ToString("dd/M/yyyy");
-            b.tbDonHangTu.Text = a.DonHangTu.ToString();
-            b.tbSoTienGiam.Text = a.SoTienGiam.ToString();
+            b.tbDonHangTu.Text = FormatNumber(a.DonHangTu.ToString()) + " VND";
+            b.tbSoTienGiam.Text = FormatNumber(a.SoTienGiam.ToString()) + " VND";
             p.Items.Add(b);
         }
 
@@ -103,7 +103,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             int count = 1;
             DiscountControl p = (DiscountControl)e.Argument;
             System.Windows.Threading.Dispatcher settingDispatcher = p.Dispatcher;
-            DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
+            DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias.Where(x=> x.DaXoa != 1));
 
             int index = 0;
 
@@ -115,10 +115,10 @@ namespace QuanLyQuanTapHoa.ViewModel
                 //DateTime dateNow = DateTime.Now;
                 if (DateTime.Compare(dateNow, Convert.ToDateTime(i.NgayKetThuc)) > 0)
                 {
-                    DataProvider.Ins.DB.GiamGias.Remove(i);
+                    i.DaXoa = 1;
                     DataProvider.Ins.DB.SaveChanges();
                     DiscountList.Clear();
-                    DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
+                    DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias.Where(x => x.DaXoa != 1));
                     string s = "Mã giảm giá " + i.Coupoun + " đã hết hạn !!";
                     ShowMessage showMess = new ShowMessage(ShowMessageBox);
                     settingDispatcher.BeginInvoke(showMess, s);
@@ -160,14 +160,14 @@ namespace QuanLyQuanTapHoa.ViewModel
             if (result == MessageBoxResult.Yes)
             {
                 string ss = discountDetail.tbCoupoun.Text;
-                foreach (GiamGia discount in DiscountList)
+                for (int i=0; i<DiscountList.Count; i++)
                 {
-                    if (discount.Coupoun == ss)
+                    if (DiscountList[i].Coupoun == ss)
                     {
-                        DataProvider.Ins.DB.GiamGias.Remove(discount);
+                        DiscountList[i].DaXoa = 1;
                         DataProvider.Ins.DB.SaveChanges();
                         DiscountList.Clear();
-                        DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias);
+                        DiscountList = new ObservableCollection<GiamGia>(DataProvider.Ins.DB.GiamGias.Where(x => x.DaXoa != 1));
 
                         ItemsControl p = (ItemsControl)discountDetail.Parent;
                         p.Items.Remove(discountDetail);
@@ -243,7 +243,11 @@ namespace QuanLyQuanTapHoa.ViewModel
 
             return true;
         }
-
+        public string FormatNumber(string a)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return double.Parse(a).ToString("#,###", cul.NumberFormat);
+        }
     }
 
 }

@@ -300,7 +300,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             if (IsProductExists(import))
             {
                 return;
-            }          
+            }
             SanPham sp = new SanPham
             {
                 TenSanPham = import.txbNameProduct.Text,
@@ -308,7 +308,8 @@ namespace QuanLyQuanTapHoa.ViewModel
                 GiaBan = 0,
                 SLBayBan = 0,
                 SLTrongKho = int.Parse(import.txbQuantity.Text),
-                Image = ConvertBitmapImageToByteData(ImageProduct)
+                Image = ConvertBitmapImageToByteData(ImageProduct),
+                HanSuDung = import.txbExpired.SelectedDate,
             };
 
             LoaiSanPham tempL = (LoaiSanPham)import.cbxKindsofGoods.SelectedItem;

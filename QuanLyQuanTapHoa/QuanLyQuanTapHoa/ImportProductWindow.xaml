@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QuanLyQuanTapHoa" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d" 
-        Title="ImportProductWindow" Height="420" Width="300"  
+        Title="ImportProductWindow" Height="480" Width="300"  
         DataContext="{StaticResource WarehouseVM}" Name="OpenImportProductWD"
         WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -74,14 +74,18 @@
                     </ComboBox>
                 </Border>
             </DockPanel>
-            <Button x:Name="btnSubmit" Content="Submit" Height="35"
+            <Border CornerRadius="10 10 10 10">
+                <DatePicker x:Name="txbExpired" HorizontalAlignment="Center" Width="274" 
+                              materialDesign:HintAssist.Hint="Hạn sử dụng" Height="32" Margin="10,0" />
+            </Border>
+            <Button x:Name="btnSubmit" Content="Submit" Height="34"
                 HorizontalAlignment="Center" Width="120" 
                  Style="{StaticResource MaterialDesignRaisedButton}" 
                  materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="1" 
                  materialDesign:RippleAssist.Feedback="Pink"
                  Foreground="White"
                 VerticalAlignment="Bottom"   Background="#F73B4F"
-                Command="{Binding SubmitImportProducttoWarehouse}" CommandParameter="{Binding ElementName=OpenImportProductWD}"/>
+                Command="{Binding SubmitImportProducttoWarehouse}" CommandParameter="{Binding ElementName=OpenImportProductWD}" Margin="87,0" RenderTransformOrigin="0.49,1.132"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -31,7 +31,7 @@
             <TextBlock Text="Sửa sản phẩm" FontSize="20" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <Grid Grid.Row="1" Margin="16 0">
-            <TextBlock x:Name="id"></TextBlock>
+            <TextBlock x:Name="id" Foreground="White"></TextBlock>
             <TextBox IsEnabled="False" x:Name="txbProductName" materialDesign:HintAssist.Hint="Tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="2" Margin="16 0">

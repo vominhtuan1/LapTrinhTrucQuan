@@ -102,7 +102,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             if(SanPhamList[index].SLBayBan > 0)
             {
                 productDetail.txbQuantity.Text = SanPhamList[index].SLBayBan.ToString();
-                productDetail.txbPrice.Text = SanPhamList[index].GiaBan.ToString();
+                productDetail.txbPrice.Text = FormatNumber(SanPhamList[index].GiaBan.ToString())+ " VND";
             }
         }
         public void AddProductToScreen(SanPham a ,ItemsControl p)
@@ -182,11 +182,23 @@ namespace QuanLyQuanTapHoa.ViewModel
                 {
                     ThemTuKho = int.Parse(tempSLThemTuKho);
                 }
+                else
+                {
+                    isUpdateProductSuccess = false;
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại. Chỉ nhập các kí tự số vào ô Thêm từ kho", 1);
+                    return;
+                }
 
                 if (ThemTuKho > product.SLTrongKho)
                 {
                     isUpdateProductSuccess = false;
                     CustomMessageBox.CustomMessageBox.Show("Số lượng thêm vượt quá số lượng trong kho!", 1);
+                    return;
+                }
+                else if( ThemTuKho <= 0)
+                {
+                    isUpdateProductSuccess = false;
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại. Số lượng thêm từ kho phải lớn hơn 0!", 1);
                     return;
                 }
                 else
@@ -199,9 +211,21 @@ namespace QuanLyQuanTapHoa.ViewModel
             {
                 int SLBayBan = 0;
                 string tempSLBayBan = editProductWindow.txbSoLuongBayBan.Text;
+                if(tempSLBayBan == "")
+                {
+                    isUpdateProductSuccess = false;
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập số lượng bày bán của sản phẩm", 1);
+                    return;
+                }
                 if (tempSLBayBan.Length > 0 && IsDigitsOnly(tempSLBayBan))
                 {
                     SLBayBan = int.Parse(tempSLBayBan);
+                }
+                else
+                {
+                    isUpdateProductSuccess = false;
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại. Chỉ nhập các kí tự số vào ô Số lượng bày bán!", 1);
+                    return;
                 }
                 if (SLBayBan > product.SLBayBan)
                 {
@@ -209,8 +233,20 @@ namespace QuanLyQuanTapHoa.ViewModel
                     CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại. Số lượng bày bán phải nhỏ hơn lúc chưa chỉnh sửa!", 1);
                     return;
                 }
+                if (SLBayBan <= 0)
+                {
+                    isUpdateProductSuccess = false;
+                    CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại. Số lượng bày bán phải lớn hơn 0!", 1);
+                    return;
+                }
                 product.SLTrongKho += product.SLBayBan - SLBayBan;
                 product.SLBayBan = SLBayBan;
+            }
+            if(editProductWindow.txbPrice.Text == "")
+            {
+                CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập giá bán!", 1);
+                isUpdateProductSuccess = false;
+                return;
             }
             if (!IsDigitsOnly(editProductWindow.txbPrice.Text))
             {
@@ -226,7 +262,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         public void DeleteProduct(ProductDetailControl productDetail)
         {
-            MessageBoxResult result = CustomMessageBox.CustomMessageBox.Show("Bạn muốn xóa sản phẩm không?", 2);
+            MessageBoxResult result = CustomMessageBox.CustomMessageBox.Show("Bạn muốn xóa sản phẩm khỏi gian hàng không?", 2);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -271,6 +307,12 @@ namespace QuanLyQuanTapHoa.ViewModel
             int SLBayBan = 0;
             string tempSLBayBan = addProductWindow.txbSLBayBan.Text;
             string tempPrice = addProductWindow.txbGiaBan.Text;
+            if (p == null)
+            {
+                isAddProductSuccess = false;
+                CustomMessageBox.CustomMessageBox.Show("Vui lòng chọn sản phẩm để thêm vào gian hàng!", 1);
+                return;
+            }
             if (tempSLBayBan.Length > 0 && IsDigitsOnly(tempSLBayBan))
             {
                 SLBayBan = int.Parse(tempSLBayBan);
@@ -297,6 +339,12 @@ namespace QuanLyQuanTapHoa.ViewModel
             {
                 p.SLBayBan = SLBayBan;
                 p.SLTrongKho -= SLBayBan;
+            }
+            if(tempPrice.Length == 0 || tempPrice == "0")
+            {
+                isAddProductSuccess = false;
+                CustomMessageBox.CustomMessageBox.Show("Vui lòng nhập lại giá bán!", 1);
+                return;
             }
             if (!IsDigitsOnly(tempPrice))
             {

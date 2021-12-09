@@ -475,7 +475,6 @@
     <Resource Include="Images\sad.png" />
     <Resource Include="Images\Goods.png" />
     <Resource Include="Images\AKIKO_free-file.png" />
-    <Resource Include="AKIKO_free-file.png" />
     <Resource Include="Images\IconApp.ico" />
     <Resource Include="Images\LogoApp.png" />
     <Content Include="Model\Model1.Context.tt">

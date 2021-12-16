@@ -120,7 +120,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                 staffDetail.txbStaffBY.Text = edit.txbStaffBY.Text;
                 staffDetail.txbStaffSex.Text = edit.cbStaffSex.Text;
                 staffDetail.txbStaffPhone.Text = edit.txbStaffPhone.Text;
-                staffDetail.txbStaffSalary.Text = edit.txbStaffSalary.Text;
+                staffDetail.txbStaffSalary.Text = FormatNumber(edit.txbStaffSalary.Text) + " VND";
                 staffDetail.txbStaffRole.Text = edit.cbStaffRole.Text;
                 staffDetail.txbStaffAccountName.Text = edit.txbStaffUser.Text;
                 isUpdateStaffSuccess = false;

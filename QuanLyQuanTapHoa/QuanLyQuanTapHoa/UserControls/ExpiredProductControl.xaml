@@ -7,13 +7,13 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              x:Name="ExpiredProductCT"
              mc:Ignorable="d" 
-             Height="25" Width="548"
+             Height="25" Width="648"
              Background="White">
     <Border>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -36,7 +36,7 @@
                 </Border>
             </Grid>
             <Border Grid.Column="1">
-                <TextBlock x:Name="TenSanPham" Text="Tên sản phẩm"/>
+                <TextBlock x:Name="TenSanPham" Text="Tên sản phẩm" TextWrapping="Wrap"/>
             </Border>
             <Border Grid.Column="2">
                 <TextBlock x:Name="DonViTinh" Text="Đơn vị tính"/>

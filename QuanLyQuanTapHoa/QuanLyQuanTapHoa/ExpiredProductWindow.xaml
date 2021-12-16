@@ -18,10 +18,10 @@
         <TextBlock Grid.Row="0" Text="Sản phẩm sắp hết hạn" FontSize="20" HorizontalAlignment="Center" Margin="10"/>
         <Grid Grid.Row="1">
             <StackPanel>
-                <Grid Height="25" Width="550" >
+                <Grid Height="25" Width="650" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -57,8 +57,8 @@
                     <Border Grid.Column="5" CornerRadius="0 10 0 0" BorderThickness="0">
                     </Border>
                 </Grid>
-                <Border Width="550"  BorderThickness="1" BorderBrush="#cccccc">
-                    <ScrollViewer MaxHeight="150" VerticalScrollBarVisibility="Auto">
+                <Border Width="650"  BorderThickness="1" BorderBrush="#cccccc">
+                    <ScrollViewer MaxHeight="250" VerticalScrollBarVisibility="Auto">
                         <ItemsControl x:Name="ExpiredProductList">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Loaded">

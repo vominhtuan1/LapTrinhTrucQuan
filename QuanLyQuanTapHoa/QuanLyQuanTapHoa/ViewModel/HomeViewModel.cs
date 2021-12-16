@@ -196,9 +196,9 @@ namespace QuanLyQuanTapHoa.ViewModel
                             replace.SanPham = i;
                             replace.SoLuong = CartItemList[j].SoLuong + 1;
                             CartItemList[j] = replace;
-                            TotalAmount += (int)CartItemList[j].SanPham.GiaBan;
+                            TotalAmount += (int)CartItemList[j].SanPham.GiaBan ;
                             Sum = FormatNumber(TotalAmount.ToString()) + " VND";
-                            Money = Sum;
+                            Money = FormatNumber((TotalAmount - int.Parse(ReturnFormatNumber(DiscountMoney))).ToString()) + " VND";
                             return;
                         }
                     }
@@ -207,7 +207,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                     a.SoLuong = 1;
                     TotalAmount += (int)a.SanPham.GiaBan;
                     Sum = FormatNumber(TotalAmount.ToString()) + " VND";
-                    Money = Sum;
+                    Money = FormatNumber((TotalAmount - int.Parse(ReturnFormatNumber(DiscountMoney))).ToString()) + " VND";
                     CartItemList.Add(a);
                     return;
                 }
@@ -229,7 +229,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                     {
                         Sum = FormatNumber(TotalAmount.ToString()) + " VND";
                     }
-                    Money = Sum;
+                    Money = FormatNumber((TotalAmount - int.Parse(ReturnFormatNumber(DiscountMoney))).ToString()) + " VND";
                     CartItemList.Remove(i);
                     return;
                 }

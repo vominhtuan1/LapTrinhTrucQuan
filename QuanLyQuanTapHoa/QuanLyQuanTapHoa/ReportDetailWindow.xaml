@@ -34,7 +34,7 @@
         <TextBlock Grid.Row="0" Text="Báo Cáo Chi Tiết" FontSize="24" HorizontalAlignment="Center" Margin="10"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Chọn Tháng" VerticalAlignment="Center"/>
-            <ComboBox MinWidth="72" Margin="10 0 0 0" SelectedItem="{Binding Month}"
+            <ComboBox MinWidth="72" Margin="10 0 0 0" 
                       materialDesign:HintAssist.Hint="11" ItemsSource="{Binding Months}"
                       x:Name="cbbMonth">
                 <ComboBox.ItemsPanel>
@@ -49,7 +49,7 @@
                 </i:Interaction.Triggers>
             </ComboBox>
             <TextBlock Text="Chọn Năm" VerticalAlignment="Center" Margin="100 0 0 0"/>
-            <ComboBox MinWidth="72" Margin="10 0 0 0" SelectedItem="{Binding Year}"
+            <ComboBox MinWidth="72" Margin="10 0 0 0" 
                       materialDesign:HintAssist.Hint="2021" x:Name="cbbYear"
                       ItemsSource="{Binding Years}">
                 <ComboBox.ItemsPanel>

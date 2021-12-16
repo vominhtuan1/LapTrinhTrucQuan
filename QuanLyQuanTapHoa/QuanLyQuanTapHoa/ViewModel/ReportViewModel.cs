@@ -56,8 +56,13 @@ namespace QuanLyQuanTapHoa.ViewModel
         private int _Year;
         public int Year { get => _Year; set { _Year = value; } }
 
+        private int _YearForCol;
+        public int YearForCol { get => _YearForCol; set { _YearForCol = value; } }
+
         private int _Quater;
         public int Quater { get => _Quater; set { _Quater = value; } }
+
+        private bool isFirstVisible = true;
 
         private BackgroundWorker worker;
 
@@ -68,6 +73,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         public ICommand LoadContentForReportDetailCommand { get; set; }
         public ICommand ReloadReportDatilCommand { get; set; }
         public ICommand TakeCaptureCommand { get; set; }
+
         public ReportViewModel()
         {
             LoadCommand = new RelayCommand<ReportControl>((p) => {
@@ -76,14 +82,13 @@ namespace QuanLyQuanTapHoa.ViewModel
                     return true;
                 }
                 return false;
-            }, (p) => { Load(p); });
+            }, (p) => { if (isFirstVisible) { Load(p); isFirstVisible = false; } else { ReloadReport(); } });
             ReloadPieChartCommand = new RelayCommand<ComboBox>((p) => { return true; }, (p) => { ReloadPieChart(p); });
             ReloadColChartCommand = new RelayCommand<ComboBox>((p) => { return true; }, (p) => { ReloadColChart(p); });
             OpenReportDetailWindowCommand = new RelayCommand<ComboBox>((p) => { return true; }, (p) => { OpenReportDetailWindow(); });
-            LoadContentForReportDetailCommand = new RelayCommand<ReportDetailWindow>((p) => { return true; }, (p) => { LoadContentForReportDetail(11, 2021, p); });
-            ReloadReportDatilCommand = new RelayCommand<ReportDetailWindow>((p) => { return true; }, (p) => { LoadContentForReportDetail(Month, Year, p); });
+            LoadContentForReportDetailCommand = new RelayCommand<ReportDetailWindow>((p) => { return true; }, (p) => { LoadContentForReportDetail(p); });
+            ReloadReportDatilCommand = new RelayCommand<ReportDetailWindow>((p) => { return true; }, (p) => { LoadContentForReportDetail(p); });
             TakeCaptureCommand = new RelayCommand<ReportDetailWindow>((p) => { return true; }, (p) => { TakeCapture(p); });
-
         }
         public void Load(ReportControl p)
         {
@@ -99,18 +104,49 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             Month = DateTime.Now.Month;
             Year = DateTime.Now.Year;
+            Quater = GetQuater(Month);
+            YearForCol = DateTime.Now.Year;
 
             ReportControl p = (ReportControl)e.Argument;
-            System.Windows.Threading.Dispatcher homeDispatcher = p.Dispatcher;
+            System.Windows.Threading.Dispatcher reportDispatcher = p.Dispatcher;
 
-            UpdateUi update = new UpdateUi(InitPieChart);
-            homeDispatcher.BeginInvoke(update, 11, 2021);
-            UpdateUi update1 = new UpdateUi(InitColumnChart);
-            homeDispatcher.BeginInvoke(update1, 4, 2021);
             UpdateUi update2 = new UpdateUi(InitComboboxYear);
-            homeDispatcher.BeginInvoke(update2, 1, 1);
+            reportDispatcher.BeginInvoke(update2, 1, 1);
+            InitSelectedItemForCombobox init = new InitSelectedItemForCombobox(InitSelectedItem);
+            reportDispatcher.BeginInvoke(init, p.PieMonth, p.PieYear, p.ColQuater, p.ColYear);
         }
         public delegate void UpdateUi(int a, int b);
+        public delegate void InitSelectedItemForCombobox(ComboBox a, ComboBox b, ComboBox c, ComboBox d);
+        public void InitSelectedItem(ComboBox a, ComboBox b, ComboBox c, ComboBox d)
+        {
+            a.SelectedItem = Month;
+            b.SelectedItem = Year;
+            d.SelectedItem = Year;
+            c.SelectedItem = GetQuater(Month);
+        }
+        public int GetQuater(int Month)
+        {
+            switch (Month)
+            {
+                case 1:
+                case 2:
+                case 3:
+                    return 1;
+                case 4:
+                case 5:
+                case 6:
+                    return 2;
+                case 7:
+                case 8:
+                case 9:
+                    return 3;
+                case 10:
+                case 11:
+                case 12:
+                    return 4;
+            }
+            return 1;
+        }
         public void InitComboboxYear(int a, int b)
         {
             Years = new List<int>();
@@ -243,17 +279,23 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             if (p.Name == "ColYear")
             {
-                Year = int.Parse(p.SelectedItem.ToString());
+                YearForCol = int.Parse(p.SelectedItem.ToString());
             }
-            InitColumnChart(Quater, Year);
+            InitColumnChart(Quater, YearForCol);
         }
         public void OpenReportDetailWindow()
         {
             ReportDetailWindow reportDetailWindow = new ReportDetailWindow();
+            reportDetailWindow.cbbMonth.SelectedItem = DateTime.Now.Month;
+            reportDetailWindow.cbbYear.SelectedItem = DateTime.Now.Year;
+
             reportDetailWindow.ShowDialog();
         }
-        public void LoadContentForReportDetail(int month, int year, ReportDetailWindow p)
+        public void LoadContentForReportDetail(ReportDetailWindow p)
         {
+            int month = int.Parse(p.cbbMonth.SelectedItem.ToString());
+            int year = int.Parse(p.cbbYear.SelectedItem.ToString());
+
             BillList = new ObservableCollection<HoaDon>(DataProvider.Ins.DB.HoaDons.Where(x => x.NgayLapHoaDon.Value.Month == month && x.NgayLapHoaDon.Value.Year == year));
             List<int> MaSP = new List<int>();
             List<int> QTY = new List<int>();
@@ -399,6 +441,11 @@ namespace QuanLyQuanTapHoa.ViewModel
                 }
                 CustomMessageBox.CustomMessageBox.Show("Xuất file PFD thành công.", 3);
             }
+        }
+        public void ReloadReport()
+        {
+            InitPieChart(Month, Year);
+            InitColumnChart(Quater, YearForCol);
         }
     }
 }

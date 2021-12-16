@@ -70,10 +70,13 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             AddProductWindow addProductWindow = new AddProductWindow();
             addProductWindow.ShowDialog();
-            int index = SanPhamList.Count;
-            SanPham a = new SanPham();
-            a = SanPhamList[index - 1];
-            AddProductToScreen(a, p);
+            if(isAddProductSuccess)
+            {
+                int index = SanPhamList.Count;
+                SanPham a = new SanPham();
+                a = SanPhamList[index - 1];
+                AddProductToScreen(a, p);
+            }
         }
 
         public void OpenEditProductWD(ProductDetailControl productDetail)
@@ -276,7 +279,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                             product.SLBayBan = 0;
                             DataProvider.Ins.DB.SaveChanges();
                             SanPhamKhoList.Clear();
-                            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0));
+                            SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0 && x.SLTrongKho > 0));
                             SanPhamList.Remove(i);
                             ItemsControl p = (ItemsControl)productDetail.Parent;
                             p.Items.Remove(productDetail);

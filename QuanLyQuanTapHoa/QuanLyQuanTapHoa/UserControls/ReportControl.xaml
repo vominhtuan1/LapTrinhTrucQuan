@@ -48,7 +48,7 @@
                                 <TextBlock Text="Chọn Tháng: " VerticalAlignment="Center" Margin="50 0 0 0"/>
                                 <WrapPanel Background="White">
                                     <ComboBox MinWidth="72" Margin="0 0 0 0" x:Name="PieMonth"
-                                              materialDesign:HintAssist.Hint="11"
+                                              
                                               ItemsSource="{Binding Months}">
                                         <ComboBox.ItemsPanel>
                                             <ItemsPanelTemplate>

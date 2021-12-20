@@ -30,7 +30,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         public List<DonViTinh> UnitList { get => _UnitList; set => _UnitList = value; }
 
         public bool isUpdateProductSuccess = true;
-        public bool isAddProductSuccess = true;
+        public bool isAddProductSuccess = false;
 
         private BackgroundWorker worker;
 
@@ -76,6 +76,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                 SanPham a = new SanPham();
                 a = SanPhamList[index - 1];
                 AddProductToScreen(a, p);
+                isAddProductSuccess = false;
             }
         }
 

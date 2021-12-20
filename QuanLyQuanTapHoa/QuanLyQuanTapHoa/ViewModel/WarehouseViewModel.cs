@@ -96,7 +96,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             ExpiredProductWindow expiredProductWindow = new ExpiredProductWindow();
             SanPhamHetHanList = new ObservableCollection<SanPham>();
             DateTime date = DateTime.Now;
-            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
+            
             for (int j = 0; j < SanPhamList.Count; j++)
             {
                 if ((int)SubtractDay((DateTime)SanPhamList[j].HanSuDung, date) <= 14 && (SanPhamList[j].SLTrongKho > 0 || SanPhamList[j].SLBayBan > 0))
@@ -197,6 +197,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             ClearUI clearUI = new ClearUI(ClearProduct);
             WarehouseDispatcher.BeginInvoke(clearUI, p.importList);
 
+            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
             SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLTrongKho > 0));
             NhapKhoList = new ObservableCollection<NhapKho>(DataProvider.Ins.DB.NhapKhoes);
             UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
@@ -405,6 +406,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             }
             ImportDetailWindow importDetailWindow = new ImportDetailWindow();
             LoadImportDetailWindow(importDetailWindow, DateTime.Now.Month, DateTime.Now.Year);
+            importDetailWindow.cbbMonth.SelectedItem = DateTime.Now.Month;
             importDetailWindow.ShowDialog();
         }
         public void LoadImportDetailWindow(ImportDetailWindow p, int month, int year)

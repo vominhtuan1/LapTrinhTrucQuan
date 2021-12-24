@@ -73,6 +73,10 @@
                         </ItemsControl>
                     </ScrollViewer>
                 </Border>
+                <ProgressBar
+                   x:Name="progressBar" Width="60" Height="60"
+                   Style="{StaticResource MaterialDesignCircularProgressBar}"
+                   Value="0" IsIndeterminate="True" Margin="80"/>
             </StackPanel>
         </Grid>
     </Grid>

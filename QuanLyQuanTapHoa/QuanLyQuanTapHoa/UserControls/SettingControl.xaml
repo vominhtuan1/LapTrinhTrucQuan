@@ -135,11 +135,11 @@
                         <Grid>
                             <ScrollViewer Height="450" Background="White" VerticalScrollBarVisibility="Auto">
                                 <ItemsControl x:Name="productList" Visibility="Hidden">
-                                    <i:Interaction.Triggers>
+                                    <!--<i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Loaded">
                                             <i:InvokeCommandAction Command="{Binding LoadCommand}" CommandParameter="{Binding ElementName=SettingCT}" />
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>
+                                    </i:Interaction.Triggers>-->
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel/>
@@ -150,7 +150,7 @@
                             <ProgressBar
                                 Name="progressBar" Width="80" Height="80"
                                 Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                Value="20" IsIndeterminate="True"/>
+                                Value="0" IsIndeterminate="True"/>
                         </Grid>
                     </StackPanel>
                 </Grid>

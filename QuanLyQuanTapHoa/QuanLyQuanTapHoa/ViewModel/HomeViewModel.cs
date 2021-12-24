@@ -34,7 +34,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         private ObservableCollection<CartItem> _CartItemList;
         public ObservableCollection<CartItem> CartItemList { get => _CartItemList; set { _CartItemList = value; OnPropertyChanged(); } }
 
-        private BackgroundWorker worker;
+        private BackgroundWorker worker, worker1;
 
 
         public int TotalAmount = 0;
@@ -145,42 +145,76 @@ namespace QuanLyQuanTapHoa.ViewModel
         public delegate void UpdateUi(SanPham a, ItemsControl p);
         public void ReLoad(HomeControl h)
         {
-            if (h.IsVisible == true)
+            if(h.IsVisible == true)
             {
-                int index;
-                h.productList.Items.Clear();
-                SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
-                if (isCategorySelecetd)
-                {
-                    index = int.Parse(uid);
-                }
-                else
-                {
-                    index = 0;
-                }
-                 
-                if (index == 0)
-                {
-                    foreach (SanPham a in SanPhamList)
-                    {
-                        AddProductControlToScreen(a, h.productList);
-                    }
-                    return;
-                }
-                else
-                {
-                    foreach (SanPham a in SanPhamList)
-                    {
-                        if (a.MaLoai == index)
-                        {
-                            AddProductControlToScreen(a, h.productList);
-                        }
-                    }
-                    return;
-                }
+                worker1 = new BackgroundWorker();
+                worker1.DoWork += Worker_DoWork1;
+                worker1.RunWorkerCompleted += Worker_RunWorkerCompleted1;
+                worker1.RunWorkerAsync(h);
             }
             return;
         }
+
+        private void Worker_RunWorkerCompleted1(object sender, RunWorkerCompletedEventArgs e)
+        {
+            HomeControl h = (HomeControl)e.Result;
+            h.productList.Visibility = Visibility.Visible;
+            h.progressBar.Visibility = Visibility.Hidden;
+        }
+
+        private void Worker_DoWork1(object sender, DoWorkEventArgs e)
+        {
+            HomeControl h = (HomeControl)e.Argument;
+            System.Windows.Threading.Dispatcher homeDispatcher = h.Dispatcher;
+
+            ShowProgressBar showPB = new ShowProgressBar(showCircleBar);
+            homeDispatcher.BeginInvoke(showPB, h);
+            ClearUI clear = new ClearUI(clearItemsControl);
+            homeDispatcher.BeginInvoke(clear, h.productList);
+
+            int index = 0;
+            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
+            if (isCategorySelecetd)
+            {
+                index = int.Parse(uid);
+            }
+
+            if (index == 0)
+            {
+                foreach (SanPham a in SanPhamList)
+                {
+                    UpdateUi update = new UpdateUi(AddProductControlToScreen);
+                    homeDispatcher.BeginInvoke(update, a, h.productList);
+                }
+            }
+            else
+            {
+                foreach (SanPham a in SanPhamList)
+                {
+                    if (a.MaLoai == index)
+                    {
+                        UpdateUi update = new UpdateUi(AddProductControlToScreen);
+                        homeDispatcher.BeginInvoke(update, a, h.productList);
+                    }
+                }
+            }
+            e.Result = h;
+        }
+
+        public delegate void ShowProgressBar(HomeControl h);
+        public delegate void ClearUI(ItemsControl i);
+
+        public void clearItemsControl(ItemsControl i)
+        {
+            i.Items.Clear();
+        }
+
+        public void showCircleBar(HomeControl h)
+        {
+            h.progressBar.Visibility = Visibility.Visible;
+            h.productList.Visibility = Visibility.Hidden;
+        }
+
         public void AddToCart(ProductControl p)
         {
             int index = int.Parse(p.id.Text);

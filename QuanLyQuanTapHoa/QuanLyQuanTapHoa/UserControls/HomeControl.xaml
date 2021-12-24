@@ -84,10 +84,10 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnAll}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -102,11 +102,12 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnDoUong}"/>
                             </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
+                            </i:EventTrigger>
+                            
                         </i:Interaction.Triggers>
                     </Button>
                     <Button Height="auto" Width="auto" x:Name="btnSua" x:Uid="2">
@@ -120,10 +121,10 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnSua}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -138,10 +139,10 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnMiGoi}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -156,10 +157,10 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnDauGiaVi}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -174,10 +175,10 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnVeSinh}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -192,10 +193,10 @@
                         </Border>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
                                 <i:InvokeCommandAction Command="{Binding GetUidCommand}" CommandParameter="{Binding ElementName=btnBanhKeo}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding FilterProductCommand}" CommandParameter="{Binding ElementName=HomeCT}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -212,7 +213,7 @@
                 <ProgressBar
                     Name="progressBar" Width="50" Height="50"
                     Style="{StaticResource MaterialDesignCircularProgressBar}"
-                    Value="20" IsIndeterminate="True"/>
+                    Value="0" IsIndeterminate="True"/>
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ItemsControl x:Name="productList" Visibility="Hidden">
                         <i:Interaction.Triggers>

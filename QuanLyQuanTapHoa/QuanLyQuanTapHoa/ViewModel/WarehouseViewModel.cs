@@ -66,7 +66,7 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         #endregion
 
-        private BackgroundWorker worker;
+        private BackgroundWorker worker,worker1;
         public bool isImportSuccess = false;
         public bool isFirst = false;
 
@@ -87,16 +87,40 @@ namespace QuanLyQuanTapHoa.ViewModel
             ReloadImportDetailWDCommand = new RelayCommand<ImportDetailWindow>((p) => { return true; }, (p) => { LoadImportDetailWindow(p, Month, Year); });
             SearchCommand = new RelayCommand<WarehouseControl>((p) => { return true; }, (p) => { SearchDetail(p); });
             OpendExpiredProductCommand = new RelayCommand<WarehouseControl>((p) => { return true; }, (p) => { OpenExpiredWD(); });
-            LoadExpiredProductCommand = new RelayCommand<ExpiredProductWindow>((p) => { return true; }, (p) => { LoadExpiredProduct(p); });
+            LoadExpiredProductCommand = new RelayCommand<ExpiredProductWindow>((p) => { return true; }, (p) => { LoadExpiredWD(p); });
             DeleteExpiredProductCommand = new RelayCommand<ExpiredProductControl>((p) => { return true; }, (p) => { DeleteExpiredProduct(p); });
         }
 
         public void OpenExpiredWD()
         {
             ExpiredProductWindow expiredProductWindow = new ExpiredProductWindow();
+            expiredProductWindow.ShowDialog();
+        }
+        public void LoadExpiredWD(ExpiredProductWindow p)
+        {
+            worker1 = new BackgroundWorker();
+            worker1.DoWork += Worker_DoWork1;
+            worker1.RunWorkerCompleted += Worker_RunWorkerCompleted1;
+            worker1.RunWorkerAsync(p);
+
+        }
+
+        private void Worker_RunWorkerCompleted1(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ExpiredProductWindow p = (ExpiredProductWindow)e.Result;
+            p.progressBar.Visibility = Visibility.Hidden;
+            p.ExpiredProductList.Visibility = Visibility.Visible;
+        }
+
+        private void Worker_DoWork1(object sender, DoWorkEventArgs e)
+        {
+            ExpiredProductWindow p = (ExpiredProductWindow)e.Argument;
+            System.Windows.Threading.Dispatcher ExpiredDispatcher = p.Dispatcher;
+
+            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
             SanPhamHetHanList = new ObservableCollection<SanPham>();
             DateTime date = DateTime.Now;
-            
+
             for (int j = 0; j < SanPhamList.Count; j++)
             {
                 if ((int)SubtractDay((DateTime)SanPhamList[j].HanSuDung, date) <= 14 && (SanPhamList[j].SLTrongKho > 0 || SanPhamList[j].SLBayBan > 0))
@@ -104,8 +128,25 @@ namespace QuanLyQuanTapHoa.ViewModel
                     SanPhamHetHanList.Add(SanPhamList[j]);
                 }
             }
-            expiredProductWindow.ShowDialog();
+
+           
+
+            AddUI1 addUI1 = new AddUI1(LoadExpiredProduct);
+            ExpiredDispatcher.BeginInvoke(addUI1, p);
+
+            e.Result = p;
         }
+
+        public delegate void ShowProgress1(ExpiredProductWindow p);
+        public delegate void AddUI1(ExpiredProductWindow p);
+
+        public void ShowProgressBar1(ExpiredProductWindow p)
+        {
+            p.progressBar.Visibility = Visibility.Visible;
+            p.ExpiredProductList.Visibility = Visibility.Hidden;
+            p.ExpiredProductList.Items.Clear();
+        }
+
         public void LoadExpiredProduct(ExpiredProductWindow expiredProductWindow)
         {
             int count = 1;
@@ -159,6 +200,8 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         public void OpenImportProductWD(ItemsControl p)
         {
+            UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
+            CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
             ImportProductWindow ImportProduct = new ImportProductWindow();
             ImportProduct.ShowDialog();
             if (isImportSuccess)
@@ -194,23 +237,15 @@ namespace QuanLyQuanTapHoa.ViewModel
             WarehouseControl p = (WarehouseControl)e.Argument;
             System.Windows.Threading.Dispatcher WarehouseDispatcher = p.Dispatcher;
 
-            ClearUI clearUI = new ClearUI(ClearProduct);
-            WarehouseDispatcher.BeginInvoke(clearUI, p.importList);
+            ShowProgress progress = new ShowProgress(ShowProgressBar);
+            WarehouseDispatcher.BeginInvoke(progress, p);
 
-            SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams);
             SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLTrongKho > 0));
-            NhapKhoList = new ObservableCollection<NhapKho>(DataProvider.Ins.DB.NhapKhoes);
-            UnitList = new List<DonViTinh>(DataProvider.Ins.DB.DonViTinhs);
-            CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
-            ChiTietNhapKhoList = new ObservableCollection<ChiTietNhapKho>(DataProvider.Ins.DB.ChiTietNhapKhoes);
 
             foreach (SanPham i in SanPhamKhoList)
             {
-                if (i.SLTrongKho > 0)
-                {
-                    AddUi update = new AddUi(AddProductToScreen);
-                    WarehouseDispatcher.BeginInvoke(update, i, p.importList);
-                }
+                AddUi update = new AddUi(AddProductToScreen);
+                WarehouseDispatcher.BeginInvoke(update, i, p.importList);
             }
             e.Result = p;
         }
@@ -225,10 +260,18 @@ namespace QuanLyQuanTapHoa.ViewModel
 
         public delegate void ClearUI(ItemsControl p);
         public delegate void AddUi(SanPham a, ItemsControl p);
+        public delegate void ShowProgress(WarehouseControl p);
 
         public void ClearProduct(ItemsControl p)
         {
             p.Items.Clear();
+        }
+
+        public void ShowProgressBar(WarehouseControl p)
+        {
+            p.progressBar.Visibility = Visibility.Visible;
+            p.importList.Visibility = Visibility.Hidden;
+            p.importList.Items.Clear();
         }
 
         public void AddProductToScreen(SanPham i, ItemsControl p)
@@ -399,6 +442,9 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         public void OpenImportDetailWindow()
         {
+            NhapKhoList = new ObservableCollection<NhapKho>(DataProvider.Ins.DB.NhapKhoes);
+            ChiTietNhapKhoList = new ObservableCollection<ChiTietNhapKho>(DataProvider.Ins.DB.ChiTietNhapKhoes);
+
             if (isFirst == false)
             {
                 InitYear(DateTime.Now.Year);

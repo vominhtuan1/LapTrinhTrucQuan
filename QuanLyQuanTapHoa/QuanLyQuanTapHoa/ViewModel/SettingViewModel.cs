@@ -139,6 +139,10 @@ namespace QuanLyQuanTapHoa.ViewModel
         {
             SettingControl p = (SettingControl)e.Argument;
             System.Windows.Threading.Dispatcher settingDispatcher = p.Dispatcher;
+
+            ShowProgress showProgress = new ShowProgress(ShowProgressbar);
+            settingDispatcher.BeginInvoke(showProgress, p);
+
             SanPhamList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan > 0));
             SanPhamKhoList = new ObservableCollection<SanPham>(DataProvider.Ins.DB.SanPhams.Where(x => x.SLBayBan == 0 && x.SLTrongKho > 0));
             CategoryList = new List<LoaiSanPham>(DataProvider.Ins.DB.LoaiSanPhams);
@@ -157,6 +161,14 @@ namespace QuanLyQuanTapHoa.ViewModel
         public delegate void UpdateUi(SanPham a, ItemsControl p);
 
         public delegate void ClearUI(ItemsControl p);
+
+        public delegate void ShowProgress(SettingControl p);
+
+        public void ShowProgressbar(SettingControl p)
+        {
+            p.progressBar.Visibility = Visibility.Visible;
+            p.productList.Visibility = Visibility.Hidden;
+        }
 
         public void ClearItemsControl(ItemsControl p)
         {
@@ -266,7 +278,7 @@ namespace QuanLyQuanTapHoa.ViewModel
         }
         public void DeleteProduct(ProductDetailControl productDetail)
         {
-            MessageBoxResult result = CustomMessageBox.CustomMessageBox.Show("Bạn muốn xóa sản phẩm khỏi gian hàng không?", 2);
+            MessageBoxResult result = CustomMessageBox.CustomMessageBox.Show("Bạn muốn cất sản phẩm này vào kho không?", 2);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -287,7 +299,7 @@ namespace QuanLyQuanTapHoa.ViewModel
                             break;
                         }
                     }
-                    CustomMessageBox.CustomMessageBox.Show("Bạn đã xóa sản phẩm khỏi gian hàng thành công !", 3);
+                    CustomMessageBox.CustomMessageBox.Show("Bạn đã cất sản phẩm vào kho thành công !", 3);
                     break;
                 case MessageBoxResult.No:
                     break;

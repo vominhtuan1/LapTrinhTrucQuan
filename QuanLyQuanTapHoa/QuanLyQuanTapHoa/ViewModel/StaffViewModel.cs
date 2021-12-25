@@ -202,7 +202,7 @@ namespace QuanLyQuanTapHoa.ViewModel
             AccountList = new List<TaiKhoan>(DataProvider.Ins.DB.TaiKhoans);
             StaffList.Clear();
             StaffList = new ObservableCollection<NhanVien>(DataProvider.Ins.DB.NhanViens);
-            CustomMessageBox.CustomMessageBox.Show("Cập nhập sản phẩm thành công!", 3);
+            CustomMessageBox.CustomMessageBox.Show("Cập nhập thông tin nhân viên thành công!", 3);
         }
         public void DeleteStaff(StaffDetailControl staffDetail)
         {

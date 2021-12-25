@@ -156,7 +156,7 @@
                         <ProgressBar
                                 x:Name="progressBar" Width="80" Height="80"
                                 Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                Value="20" IsIndeterminate="True" RenderTransformOrigin="0.722,-1.304" Margin="400,175,371,175"/>
+                                Value="0" IsIndeterminate="True" RenderTransformOrigin="0.722,-1.304" Margin="400,175,371,175"/>
                     </Grid>
                 </StackPanel>
             </Grid>
